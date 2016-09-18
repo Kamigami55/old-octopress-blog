@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://kamigami55.github.io/atom.xml" rel="self"/>
   <link href="http://kamigami55.github.io/"/>
-  <updated>2016-09-18T17:10:59+08:00</updated>
+  <updated>2016-09-18T17:33:19+08:00</updated>
   <id>http://kamigami55.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -12,24 +12,5 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[My-first-post]]></title>
-    <link href="http://kamigami55.github.io/blog/2016/09/18/my-first-post/"/>
-    <updated>2016-09-18T17:09:44+08:00</updated>
-    <id>http://kamigami55.github.io/blog/2016/09/18/my-first-post</id>
-    <content type="html"><![CDATA[<h1>YOOOOOO</h1>
-
-<p>This is my first post</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>code test
-</span><span class='line'>second code line</span></code></pre></td></tr></table></div></figure>
-
-
-
-]]></content>
-  </entry>
   
 </feed>
