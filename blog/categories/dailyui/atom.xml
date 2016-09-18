@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Dailyui | Eason's blog]]></title>
   <link href="http://easonchang.com/blog/categories/dailyui/atom.xml" rel="self"/>
   <link href="http://easonchang.com/"/>
-  <updated>2016-09-18T23:02:27+08:00</updated>
+  <updated>2016-09-18T23:25:05+08:00</updated>
   <id>http://easonchang.com/</id>
   <author>
     <name><![CDATA[Eason Chang]]></name>
@@ -29,9 +29,11 @@
 <!-- more -->
 
 
-<p>這次我使用Keynote作為拼圖軟體（非常坑爹，可是沒錢買PS和AI啊，之後應該會去找開源的替代方案）
-背景圖片來源：<a href="librestock.com">Librestock</a>（超推）
-向量圖片來源：<a href="freepik.com">Freepik</a>（也是超推）</p>
+<p>這次我使用Keynote作為拼圖軟體（非常坑爹，可是沒錢買PS和AI啊，之後應該會去找開源的替代方案）</p>
+
+<p>背景圖片來源：<a href="librestock.com">Librestock</a>（超推）</p>
+
+<p>向量圖片來源：<a href="freepik.com">Freepik</a>（也是超推）</p>
 
 <p>在山峰上放字的靈感來源是這支影片(3:28處)：<a href="https://www.youtube.com/watch?v=1Huz2P7tdYk">https://www.youtube.com/watch?v=1Huz2P7tdYk</a>
 可見平常多看一些有的沒的也是有派上用場的一天:)
@@ -41,6 +43,50 @@
 前方的道路還很長呀</p>
 
 <p>以上，這是今天的DailyUI #003 Landing Page!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[【DailyUI #002】Credit Card Checkout]]></title>
+    <link href="http://easonchang.com/2016/05/09/dailyui-002-credit-card-checkout/"/>
+    <updated>2016-05-09T21:03:00+08:00</updated>
+    <id>http://easonchang.com/2016/05/09/dailyui-002-credit-card-checkout</id>
+    <content type="html"><![CDATA[<p><img src="http://user-image.logdown.io/user/16613/blog/15900/post/731508/NPDyMcXORaWdN4bj9uDj_dailyui_002_credit.png" alt="dailyui_002_credit.png" /></p>
+
+<p><a href="http://kamigami55.github.io/DailyUI/002_creditCardCheckout/">點我試試Live Demo</a></p>
+
+<p><a href="https://github.com/Kamigami55/DailyUI/tree/master/002_creditCardCheckout">點我看看Github原始碼(可是完全沒有整理超級亂我覺得你還是不要看好了)</a></p>
+
+<p>It&rsquo;s DailyUI day #2!</p>
+
+<p>做一做就上癮了，所以當然要趁勝追擊繼續創造很厲害很厲害的UI！</p>
+
+<p>我發現CSS還有很多特性是我還不了解的、pseudo-element(偽元素)、animetion、@keyframes、transform、&hellip;&hellip;
+我對於前端設計的掌握度還是非常低，無法隨心所欲地作出想要的效果，不過在挑戰DailyUI的過程中，確實可以明顯感覺到自己正在進步，希望完成這100天的挑戰後，自己能成為一位上的了檯面的前端工程師！</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[【DailyUI #001】Sign Up]]></title>
+    <link href="http://easonchang.com/2016/05/09/dailyui-001-sign-up/"/>
+    <updated>2016-05-09T07:28:00+08:00</updated>
+    <id>http://easonchang.com/2016/05/09/dailyui-001-sign-up</id>
+    <content type="html"><![CDATA[<p><img src="http://user-image.logdown.io/user/16613/blog/15900/post/731238/gGkjq5L8SMyz9NMS0In2_Daily-UI-001.png" alt="Daily-UI-001.png" /></p>
+
+<h1>我今天做了什麼</h1>
+
+<p>新專案啟動！這是DailyUI！</p>
+
+<p>今天的題目是<strong>&ldquo;Sign Up&rdquo;</strong>，設計一個註冊介面。</p>
+
+<p>而我希望「註冊」這個行為可以脫離「填表單」這個框架。註冊也可以像是一位導遊，引領遊客們進入你精心設計的網站中探索，因此這個過程應該是以「對話、引導」的方式呈現，於是乎我就借用了通訊軟體的設計，將註冊表單包裹在與導遊的對話之中。</p>
+
+<!-- more -->
+
+
+<p><a href="http://kamigami55.github.io/DailyUI/001_signup/">點我玩線上Demo</a></p>
+
+<p><a href="https://github.com/Kamigami55/DailyUI/tree/master/001_signup">點我查看Github原始碼</a></p>
 ]]></content>
   </entry>
   
@@ -73,9 +119,11 @@
 
 <h1>我的挑戰紀錄</h1>
 
-<p><a href="http://easonchang.logdown.com/posts/731238-dailyui-001-sign-up">【DailyUI #001】Sign Up</a>
-<a href="http://easonchang.logdown.com/posts/731508-dailyui-002-credit-card-checkout">【DailyUI #002】Credit Card Checkout</a>
-<a href="http://easonchang.logdown.com/posts/731867-dailyui-003-landing-page">【DailyUI #003】Landing Page</a></p>
+<p><a href="http://easonchang.com/2016/05/09/dailyui-001-sign-up/">【DailyUI #001】Sign Up</a></p>
+
+<p><a href="http://easonchang.com/2016/05/09/dailyui-002-credit-card-checkout/">【DailyUI #002】Credit Card Checkout</a></p>
+
+<p><a href="http://easonchang.com/2016/05/10/dailyui-003-landing-page/">【DailyUI #003】Landing Page</a></p>
 ]]></content>
   </entry>
   

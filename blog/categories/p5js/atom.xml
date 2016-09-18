@@ -4,7 +4,7 @@
   <title><![CDATA[Category: P5js | Eason's blog]]></title>
   <link href="http://easonchang.com/blog/categories/p5js/atom.xml" rel="self"/>
   <link href="http://easonchang.com/"/>
-  <updated>2016-09-18T23:02:27+08:00</updated>
+  <updated>2016-09-18T23:25:05+08:00</updated>
   <id>http://easonchang.com/</id>
   <author>
     <name><![CDATA[Eason Chang]]></name>
@@ -22,8 +22,9 @@
 
 <h1>LifeGame，生命遊戲模擬無限的可能性</h1>
 
-<p><a href="http://kamigami55.github.io/100sites/011_LifeGame/">點我玩生命遊戲線上demo</a>
-<a href="https://github.com/Kamigami55/100sites/tree/gh-pages/011_LifeGame">點我查看Github原始碼</a></p>
+<p><a href="http://kamigami55.github.io/100sites/011_LifeGame/">點我玩生命遊戲線上demo</a></p>
+
+<p><a href="https://github.com/Kamigami55/100sites/tree/gh-pages/011_LifeGame">點我查看Github原始碼</a></p>
 
 <ul>
 <li>ENTER：暫停</li>
@@ -296,8 +297,9 @@ function freshMap() {
 
 <h1>Piano，用P5js的sound函式庫實作虛擬鋼琴</h1>
 
-<p><a href="http://kamigami55.github.io/100sites/010_Piano/">點我玩線上Demo</a>
-<a href="https://github.com/Kamigami55/100sites/tree/gh-pages/010_Piano">點我查看程式碼</a></p>
+<p><a href="http://kamigami55.github.io/100sites/010_Piano/">點我玩線上Demo</a></p>
+
+<p><a href="https://github.com/Kamigami55/100sites/tree/gh-pages/010_Piano">點我查看程式碼</a></p>
 
 <p>要營造出好氣氛，一定要有適合的音樂，於是今天我想要玩音樂，所以就研究了一下<a href="http://p5js.org/">P5.js</a>的<a href="http://p5js.org/reference/#/libraries/p5.sound">sound</a>函式庫，做出了今天的Piano虛擬鋼琴。</p>
 
@@ -607,8 +609,9 @@ function keyReleased() {
 
 <blockquote><p>一句話摘要：使用P5.js製作的類火焰互動效果</p></blockquote>
 
-<p><a href="http://kamigami55.github.io/100sites/009_Flame/">玩線上Demo</a>
-<a href="https://github.com/Kamigami55/100sites/tree/gh-pages/009_Flame">查看Github原始碼</a></p>
+<p><a href="http://kamigami55.github.io/100sites/009_Flame/">玩線上Demo</a></p>
+
+<p><a href="https://github.com/Kamigami55/100sites/tree/gh-pages/009_Flame">查看Github原始碼</a></p>
 
 <p>我會知道<a href="http://p5js.org">P5.js</a>的存在，是因為在今年SITCON年會上聽了<a href="https://www.behance.net/chiunhauyou">游宭鎬(Chiun Hau You)</a>先生的分享，而最近看他用P5.js做的視覺辨識專案: <a href="https://www.behance.net/gallery/34490551/Hello-World-Programmable-Visual-Identity">Hello World - Programmable Visual Identity</a>上了<a href="http://codepen.io">CodePen</a>的Picked Pens，迴響熱烈，讓我也開始想探索P5.js更多的可能性，於是做了今天的小火焰互動特效練習。</p>
 

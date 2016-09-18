@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Project | Eason's blog]]></title>
   <link href="http://easonchang.com/blog/categories/project/atom.xml" rel="self"/>
   <link href="http://easonchang.com/"/>
-  <updated>2016-09-18T23:02:27+08:00</updated>
+  <updated>2016-09-18T23:25:05+08:00</updated>
   <id>http://easonchang.com/</id>
   <author>
     <name><![CDATA[Eason Chang]]></name>
@@ -29,9 +29,11 @@
 <!-- more -->
 
 
-<p>這次我使用Keynote作為拼圖軟體（非常坑爹，可是沒錢買PS和AI啊，之後應該會去找開源的替代方案）
-背景圖片來源：<a href="librestock.com">Librestock</a>（超推）
-向量圖片來源：<a href="freepik.com">Freepik</a>（也是超推）</p>
+<p>這次我使用Keynote作為拼圖軟體（非常坑爹，可是沒錢買PS和AI啊，之後應該會去找開源的替代方案）</p>
+
+<p>背景圖片來源：<a href="librestock.com">Librestock</a>（超推）</p>
+
+<p>向量圖片來源：<a href="freepik.com">Freepik</a>（也是超推）</p>
 
 <p>在山峰上放字的靈感來源是這支影片(3:28處)：<a href="https://www.youtube.com/watch?v=1Huz2P7tdYk">https://www.youtube.com/watch?v=1Huz2P7tdYk</a>
 可見平常多看一些有的沒的也是有派上用場的一天:)
@@ -41,6 +43,26 @@
 前方的道路還很長呀</p>
 
 <p>以上，這是今天的DailyUI #003 Landing Page!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[【DailyUI #002】Credit Card Checkout]]></title>
+    <link href="http://easonchang.com/2016/05/09/dailyui-002-credit-card-checkout/"/>
+    <updated>2016-05-09T21:03:00+08:00</updated>
+    <id>http://easonchang.com/2016/05/09/dailyui-002-credit-card-checkout</id>
+    <content type="html"><![CDATA[<p><img src="http://user-image.logdown.io/user/16613/blog/15900/post/731508/NPDyMcXORaWdN4bj9uDj_dailyui_002_credit.png" alt="dailyui_002_credit.png" /></p>
+
+<p><a href="http://kamigami55.github.io/DailyUI/002_creditCardCheckout/">點我試試Live Demo</a></p>
+
+<p><a href="https://github.com/Kamigami55/DailyUI/tree/master/002_creditCardCheckout">點我看看Github原始碼(可是完全沒有整理超級亂我覺得你還是不要看好了)</a></p>
+
+<p>It&rsquo;s DailyUI day #2!</p>
+
+<p>做一做就上癮了，所以當然要趁勝追擊繼續創造很厲害很厲害的UI！</p>
+
+<p>我發現CSS還有很多特性是我還不了解的、pseudo-element(偽元素)、animetion、@keyframes、transform、&hellip;&hellip;
+我對於前端設計的掌握度還是非常低，無法隨心所欲地作出想要的效果，不過在挑戰DailyUI的過程中，確實可以明顯感覺到自己正在進步，希望完成這100天的挑戰後，自己能成為一位上的了檯面的前端工程師！</p>
 ]]></content>
   </entry>
   
@@ -62,8 +84,46 @@
 <!-- more -->
 
 
-<p><a href="http://kamigami55.github.io/DailyUI/001_signup/">點我玩線上Demo</a>
-<a href="https://github.com/Kamigami55/DailyUI/tree/master/001_signup">點我查看Github原始碼</a></p>
+<p><a href="http://kamigami55.github.io/DailyUI/001_signup/">點我玩線上Demo</a></p>
+
+<p><a href="https://github.com/Kamigami55/DailyUI/tree/master/001_signup">點我查看Github原始碼</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[【DailyUI #000】成為最強前端設計師吧]]></title>
+    <link href="http://easonchang.com/2016/05/08/dailyui-000-become-awesome-front-end-designer/"/>
+    <updated>2016-05-08T14:50:00+08:00</updated>
+    <id>http://easonchang.com/2016/05/08/dailyui-000-become-awesome-front-end-designer</id>
+    <content type="html"><![CDATA[<p><img src="http://user-image.logdown.io/user/16613/blog/15900/post/731238/JEjpZ1kkQpSUtPAwZ0gw_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-05-09%20%E4%B8%8B%E5%8D%883.16.31.png" alt="DailyUI.png" /></p>
+
+<h1>什麼是 DailyUI</h1>
+
+<p>在網上衝浪的時候，不小心又看到了一個驚人的網站：DailyUI.co
+這是一個協助你成為更專業的 UI Designer 的服務，透過激勵你連續 100 天進行 UI 設計，他的運作方式是這樣的：</p>
+
+<ul>
+<li>每天都會寄一封 email 給你，告訴你今天的 UI 設計題目（假日沒有，假日是用來遊山玩水的）</li>
+<li>題目只會指出大方向，沒有太多限制，發揮創意打造出最強 UI！It&rsquo;s show time!</li>
+<li>將你的設計發上 Twitter 或是 Dribble，向全世界分享你的創意！</li>
+<li>偶爾會有驚喜獎勵，不要被嚇到了:)</li>
+</ul>
+
+
+<!-- more -->
+
+
+<p>這種互動模式實在是太驚人了！而且我也想知道有什麼驚喜獎勵～</p>
+
+<p>於是乎「<strong>Challenge Accepted!!</strong>」</p>
+
+<h1>我的挑戰紀錄</h1>
+
+<p><a href="http://easonchang.com/2016/05/09/dailyui-001-sign-up/">【DailyUI #001】Sign Up</a></p>
+
+<p><a href="http://easonchang.com/2016/05/09/dailyui-002-credit-card-checkout/">【DailyUI #002】Credit Card Checkout</a></p>
+
+<p><a href="http://easonchang.com/2016/05/10/dailyui-003-landing-page/">【DailyUI #003】Landing Page</a></p>
 ]]></content>
   </entry>
   
@@ -76,8 +136,9 @@
 
 <h1>LifeGame，生命遊戲模擬無限的可能性</h1>
 
-<p><a href="http://kamigami55.github.io/100sites/011_LifeGame/">點我玩生命遊戲線上demo</a>
-<a href="https://github.com/Kamigami55/100sites/tree/gh-pages/011_LifeGame">點我查看Github原始碼</a></p>
+<p><a href="http://kamigami55.github.io/100sites/011_LifeGame/">點我玩生命遊戲線上demo</a></p>
+
+<p><a href="https://github.com/Kamigami55/100sites/tree/gh-pages/011_LifeGame">點我查看Github原始碼</a></p>
 
 <ul>
 <li>ENTER：暫停</li>
@@ -335,470 +396,6 @@ function freshMap() {
     for (var j = 0; j &lt; num_y; ++j) {
       oldMap[i][j] = newMap[i][j];
     }
-  }
-}
-</code></pre>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[【100sites #010】Piano，用P5js的sound函式庫實作虛擬鋼琴]]></title>
-    <link href="http://easonchang.com/2016/03/25/100sites-010-piano/"/>
-    <updated>2016-03-25T17:57:00+08:00</updated>
-    <id>http://easonchang.com/2016/03/25/100sites-010-piano</id>
-    <content type="html"><![CDATA[<p><img src="http://user-image.logdown.io/user/16613/blog/15900/post/680679/LBpcbJhTT1ClVUbKTHPm_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-03-26%20%E4%B8%8A%E5%8D%881.18.01.png" alt="螢幕快照 2016-03-26 上午1.18.01.png" /></p>
-
-<h1>Piano，用P5js的sound函式庫實作虛擬鋼琴</h1>
-
-<p><a href="http://kamigami55.github.io/100sites/010_Piano/">點我玩線上Demo</a>
-<a href="https://github.com/Kamigami55/100sites/tree/gh-pages/010_Piano">點我查看程式碼</a></p>
-
-<p>要營造出好氣氛，一定要有適合的音樂，於是今天我想要玩音樂，所以就研究了一下<a href="http://p5js.org/">P5.js</a>的<a href="http://p5js.org/reference/#/libraries/p5.sound">sound</a>函式庫，做出了今天的Piano虛擬鋼琴。</p>
-
-<!-- more -->
-
-
-<p>這個函式庫有不少功能可以使用，播音錄音波型轉換都可以做到，今天的Piano使用了sine函數的oscillator製造聲音，再用FFT.analyze()來顯示波形。</p>
-
-<p>本次的程式碼：
-<figure class='code'><figcaption><span>index.html</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="ni">&amp;lt;</span>!DOCTYPE html&gt;
-</span><span class='line'><span class="nt">&lt;html&gt;</span>
-</span><span class='line'><span class="nt">&lt;head&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;meta</span> <span class="na">charset-</span><span class="err">&quot;</span><span class="na">UTF-8</span><span class="err">&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;title&gt;</span>Piano<span class="nt">&lt;/title&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;style.css&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.23/p5.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;p5.sound.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;piano.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-</span><span class='line'><span class="nt">&lt;/head&gt;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;&lt;body&gt;</span>
-</span><span class='line'><span class="nt">&lt;/body&gt;</span>
-</span><span class='line'><span class="nt">&lt;/html&gt;</span>
-</span></code></pre></td></tr></table></div></figure></p>
-
-<pre><code class="css style.css">* {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  overflow: hidden;
-}
-</code></pre>
-
-<pre><code class="javascript piano.js">var attackLevel = 2.0;
-var releaseLevel = 0;
-
-var attackTime = 0.001;
-var decayTime = 0.2;
-var susPercent = 0.2;
-var releaseTime = 0.5;
-
-var env, triOsc;
-var notePressed = [false, false, false, false, false, false, false, false, false, false, false, false];
-var fft;
-
-function setup() {
-  createCanvas(windowWidth, windowHeight);
-
-  textAlign(CENTER);
-  textSize(40);
-
-  env = new p5.Env();
-  env.setADSR(attackTime, decayTime, susPercent, releaseTime);
-  env.setRange(attackLevel, releaseLevel);
-
-  triOsc = new p5.Oscillator('sine');
-  triOsc.amp(env);
-  triOsc.start();
-
-  ellipseMode(CENTER);
-  strokeWeight(2);
-  rectMode(CENTER);
-
-  fft = new p5.FFT();
-}
-
-
-function draw() {
-  background(200);
-
-  // title
-  fill(255);  
-  strokeWeight(5);
-  textSize(120);
-  textFont("Georgia");
-  text("PIANO", width/2, 150);
-  textFont("Normal");
-
-  // spectrum 
-  var spectrum = fft.analyze(); 
-  noStroke();
-  fill(230); 
-  for (var i = 0; i&lt; spectrum.length; i++){
-    var x = map(i, 0, spectrum.length, 0, width/2);
-    var h = -height/2 + map(spectrum[i], 0, 255, height/2, 0);
-    rect(x, height/2, width / spectrum.length, h);
-    rect(width-x, height/2, width / spectrum.length, h);
-  }
-
-  // black note
-  drawNote(windowWidth/2-150, windowHeight/2-60, 'E', 'b', notePressed[0]);
-  drawNote(windowWidth/2-90, windowHeight/2-60, 'R', 'b', notePressed[1]);
-  drawNote(windowWidth/2+30, windowHeight/2-60, 'Y', 'b', notePressed[2]);
-  drawNote(windowWidth/2+90, windowHeight/2-60, 'U', 'b', notePressed[3]);
-  drawNote(windowWidth/2+150, windowHeight/2-60, 'I', 'b', notePressed[4]);
-
-  // white note
-  drawNote(windowWidth/2-180, windowHeight/2, 'S', 'w', notePressed[5]);
-  drawNote(windowWidth/2-120, windowHeight/2, 'D', 'w', notePressed[6]);
-  drawNote(windowWidth/2-60, windowHeight/2, 'F', 'w', notePressed[7]);
-  drawNote(windowWidth/2, windowHeight/2, 'G', 'w', notePressed[8]);
-  drawNote(windowWidth/2+60, windowHeight/2, 'H', 'w', notePressed[9]);
-  drawNote(windowWidth/2+120, windowHeight/2, 'J', 'w', notePressed[10]);
-  drawNote(windowWidth/2+180, windowHeight/2, 'K', 'w', notePressed[11]);
-}
-
-
-function playEnv(f){
-  triOsc.freq(f);
-  env.play();
-}
-
-
-function drawNote(xpos, ypos, key, color, pressed) {
-  // black note
-  var big = 0;
-  if (pressed) {
-    big = 8;
-  }
-  // shadow
-  fill(100);
-  strokeWeight(0);
-  ellipse(xpos+3, ypos+3, 50+big, 50+big);
-  // note
-  if (color == 'b') {
-    fill(0);
-    stroke(255);  
-  } else {
-    fill(255);
-    stroke(0);  
-  }
-  strokeWeight(2);
-  ellipse(xpos, ypos, 50+big, 50+big);
-  // text
-  if (color == 'b') {
-    fill(255);  
-  } else {
-    fill(0);
-  }
-  textSize(40);
-  if (pressed) {
-    textSize(44);
-  }
-  text(key, xpos, ypos+17);
-}
-
-
-function keyPressed() {
-  switch (keyCode) {
-  case 83: // S
-  case 115: // s
-    playEnv(261); // C note
-    notePressed[5] = true;
-    break;
-  case 69: // E
-  case 101: // e
-    playEnv(277); // C# note
-    notePressed[0] = true;
-    break;
-  case 68: // D
-  case 110: // d
-    playEnv(293); // D note
-    notePressed[6] = true;
-    break;
-  case 82: // R
-  case 114: // r
-    playEnv(311); // D# note
-    notePressed[1] = true;
-    break;
-  case 70: // F
-  case 102: // f
-    playEnv(329); // E note
-    notePressed[7] = true;
-    break;
-  case 71: // G
-  case 103: // g
-    playEnv(349); // F note
-    notePressed[8] = true;
-    break;
-  case 89: // Y
-  case 121: // y
-    playEnv(369); // F# note
-    notePressed[2] = true;
-    break;
-  case 72: // H
-  case 104: // h
-    playEnv(392); // G note
-    notePressed[9] = true;
-    break;
-  case 85: // U
-  case 117: // u
-    playEnv(415); // G# note
-    notePressed[3] = true;
-    break;
-  case 74: // J
-  case 106: // j
-    playEnv(440); // A note
-    notePressed[10] = true;
-    break;
-  case 73: // U
-  case 105: // u
-    playEnv(466); // A# note
-    notePressed[4] = true;
-    break;
-  case 75: // K
-  case 107: // k
-    playEnv(493); // B note
-    notePressed[11] = true;
-    break;
-  default:
-    break;
-  }
-}
-
-function keyReleased() {
-  switch (keyCode) {
-  case 83: // S
-  case 115: // s
-    // C note
-    notePressed[5] = false;
-    break;
-  case 69: // E
-  case 101: // e
-    // C# note
-    notePressed[0] = false;
-    break;
-  case 68: // D
-  case 110: // d
-    // D note
-    notePressed[6] = false;
-    break;
-  case 82: // R
-  case 114: // r
-    // D# note
-    notePressed[1] = false;
-    break;
-  case 70: // F
-  case 102: // f
-    // E note
-    notePressed[7] = false;
-    break;
-  case 71: // G
-  case 103: // g
-    // F note
-    notePressed[8] = false;
-    break;
-  case 89: // Y
-  case 121: // y
-    // F# note
-    notePressed[2] = false;
-    break;
-  case 72: // H
-  case 104: // h
-    // G note
-    notePressed[9] = false;
-    break;
-  case 85: // U
-  case 117: // u
-    // G# note
-    notePressed[3] = false;
-    break;
-  case 74: // J
-  case 106: // j
-    // A note
-    notePressed[10] = false;
-    break;
-  case 73: // U
-  case 105: // u
-    // A# note
-    notePressed[4] = false;
-    break;
-  case 75: // K
-  case 107: // k
-    // B note
-    notePressed[11] = false;
-    break;
-  default:
-    break;
-  }
-}
-</code></pre>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[【100sites #009】Flame，P5js酷炫小動畫]]></title>
-    <link href="http://easonchang.com/2016/03/23/100sites-009-flame/"/>
-    <updated>2016-03-23T07:05:00+08:00</updated>
-    <id>http://easonchang.com/2016/03/23/100sites-009-flame</id>
-    <content type="html"><![CDATA[<p><img src="http://user-image.logdown.io/user/16613/blog/15900/post/670772/PoU9jCY6SQGh74CXEgC3_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-03-23%20%E4%B8%8A%E5%8D%884.08.53.png" alt="螢幕快照 2016-03-23 上午4.08.53.png" /></p>
-
-<blockquote><p>一句話摘要：使用P5.js製作的類火焰互動效果</p></blockquote>
-
-<p><a href="http://kamigami55.github.io/100sites/009_Flame/">玩線上Demo</a>
-<a href="https://github.com/Kamigami55/100sites/tree/gh-pages/009_Flame">查看Github原始碼</a></p>
-
-<p>我會知道<a href="http://p5js.org">P5.js</a>的存在，是因為在今年SITCON年會上聽了<a href="https://www.behance.net/chiunhauyou">游宭鎬(Chiun Hau You)</a>先生的分享，而最近看他用P5.js做的視覺辨識專案: <a href="https://www.behance.net/gallery/34490551/Hello-World-Programmable-Visual-Identity">Hello World - Programmable Visual Identity</a>上了<a href="http://codepen.io">CodePen</a>的Picked Pens，迴響熱烈，讓我也開始想探索P5.js更多的可能性，於是做了今天的小火焰互動特效練習。</p>
-
-<!-- more -->
-
-
-<p>今天沒什麼細節要講，移動你的滑鼠，享受這些小火焰吧！</p>
-
-<p>點滑鼠左鍵可以切換樣式，共有4種樣式。</p>
-
-<p>另外一種樣式：
-<img src="http://user-image.logdown.io/user/16613/blog/15900/post/670772/1wuhemM4Tu6djxvgu8Pv_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-03-23%20%E4%B8%8A%E5%8D%884.09.52.png" alt="螢幕快照 2016-03-23 上午4.09.52.png" /></p>
-
-<p>原始碼：
-<figure class='code'><figcaption><span>index.html</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="ni">&amp;lt;</span>!DOCTYPE html&gt;
-</span><span class='line'><span class="nt">&lt;html&gt;</span>
-</span><span class='line'><span class="nt">&lt;head&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;meta</span> <span class="na">charset-</span><span class="err">&quot;</span><span class="na">UTF-8</span><span class="err">&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;title&gt;</span>Flame<span class="nt">&lt;/title&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;style.css&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.23/p5.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;flame.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-</span><span class='line'><span class="nt">&lt;/head&gt;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;&lt;body&gt;</span>
-</span><span class='line'><span class="nt">&lt;/body&gt;</span>
-</span><span class='line'><span class="nt">&lt;/html&gt;</span>
-</span></code></pre></td></tr></table></div></figure></p>
-
-<pre><code class="css style.css">* {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  overflow: hidden;
-}
-</code></pre>
-
-<pre><code class="javascript flame.js">var rows = 0, // how many shapes there are vertically
-    cols = 0, // how many shapes there are horizontally
-    diameter = [], // diameter of every single shape
-    displayMode = 0, // four display mode: 0: red rect, 1: red ellipse, 2: blue rect, 3: blue ellipse
-    MARGIN = 30, // distance between two shapes
-    MAX_SIZE = 100, // max shape size when mouse approach
-    SENSE_RANGE = 200; // what distance shapes will react
-
-function setup() {
-
-  createCanvas(windowWidth, windowHeight);
-  strokeWeight(0);
-  ellipseMode(CENTER);
-  rectMode(CENTER);
-  frameRate(30);
-
-  rows = windowHeight / MARGIN;
-  cols = windowWidth / MARGIN;
-
-  // initialize diameter 2-dimensional array
-  for (var y = 0; y &lt; rows; ++y) { 
-    diameter.push([]);
-    for (var x = 0; x &lt; cols; ++x) {
-      diameter[y].push(0);
-    }
-  }
-}
-
-function draw() {
-
-  background(20);
-  for (var y = 0; y &lt; rows; y += 1) {
-    for (var x = 0; x &lt; cols; x += 1) {
-      var thisDiameter = diameter[y][x];
-
-      // decrease diameter by time until diameter is 0
-      if (thisDiameter &lt; 2) {
-        diameter[y][x] = 0;        
-      } else { // thisDiameter &gt;= 2
-        diameter[y][x] -= 2;
-        thisDiameter = diameter[y][x];        
-
-        // And we can now display it
-        // Determine which color should we use
-        if (displayMode &lt;= 1) { // 0, 1
-          fill(255,thisDiameter*2.5,0); // red color mode
-        } else { // 2, 3
-          fill(0,thisDiameter*2.5,255-thisDiameter*1.5); // blue color mode
-        }
-        // Determine which shape should we use
-        if (displayMode == 0 || displayMode == 2) { // 0, 2
-          rect(x*MARGIN, y*MARGIN, thisDiameter, thisDiameter); // rect mode
-        } else { // 1, 3
-          ellipse(x*MARGIN, y*MARGIN, thisDiameter, thisDiameter); // ellipse mode
-        }
-      } // .if-else
-    } // .for
-  } // .for
-}
-
-// when mouse moved, adjust diameters of every shapes
-function mouseMoved() {
-
-  for (var y = 0; y &lt; rows; y += 1) {
-    for (var x = 0; x &lt; cols; x += 1) {
-      // calculus the distance between this shape and user mouse
-      var dist = Math.sqrt((x*MARGIN-mouseX)*(x*MARGIN-mouseX)+(y*MARGIN-mouseY)*(y*MARGIN-mouseY));
-      if (dist &lt;= SENSE_RANGE) {
-        // calculus the diameter based on the distance
-        var theDiameter = (SENSE_RANGE - dist)*MAX_SIZE/SENSE_RANGE;
-        // if current diameter is smaller than the calc diameter
-        if (diameter[y][x] &lt; theDiameter) {
-          diameter[y][x] = theDiameter; // increase the current diameter to it should be
-        }
-      }
-    }
-  }
-}
-
-// switch display mode
-function mousePressed() {
-  ++displayMode;
-  if (displayMode &gt; 3) {
-    displayMode = 0;
   }
 }
 </code></pre>
