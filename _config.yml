@@ -21,6 +21,9 @@ subscribe_email:
 # RSS feeds can list your email address if you like
 email:
 
+url: https://easonchang.com
+enforce_ssl: easonchang.com
+
 # ----------------------- #
 #   HPSTR theme setting   #
 # ----------------------- #

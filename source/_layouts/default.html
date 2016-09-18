@@ -1,6 +1,13 @@
 {% include doctype.html %}
 <head>
-{% include head.html %}
+<!-- enforce https -->
+  <script type="text/javascript">
+    var host = "easonchang.com";
+    if ((host == window.location.host) && (window.location.protocol != "https:"))
+      window.location.protocol = "https";
+  </script>
+
+  {% include head.html %}
 </head>
 
 <body id="post-index" {% if page.image.feature %}class="feature"{% endif %}>

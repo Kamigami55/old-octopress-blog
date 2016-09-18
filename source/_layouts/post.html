@@ -1,5 +1,12 @@
 {% include doctype.html %}
 <head>
+<!-- enforce https -->
+  <script type="text/javascript">
+    var host = "easonchang.com";
+    if ((host == window.location.host) && (window.location.protocol != "https:"))
+      window.location.protocol = "https";
+  </script>
+
 {% include head.html %}
 </head>
 
