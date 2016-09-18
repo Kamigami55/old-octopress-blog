@@ -1,0 +1,819 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>【100sites #010】Piano，用P5js的sound函式庫實作虛擬鋼琴 - Eason's blog</title>
+  <meta name="author" content="Eason Chang">
+
+  
+  <meta name="description" content="Piano，用P5js的sound函式庫實作虛擬鋼琴 點我玩線上Demo
+點我查看程式碼 要營造出好氣氛，一定要有適合的音樂，於是今天我想要玩音樂，所以就研究了一下P5.js的sound函式庫，做出了今天的Piano虛擬鋼琴。 這個函式庫有不少功能可以使用，播音錄音波型轉換都可以做到， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://easonchang.com/2016/03/25/100sites-010-piano/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Eason's blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-73788598-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Eason's blog</a></h1>
+  
+    <h2>I create, therefore I am.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="easonchang.com">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">【100sites #010】Piano，用P5js的sound函式庫實作虛擬鋼琴</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2016-03-25T17:57:00+08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>25</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>5:57 pm</span></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://easonchang.com">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><img src="http://user-image.logdown.io/user/16613/blog/15900/post/680679/LBpcbJhTT1ClVUbKTHPm_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-03-26%20%E4%B8%8A%E5%8D%881.18.01.png" alt="螢幕快照 2016-03-26 上午1.18.01.png" /></p>
+
+<h1>Piano，用P5js的sound函式庫實作虛擬鋼琴</h1>
+
+<p><a href="http://kamigami55.github.io/100sites/010_Piano/">點我玩線上Demo</a>
+<a href="https://github.com/Kamigami55/100sites/tree/gh-pages/010_Piano">點我查看程式碼</a></p>
+
+<p>要營造出好氣氛，一定要有適合的音樂，於是今天我想要玩音樂，所以就研究了一下<a href="http://p5js.org/">P5.js</a>的<a href="http://p5js.org/reference/#/libraries/p5.sound">sound</a>函式庫，做出了今天的Piano虛擬鋼琴。</p>
+
+<!-- more -->
+
+
+<p>這個函式庫有不少功能可以使用，播音錄音波型轉換都可以做到，今天的Piano使用了sine函數的oscillator製造聲音，再用FFT.analyze()來顯示波形。</p>
+
+<p>本次的程式碼：</p>
+
+<figure class='code'><figcaption><span>index.html</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span><span class='line'><span class="nt">&lt;html&gt;</span>
+</span><span class='line'><span class="nt">&lt;head&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;meta</span> <span class="na">charset-</span><span class="err">&quot;</span><span class="na">UTF-8</span><span class="err">&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;title&gt;</span>Piano<span class="nt">&lt;/title&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;style.css&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.23/p5.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;p5.sound.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;piano.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span><span class='line'><span class="nt">&lt;/head&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;body&gt;</span>
+</span><span class='line'><span class="nt">&lt;/body&gt;</span>
+</span><span class='line'><span class="nt">&lt;/html&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>style.css</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="o">*</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">padding</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">body</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">overflow</span><span class="o">:</span> <span class="k">hidden</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>piano.js</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
+<span class='line-number'>95</span>
+<span class='line-number'>96</span>
+<span class='line-number'>97</span>
+<span class='line-number'>98</span>
+<span class='line-number'>99</span>
+<span class='line-number'>100</span>
+<span class='line-number'>101</span>
+<span class='line-number'>102</span>
+<span class='line-number'>103</span>
+<span class='line-number'>104</span>
+<span class='line-number'>105</span>
+<span class='line-number'>106</span>
+<span class='line-number'>107</span>
+<span class='line-number'>108</span>
+<span class='line-number'>109</span>
+<span class='line-number'>110</span>
+<span class='line-number'>111</span>
+<span class='line-number'>112</span>
+<span class='line-number'>113</span>
+<span class='line-number'>114</span>
+<span class='line-number'>115</span>
+<span class='line-number'>116</span>
+<span class='line-number'>117</span>
+<span class='line-number'>118</span>
+<span class='line-number'>119</span>
+<span class='line-number'>120</span>
+<span class='line-number'>121</span>
+<span class='line-number'>122</span>
+<span class='line-number'>123</span>
+<span class='line-number'>124</span>
+<span class='line-number'>125</span>
+<span class='line-number'>126</span>
+<span class='line-number'>127</span>
+<span class='line-number'>128</span>
+<span class='line-number'>129</span>
+<span class='line-number'>130</span>
+<span class='line-number'>131</span>
+<span class='line-number'>132</span>
+<span class='line-number'>133</span>
+<span class='line-number'>134</span>
+<span class='line-number'>135</span>
+<span class='line-number'>136</span>
+<span class='line-number'>137</span>
+<span class='line-number'>138</span>
+<span class='line-number'>139</span>
+<span class='line-number'>140</span>
+<span class='line-number'>141</span>
+<span class='line-number'>142</span>
+<span class='line-number'>143</span>
+<span class='line-number'>144</span>
+<span class='line-number'>145</span>
+<span class='line-number'>146</span>
+<span class='line-number'>147</span>
+<span class='line-number'>148</span>
+<span class='line-number'>149</span>
+<span class='line-number'>150</span>
+<span class='line-number'>151</span>
+<span class='line-number'>152</span>
+<span class='line-number'>153</span>
+<span class='line-number'>154</span>
+<span class='line-number'>155</span>
+<span class='line-number'>156</span>
+<span class='line-number'>157</span>
+<span class='line-number'>158</span>
+<span class='line-number'>159</span>
+<span class='line-number'>160</span>
+<span class='line-number'>161</span>
+<span class='line-number'>162</span>
+<span class='line-number'>163</span>
+<span class='line-number'>164</span>
+<span class='line-number'>165</span>
+<span class='line-number'>166</span>
+<span class='line-number'>167</span>
+<span class='line-number'>168</span>
+<span class='line-number'>169</span>
+<span class='line-number'>170</span>
+<span class='line-number'>171</span>
+<span class='line-number'>172</span>
+<span class='line-number'>173</span>
+<span class='line-number'>174</span>
+<span class='line-number'>175</span>
+<span class='line-number'>176</span>
+<span class='line-number'>177</span>
+<span class='line-number'>178</span>
+<span class='line-number'>179</span>
+<span class='line-number'>180</span>
+<span class='line-number'>181</span>
+<span class='line-number'>182</span>
+<span class='line-number'>183</span>
+<span class='line-number'>184</span>
+<span class='line-number'>185</span>
+<span class='line-number'>186</span>
+<span class='line-number'>187</span>
+<span class='line-number'>188</span>
+<span class='line-number'>189</span>
+<span class='line-number'>190</span>
+<span class='line-number'>191</span>
+<span class='line-number'>192</span>
+<span class='line-number'>193</span>
+<span class='line-number'>194</span>
+<span class='line-number'>195</span>
+<span class='line-number'>196</span>
+<span class='line-number'>197</span>
+<span class='line-number'>198</span>
+<span class='line-number'>199</span>
+<span class='line-number'>200</span>
+<span class='line-number'>201</span>
+<span class='line-number'>202</span>
+<span class='line-number'>203</span>
+<span class='line-number'>204</span>
+<span class='line-number'>205</span>
+<span class='line-number'>206</span>
+<span class='line-number'>207</span>
+<span class='line-number'>208</span>
+<span class='line-number'>209</span>
+<span class='line-number'>210</span>
+<span class='line-number'>211</span>
+<span class='line-number'>212</span>
+<span class='line-number'>213</span>
+<span class='line-number'>214</span>
+<span class='line-number'>215</span>
+<span class='line-number'>216</span>
+<span class='line-number'>217</span>
+<span class='line-number'>218</span>
+<span class='line-number'>219</span>
+<span class='line-number'>220</span>
+<span class='line-number'>221</span>
+<span class='line-number'>222</span>
+<span class='line-number'>223</span>
+<span class='line-number'>224</span>
+<span class='line-number'>225</span>
+<span class='line-number'>226</span>
+<span class='line-number'>227</span>
+<span class='line-number'>228</span>
+<span class='line-number'>229</span>
+<span class='line-number'>230</span>
+<span class='line-number'>231</span>
+<span class='line-number'>232</span>
+<span class='line-number'>233</span>
+<span class='line-number'>234</span>
+<span class='line-number'>235</span>
+<span class='line-number'>236</span>
+<span class='line-number'>237</span>
+<span class='line-number'>238</span>
+<span class='line-number'>239</span>
+<span class='line-number'>240</span>
+<span class='line-number'>241</span>
+<span class='line-number'>242</span>
+<span class='line-number'>243</span>
+<span class='line-number'>244</span>
+<span class='line-number'>245</span>
+<span class='line-number'>246</span>
+<span class='line-number'>247</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">attackLevel</span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">;</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">releaseLevel</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">var</span> <span class="nx">attackTime</span> <span class="o">=</span> <span class="mf">0.001</span><span class="p">;</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">decayTime</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">;</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">susPercent</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">;</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">releaseTime</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">var</span> <span class="nx">env</span><span class="p">,</span> <span class="nx">triOsc</span><span class="p">;</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">notePressed</span> <span class="o">=</span> <span class="p">[</span><span class="kc">false</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">false</span><span class="p">];</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">fft</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">function</span> <span class="nx">setup</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">createCanvas</span><span class="p">(</span><span class="nx">windowWidth</span><span class="p">,</span> <span class="nx">windowHeight</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">textAlign</span><span class="p">(</span><span class="nx">CENTER</span><span class="p">);</span>
+</span><span class='line'>  <span class="nx">textSize</span><span class="p">(</span><span class="mi">40</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">env</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">p5</span><span class="p">.</span><span class="nx">Env</span><span class="p">();</span>
+</span><span class='line'>  <span class="nx">env</span><span class="p">.</span><span class="nx">setADSR</span><span class="p">(</span><span class="nx">attackTime</span><span class="p">,</span> <span class="nx">decayTime</span><span class="p">,</span> <span class="nx">susPercent</span><span class="p">,</span> <span class="nx">releaseTime</span><span class="p">);</span>
+</span><span class='line'>  <span class="nx">env</span><span class="p">.</span><span class="nx">setRange</span><span class="p">(</span><span class="nx">attackLevel</span><span class="p">,</span> <span class="nx">releaseLevel</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">triOsc</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">p5</span><span class="p">.</span><span class="nx">Oscillator</span><span class="p">(</span><span class="s1">&#39;sine&#39;</span><span class="p">);</span>
+</span><span class='line'>  <span class="nx">triOsc</span><span class="p">.</span><span class="nx">amp</span><span class="p">(</span><span class="nx">env</span><span class="p">);</span>
+</span><span class='line'>  <span class="nx">triOsc</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">ellipseMode</span><span class="p">(</span><span class="nx">CENTER</span><span class="p">);</span>
+</span><span class='line'>  <span class="nx">strokeWeight</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+</span><span class='line'>  <span class="nx">rectMode</span><span class="p">(</span><span class="nx">CENTER</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">fft</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">p5</span><span class="p">.</span><span class="nx">FFT</span><span class="p">();</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="kd">function</span> <span class="nx">draw</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">background</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">// title</span>
+</span><span class='line'>  <span class="nx">fill</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span>
+</span><span class='line'>  <span class="nx">strokeWeight</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+</span><span class='line'>  <span class="nx">textSize</span><span class="p">(</span><span class="mi">120</span><span class="p">);</span>
+</span><span class='line'>  <span class="nx">textFont</span><span class="p">(</span><span class="s2">&quot;Georgia&quot;</span><span class="p">);</span>
+</span><span class='line'>  <span class="nx">text</span><span class="p">(</span><span class="s2">&quot;PIANO&quot;</span><span class="p">,</span> <span class="nx">width</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">150</span><span class="p">);</span>
+</span><span class='line'>  <span class="nx">textFont</span><span class="p">(</span><span class="s2">&quot;Normal&quot;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">// spectrum </span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">spectrum</span> <span class="o">=</span> <span class="nx">fft</span><span class="p">.</span><span class="nx">analyze</span><span class="p">();</span>
+</span><span class='line'>  <span class="nx">noStroke</span><span class="p">();</span>
+</span><span class='line'>  <span class="nx">fill</span><span class="p">(</span><span class="mi">230</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span> <span class="nx">spectrum</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">map</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">spectrum</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">width</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span>
+</span><span class='line'>    <span class="kd">var</span> <span class="nx">h</span> <span class="o">=</span> <span class="o">-</span><span class="nx">height</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="nx">map</span><span class="p">(</span><span class="nx">spectrum</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="nx">height</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span><span class='line'>    <span class="nx">rect</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">height</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="nx">width</span> <span class="o">/</span> <span class="nx">spectrum</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span> <span class="nx">h</span><span class="p">);</span>
+</span><span class='line'>    <span class="nx">rect</span><span class="p">(</span><span class="nx">width</span><span class="o">-</span><span class="nx">x</span><span class="p">,</span> <span class="nx">height</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="nx">width</span> <span class="o">/</span> <span class="nx">spectrum</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span> <span class="nx">h</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">// black note</span>
+</span><span class='line'>  <span class="nx">drawNote</span><span class="p">(</span><span class="nx">windowWidth</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="mi">150</span><span class="p">,</span> <span class="nx">windowHeight</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="mi">60</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="nx">notePressed</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+</span><span class='line'>  <span class="nx">drawNote</span><span class="p">(</span><span class="nx">windowWidth</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="nx">windowHeight</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="mi">60</span><span class="p">,</span> <span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="nx">notePressed</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+</span><span class='line'>  <span class="nx">drawNote</span><span class="p">(</span><span class="nx">windowWidth</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="mi">30</span><span class="p">,</span> <span class="nx">windowHeight</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="mi">60</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="nx">notePressed</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+</span><span class='line'>  <span class="nx">drawNote</span><span class="p">(</span><span class="nx">windowWidth</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="mi">90</span><span class="p">,</span> <span class="nx">windowHeight</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="mi">60</span><span class="p">,</span> <span class="s1">&#39;U&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="nx">notePressed</span><span class="p">[</span><span class="mi">3</span><span class="p">]);</span>
+</span><span class='line'>  <span class="nx">drawNote</span><span class="p">(</span><span class="nx">windowWidth</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="mi">150</span><span class="p">,</span> <span class="nx">windowHeight</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="mi">60</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="nx">notePressed</span><span class="p">[</span><span class="mi">4</span><span class="p">]);</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">// white note</span>
+</span><span class='line'>  <span class="nx">drawNote</span><span class="p">(</span><span class="nx">windowWidth</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span> <span class="nx">windowHeight</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="nx">notePressed</span><span class="p">[</span><span class="mi">5</span><span class="p">]);</span>
+</span><span class='line'>  <span class="nx">drawNote</span><span class="p">(</span><span class="nx">windowWidth</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="mi">120</span><span class="p">,</span> <span class="nx">windowHeight</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="nx">notePressed</span><span class="p">[</span><span class="mi">6</span><span class="p">]);</span>
+</span><span class='line'>  <span class="nx">drawNote</span><span class="p">(</span><span class="nx">windowWidth</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="mi">60</span><span class="p">,</span> <span class="nx">windowHeight</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="nx">notePressed</span><span class="p">[</span><span class="mi">7</span><span class="p">]);</span>
+</span><span class='line'>  <span class="nx">drawNote</span><span class="p">(</span><span class="nx">windowWidth</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="nx">windowHeight</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="nx">notePressed</span><span class="p">[</span><span class="mi">8</span><span class="p">]);</span>
+</span><span class='line'>  <span class="nx">drawNote</span><span class="p">(</span><span class="nx">windowWidth</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="mi">60</span><span class="p">,</span> <span class="nx">windowHeight</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="nx">notePressed</span><span class="p">[</span><span class="mi">9</span><span class="p">]);</span>
+</span><span class='line'>  <span class="nx">drawNote</span><span class="p">(</span><span class="nx">windowWidth</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="mi">120</span><span class="p">,</span> <span class="nx">windowHeight</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;J&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="nx">notePressed</span><span class="p">[</span><span class="mi">10</span><span class="p">]);</span>
+</span><span class='line'>  <span class="nx">drawNote</span><span class="p">(</span><span class="nx">windowWidth</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="mi">180</span><span class="p">,</span> <span class="nx">windowHeight</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;K&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="nx">notePressed</span><span class="p">[</span><span class="mi">11</span><span class="p">]);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="kd">function</span> <span class="nx">playEnv</span><span class="p">(</span><span class="nx">f</span><span class="p">){</span>
+</span><span class='line'>  <span class="nx">triOsc</span><span class="p">.</span><span class="nx">freq</span><span class="p">(</span><span class="nx">f</span><span class="p">);</span>
+</span><span class='line'>  <span class="nx">env</span><span class="p">.</span><span class="nx">play</span><span class="p">();</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="kd">function</span> <span class="nx">drawNote</span><span class="p">(</span><span class="nx">xpos</span><span class="p">,</span> <span class="nx">ypos</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">color</span><span class="p">,</span> <span class="nx">pressed</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="c1">// black note</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">big</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="nx">pressed</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">big</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="c1">// shadow</span>
+</span><span class='line'>  <span class="nx">fill</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+</span><span class='line'>  <span class="nx">strokeWeight</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span><span class='line'>  <span class="nx">ellipse</span><span class="p">(</span><span class="nx">xpos</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span> <span class="nx">ypos</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span> <span class="mi">50</span><span class="o">+</span><span class="nx">big</span><span class="p">,</span> <span class="mi">50</span><span class="o">+</span><span class="nx">big</span><span class="p">);</span>
+</span><span class='line'>  <span class="c1">// note</span>
+</span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="nx">color</span> <span class="o">==</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span><span class='line'>    <span class="nx">stroke</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">fill</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span>
+</span><span class='line'>    <span class="nx">stroke</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="nx">strokeWeight</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+</span><span class='line'>  <span class="nx">ellipse</span><span class="p">(</span><span class="nx">xpos</span><span class="p">,</span> <span class="nx">ypos</span><span class="p">,</span> <span class="mi">50</span><span class="o">+</span><span class="nx">big</span><span class="p">,</span> <span class="mi">50</span><span class="o">+</span><span class="nx">big</span><span class="p">);</span>
+</span><span class='line'>  <span class="c1">// text</span>
+</span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="nx">color</span> <span class="o">==</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">fill</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="nx">textSize</span><span class="p">(</span><span class="mi">40</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="nx">pressed</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">textSize</span><span class="p">(</span><span class="mi">44</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="nx">text</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">xpos</span><span class="p">,</span> <span class="nx">ypos</span><span class="o">+</span><span class="mi">17</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="kd">function</span> <span class="nx">keyPressed</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">switch</span> <span class="p">(</span><span class="nx">keyCode</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">83</span><span class="o">:</span> <span class="c1">// S</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">115</span><span class="o">:</span> <span class="c1">// s</span>
+</span><span class='line'>    <span class="nx">playEnv</span><span class="p">(</span><span class="mi">261</span><span class="p">);</span> <span class="c1">// C note</span>
+</span><span class='line'>    <span class="nx">notePressed</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">69</span><span class="o">:</span> <span class="c1">// E</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">101</span><span class="o">:</span> <span class="c1">// e</span>
+</span><span class='line'>    <span class="nx">playEnv</span><span class="p">(</span><span class="mi">277</span><span class="p">);</span> <span class="c1">// C# note</span>
+</span><span class='line'>    <span class="nx">notePressed</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">68</span><span class="o">:</span> <span class="c1">// D</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">110</span><span class="o">:</span> <span class="c1">// d</span>
+</span><span class='line'>    <span class="nx">playEnv</span><span class="p">(</span><span class="mi">293</span><span class="p">);</span> <span class="c1">// D note</span>
+</span><span class='line'>    <span class="nx">notePressed</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">82</span><span class="o">:</span> <span class="c1">// R</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">114</span><span class="o">:</span> <span class="c1">// r</span>
+</span><span class='line'>    <span class="nx">playEnv</span><span class="p">(</span><span class="mi">311</span><span class="p">);</span> <span class="c1">// D# note</span>
+</span><span class='line'>    <span class="nx">notePressed</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">70</span><span class="o">:</span> <span class="c1">// F</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">102</span><span class="o">:</span> <span class="c1">// f</span>
+</span><span class='line'>    <span class="nx">playEnv</span><span class="p">(</span><span class="mi">329</span><span class="p">);</span> <span class="c1">// E note</span>
+</span><span class='line'>    <span class="nx">notePressed</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">71</span><span class="o">:</span> <span class="c1">// G</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">103</span><span class="o">:</span> <span class="c1">// g</span>
+</span><span class='line'>    <span class="nx">playEnv</span><span class="p">(</span><span class="mi">349</span><span class="p">);</span> <span class="c1">// F note</span>
+</span><span class='line'>    <span class="nx">notePressed</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">89</span><span class="o">:</span> <span class="c1">// Y</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">121</span><span class="o">:</span> <span class="c1">// y</span>
+</span><span class='line'>    <span class="nx">playEnv</span><span class="p">(</span><span class="mi">369</span><span class="p">);</span> <span class="c1">// F# note</span>
+</span><span class='line'>    <span class="nx">notePressed</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">72</span><span class="o">:</span> <span class="c1">// H</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">104</span><span class="o">:</span> <span class="c1">// h</span>
+</span><span class='line'>    <span class="nx">playEnv</span><span class="p">(</span><span class="mi">392</span><span class="p">);</span> <span class="c1">// G note</span>
+</span><span class='line'>    <span class="nx">notePressed</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">85</span><span class="o">:</span> <span class="c1">// U</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">117</span><span class="o">:</span> <span class="c1">// u</span>
+</span><span class='line'>    <span class="nx">playEnv</span><span class="p">(</span><span class="mi">415</span><span class="p">);</span> <span class="c1">// G# note</span>
+</span><span class='line'>    <span class="nx">notePressed</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">74</span><span class="o">:</span> <span class="c1">// J</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">106</span><span class="o">:</span> <span class="c1">// j</span>
+</span><span class='line'>    <span class="nx">playEnv</span><span class="p">(</span><span class="mi">440</span><span class="p">);</span> <span class="c1">// A note</span>
+</span><span class='line'>    <span class="nx">notePressed</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">73</span><span class="o">:</span> <span class="c1">// U</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">105</span><span class="o">:</span> <span class="c1">// u</span>
+</span><span class='line'>    <span class="nx">playEnv</span><span class="p">(</span><span class="mi">466</span><span class="p">);</span> <span class="c1">// A# note</span>
+</span><span class='line'>    <span class="nx">notePressed</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">75</span><span class="o">:</span> <span class="c1">// K</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">107</span><span class="o">:</span> <span class="c1">// k</span>
+</span><span class='line'>    <span class="nx">playEnv</span><span class="p">(</span><span class="mi">493</span><span class="p">);</span> <span class="c1">// B note</span>
+</span><span class='line'>    <span class="nx">notePressed</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">default</span><span class="o">:</span>
+</span><span class='line'>    <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">function</span> <span class="nx">keyReleased</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">switch</span> <span class="p">(</span><span class="nx">keyCode</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">83</span><span class="o">:</span> <span class="c1">// S</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">115</span><span class="o">:</span> <span class="c1">// s</span>
+</span><span class='line'>    <span class="c1">// C note</span>
+</span><span class='line'>    <span class="nx">notePressed</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">69</span><span class="o">:</span> <span class="c1">// E</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">101</span><span class="o">:</span> <span class="c1">// e</span>
+</span><span class='line'>    <span class="c1">// C# note</span>
+</span><span class='line'>    <span class="nx">notePressed</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">68</span><span class="o">:</span> <span class="c1">// D</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">110</span><span class="o">:</span> <span class="c1">// d</span>
+</span><span class='line'>    <span class="c1">// D note</span>
+</span><span class='line'>    <span class="nx">notePressed</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">82</span><span class="o">:</span> <span class="c1">// R</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">114</span><span class="o">:</span> <span class="c1">// r</span>
+</span><span class='line'>    <span class="c1">// D# note</span>
+</span><span class='line'>    <span class="nx">notePressed</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">70</span><span class="o">:</span> <span class="c1">// F</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">102</span><span class="o">:</span> <span class="c1">// f</span>
+</span><span class='line'>    <span class="c1">// E note</span>
+</span><span class='line'>    <span class="nx">notePressed</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">71</span><span class="o">:</span> <span class="c1">// G</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">103</span><span class="o">:</span> <span class="c1">// g</span>
+</span><span class='line'>    <span class="c1">// F note</span>
+</span><span class='line'>    <span class="nx">notePressed</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">89</span><span class="o">:</span> <span class="c1">// Y</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">121</span><span class="o">:</span> <span class="c1">// y</span>
+</span><span class='line'>    <span class="c1">// F# note</span>
+</span><span class='line'>    <span class="nx">notePressed</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">72</span><span class="o">:</span> <span class="c1">// H</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">104</span><span class="o">:</span> <span class="c1">// h</span>
+</span><span class='line'>    <span class="c1">// G note</span>
+</span><span class='line'>    <span class="nx">notePressed</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">85</span><span class="o">:</span> <span class="c1">// U</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">117</span><span class="o">:</span> <span class="c1">// u</span>
+</span><span class='line'>    <span class="c1">// G# note</span>
+</span><span class='line'>    <span class="nx">notePressed</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">74</span><span class="o">:</span> <span class="c1">// J</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">106</span><span class="o">:</span> <span class="c1">// j</span>
+</span><span class='line'>    <span class="c1">// A note</span>
+</span><span class='line'>    <span class="nx">notePressed</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">73</span><span class="o">:</span> <span class="c1">// U</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">105</span><span class="o">:</span> <span class="c1">// u</span>
+</span><span class='line'>    <span class="c1">// A# note</span>
+</span><span class='line'>    <span class="nx">notePressed</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">75</span><span class="o">:</span> <span class="c1">// K</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">107</span><span class="o">:</span> <span class="c1">// k</span>
+</span><span class='line'>    <span class="c1">// B note</span>
+</span><span class='line'>    <span class="nx">notePressed</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">default</span><span class="o">:</span>
+</span><span class='line'>    <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Eason Chang</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2016-03-25T17:57:00+08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>25</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>5:57 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/100sites/'>100sites</a>, <a class='category' href='/blog/categories/p5js/'>p5js</a>, <a class='category' href='/blog/categories/project/'>project</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://easonchang.com/2016/03/25/100sites-010-piano/" data-via="" data-counturl="http://easonchang.com/2016/03/25/100sites-010-piano/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2016/03/23/100sites-009-flame/" title="Previous Post: 【100sites #009】Flame，P5js酷炫小動畫">&laquo; 【100sites #009】Flame，P5js酷炫小動畫</a>
+      
+      
+        <a class="basic-alignment right" href="/2016/03/28/100sites-011-lifegame/" title="Next Post: 【100sites #011】LifeGame，生命遊戲模擬無限的可能性">【100sites #011】LifeGame，生命遊戲模擬無限的可能性 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2016/08/22/dream-diary-13-before-final-exam/">【大夢日記#13】必須得一次過關的期末考！？</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2016/08/19/dream-diary-12-law/">【大夢日記#12】想飛？得先遵守遊戲規則！飛航法規！</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2016/08/18/using-ssh-with-putty-key-on-macos/">在MacOS使用putty Key進行ssh連線</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2016/08/18/dream-diary-11-flight-plan/">【大夢日記#11】撰寫飛行計劃！全部一起上吧！</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2016/08/17/dream-diary-10-flight-computer/">【大夢日記#10】飛航小道具登場！航圖 & Flight Computer</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2016 - Eason Chang -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'eason-blog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://easonchang.com/2016/03/25/100sites-010-piano/';
+        var disqus_url = 'http://easonchang.com/2016/03/25/100sites-010-piano/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

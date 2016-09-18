@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Side-project | Eason's blog]]></title>
+  <link href="http://easonchang.com/blog/categories/side-project/atom.xml" rel="self"/>
+  <link href="http://easonchang.com/"/>
+  <updated>2016-09-18T22:57:45+08:00</updated>
+  <id>http://easonchang.com/</id>
+  <author>
+    <name><![CDATA[Eason Chang]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[【100sites #006】Snack]]></title>
+    <link href="http://easonchang.com/2016/02/16/100sites-006-snack/"/>
+    <updated>2016-02-16T12:41:00+08:00</updated>
+    <id>http://easonchang.com/2016/02/16/100sites-006-snack</id>
+    <content type="html"><![CDATA[<p><img src="http://user-image.logdown.io/user/16613/blog/15900/post/516675/2LtgMAbET4ObmXbShlUc_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-02-16%20%E4%B8%8B%E5%8D%888.39.27.png" alt="螢幕快照 2016-02-16 下午8.39.27.png" /></p>
+
+<h1>Snack - 貪食蛇，吃掉那些點點吧！</h1>
+
+<p><a href="https://github.com/Kamigami55/100sites/tree/gh-pages/006_Snack">Github</a>
+<a href="http://kamigami55.github.io/100sites/006_Snack/">Live Demo</a></p>
+
+<p>今天比較有閒有空，把之前一直想做的貪食蛇遊戲做出來了，使用Processing.js。</p>
+
+<!-- more -->
+
+
+<p>規則如同經典的貪食蛇，目標是不斷的吃點點，讓自己越長越長，但如果撞到自己就輸了。</p>
+
+<p>使用方向鍵來移動，Enter鍵來開始/暫停。</p>
+
+<p>我正在努力學習如何組織自己的程式碼和適當地下註解，非常歡迎指教。</p>
+
+<p>今天的code：
+<figure class='code'><figcaption><span>index.html</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="ni">&amp;lt;</span>!DOCTYPE html&gt;
+</span><span class='line'><span class="nt">&lt;html&gt;</span>
+</span><span class='line'><span class="nt">&lt;head&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;title&gt;</span>Snack<span class="nt">&lt;/title&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://cdn.bootcss.com/processing.js/1.4.16/processing.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span><span class='line'><span class="nt">&lt;/head&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;&lt;body&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;h1&gt;</span>Be a Snack!<span class="nt">&lt;/h1&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;p&gt;</span>Move - Arrow key.<span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;p&gt;</span>Start/Pause - Enter(Return)<span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;canvas</span> <span class="na">id=</span><span class="s">&quot;game&quot;</span> <span class="na">data-processing-sources=</span><span class="s">&quot;snack.pde&quot;</span><span class="nt">&gt;&lt;/canvas&gt;</span>
+</span><span class='line'><span class="nt">&lt;/body&gt;</span>
+</span><span class='line'><span class="nt">&lt;/html&gt;</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<pre><code class="javascript snack.pde">/* @pjs globalKeyEvents="true"; */
+
+int NUM_OF_PILES = 26; // how many piles per dimension
+int PILE_SIZE = 18; // unit: px
+int SPEED = 12; // frame rate
+int DEFAULT_SNACK_LENGTH = 4; 
+int DIRECTION_UP = 1; // direction of the snack (1:up 2:down 3:left 4:right)
+int DIRECTION_DOWN = 2;
+int DIRECTION_LEFT = 3;
+int DIRECTION_RIGHT = 4;
+int DEFAULT_SNACK_DIRECTION = DIRECTION_UP; 
+
+int direction = DEFAULT_SNACK_DIRECTION; // direction of snack
+ArrayList snack = new ArrayList();
+Food food = new Food(0, 0); // the only food on the board
+boolean isPausing = true; // whether the game is pausing
+
+
+void setup() {
+  size(NUM_OF_PILES * PILE_SIZE, NUM_OF_PILES * PILE_SIZE);
+  ellipseMode(CORNER);
+  frameRate(SPEED);
+
+  resetSnack();
+  food.resetPosition();
+
+  noLoop(); // the default state of the game is pausing
+  isPausing = true;
+}
+
+
+void resetSnack() {
+  // clear snack arrarList
+  for(int i = 0; i &lt; snack.size(); ++i) {
+    snack.remove(0);
+  }
+  direction = DEFAULT_SNACK_DIRECTION; // set direction to default (up)
+
+  // set the snack at the center of the board with default snack length
+  // +i is to set the tail of snack to the south(+Y)
+  for(int i = 0; i &lt; DEFAULT_SNACK_LENGTH; ++i) {
+    snack.add(new SnackUnit(NUM_OF_PILES/2, NUM_OF_PILES/2+i));
+  }
+}
+
+
+
+void draw() {
+  background(50);
+  for(int i = 0; i &lt; snack.size(); ++i) {
+    snack.get(i).display();
+  }
+  food.display();
+
+  snackMove();
+  checkFood();
+  checkLose();
+}
+
+
+void snackMove() {
+  int vx = 0; // velocity of the snack at x axis (-1, 0, 1)
+  int vy = 0; // velocity of the snack at x axis (-1, 0, 1)
+   // set velocities according to the direction
+  switch(direction) {
+    case DIRECTION_UP:
+      vy = -1;
+      break;
+    case DIRECTION_DOWN:
+      vy = 1;
+      break;
+    case DIRECTION_LEFT:
+      vx = -1;
+      break;
+    case DIRECTION_RIGHT:
+      vx = 1;
+      break;
+    default:
+      break;
+  }
+   // move snack body forward
+  for(int i = snack.size()-1; i &gt; 0; --i) {
+    snack.get(i).xpos = snack.get(i-1).xpos;
+    snack.get(i).ypos = snack.get(i-1).ypos;
+  }
+   // move snack head forward according to the velocities
+  snack.get(0).xpos += vx;
+  snack.get(0).ypos += vy;
+
+   // if the snack is in the wall, make it appear on the other side
+  if(snack.get(0).xpos &lt; 0)
+    snack.get(0).xpos = NUM_OF_PILES-1;
+  else if(snack.get(0).xpos &gt; NUM_OF_PILES-1)
+    snack.get(0).xpos = 0;
+  else if(snack.get(0).ypos &lt; 0)
+    snack.get(0).ypos = NUM_OF_PILES-1;
+  else if(snack.get(0).ypos &gt; NUM_OF_PILES-1)
+    snack.get(0).ypos = 0;
+}
+
+
+void checkFood() {
+  if(snack.get(0).isOn(food.xpos, food.ypos)) {
+     // append a new snack body at the tail
+    snack.add(new SnackUnit(snack.get(snack.size()-1).xpos, snack.get(snack.size()-1).ypos));
+    food.resetPosition();
+  }
+}
+
+
+void checkLose() {
+   // if the snack hit itself
+  for(int i = 1; i &lt; snack.size(); ++i) {
+    if(snack.get(0).isOn(snack.get(i).xpos, snack.get(i).ypos)) {
+       // the player lose, pause the game
+      isPausing = true;
+      noLoop();
+    }
+  }
+}
+
+
+void keyPressed() {
+  switch(keyCode) {
+     // pressing arrow key to change the direction
+    case UP:
+      direction = DIRECTION_UP;
+      break;
+    case DOWN:
+      direction = DIRECTION_DOWN;
+      break;
+    case LEFT:
+      direction = DIRECTION_LEFT;
+      break;
+    case RIGHT:
+      direction = DIRECTION_RIGHT;
+      break;
+     // pressing ENTER and RETURN to toggle Pausing state
+    case ENTER:
+    case RETURN:
+      if(isPausing) {
+        isPausing = false;
+        loop();
+      } else {
+        isPausing = true;
+        noLoop();
+      }
+      break;
+    default:
+      break;
+  }
+}
+
+
+class SnackUnit {
+  int xpos, ypos;
+
+  SnackUnit(int x, int y) {
+    xpos = x;
+    ypos = y;
+  }
+  void display() {
+    fill(255);
+    rect(xpos*PILE_SIZE, ypos*PILE_SIZE, PILE_SIZE, PILE_SIZE);
+  }
+  boolean isOn(int x, int y) {
+    return xpos == x &amp;&amp; ypos == y;
+  }
+}
+
+
+class Food {
+  int xpos, ypos;
+
+  Food(int x, int y) {
+    xpos = x;
+    ypos = y;
+  }
+  void display() {
+    fill(255);
+     // the size of the food is 4px smaller than a pile
+    ellipse(xpos*PILE_SIZE+2, ypos*PILE_SIZE+2, PILE_SIZE-4, PILE_SIZE-4);
+  }
+  void resetPosition() {
+    xpos = int(random(0, NUM_OF_PILES));
+    ypos = int(random(0, NUM_OF_PILES));
+    for(int i = 0; i &lt; snack.size(); ++i) {
+      if(snack.get(i).isOn(xpos, ypos)) { // if the snack is already on the position of the new food
+        resetPosition(); // reset food position to another place
+      }
+    }
+  }
+}
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[【100sites #005】Drawer]]></title>
+    <link href="http://easonchang.com/2016/02/15/100sites-005-drawer/"/>
+    <updated>2016-02-15T17:49:00+08:00</updated>
+    <id>http://easonchang.com/2016/02/15/100sites-005-drawer</id>
+    <content type="html"><![CDATA[<p><img src="http://user-image.logdown.io/user/16613/blog/15900/post/514460/8x01NawRtiOVpJ25WJ4b_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-02-16%20%E4%B8%8A%E5%8D%881.47.27.png" alt="螢幕快照 2016-02-16 上午1.47.27.png" /></p>
+
+<h1>Drawer - 簡單抽數字</h1>
+
+<p><a href="https://github.com/Kamigami55/100sites/tree/gh-pages/005_Drawer">Github</a>
+<a href="http://kamigami55.github.io/100sites/005_Drawer/">Live Demo</a></p>
+
+<p>今天搬回新竹，實在沒多少時間寫程式，於是就寫了一個簡單卻實用的小抽籤程式。</p>
+
+<p>目前寫出來的功能很簡單，使用者輸入最小值和最大值，點擊按鈕後就能抽到一個隨機數字。</p>
+
+<!-- more -->
+
+
+<p>框架上只使用到了JQuery和Bootstrap，我最愛的兩個框架。</p>
+
+<p>之後有時間會加上更多功能，如：不同的抽籤模式、轉盤動畫等。</p>
+
+<p>以下是程式碼：
+<figure class='code'><figcaption><span>index.html</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="ni">&amp;lt;</span>!DOCTYPE html&gt;
+</span><span class='line'><span class="nt">&lt;html&gt;</span>
+</span><span class='line'><span class="nt">&lt;head&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;title&gt;</span>Drawer<span class="nt">&lt;/title&gt;</span>
+</span><span class='line'>  <span class="c">&lt;!-- JQuery --&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span><span class='line'>  <span class="c">&lt;!-- Bootstrap --&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css&quot;</span> <span class="na">integrity=</span><span class="s">&quot;sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7&quot;</span> <span class="na">crossorigin=</span><span class="s">&quot;anonymous&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js&quot;</span> <span class="na">integrity=</span><span class="s">&quot;sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS&quot;</span> <span class="na">crossorigin=</span><span class="s">&quot;anonymous&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span><span class='line'><span class="nt">&lt;/head&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;&lt;body&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;container&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-md-6 col-md-offset-3&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;h1&gt;</span>Drawer!<span class="nt">&lt;/h1&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;h2&gt;</span>Pick One:<span class="nt">&lt;/h2&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-inline&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>        From <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;number&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">id=</span><span class="s">&quot;minimum&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Minimum&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>        To <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;number&quot;</span> <span class="na">class=</span><span class="s">&quot;form-control&quot;</span> <span class="na">id=</span><span class="s">&quot;maximum&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Maximum&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span> <span class="na">id=</span><span class="s">&quot;pickone&quot;</span><span class="nt">&gt;</span>Pick one!<span class="nt">&lt;/button&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;panel panel-info&quot;</span> <span class="na">id=</span><span class="s">&quot;result-panel&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;panel-body&quot;</span> <span class="na">id=</span><span class="s">&quot;result-body&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>            Choose your Max and Min, I will give you a number!
+</span><span class='line'>          <span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/div&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;&lt;/body&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;drawer.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;&lt;/html&gt;</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<pre><code class="javascript drawer.js">$(document).ready(function(){
+
+  pickone_btn = $("#pickone"); 
+  result_panel = $("#result-panel"); // style of result panel, used to change result panel style
+  result_body = $("#result-body"); // body of result panel, used to display result
+  max_fld = $("#maximum"); // maximum input field
+  min_fld = $("#minimum"); // minimum input field
+
+  pickone_btn.click(function(){
+
+    var min = parseInt(min_fld.val());
+    var max = parseInt(max_fld.val());
+
+    // if the input is invalid (empty or not number)
+    if(isNaN(min) || isNaN(max)) {
+      result_body.html("I need both MIN and MAX!");
+      // set style to danger(red)
+      result_panel.addClass("panel-danger");
+      result_panel.removeClass("panel-info");
+      result_panel.removeClass("panel-success");
+      return;
+    }
+
+    if(min &gt; max){ 
+      // interchange min &amp; max
+      var tmp = min;
+      min = max;
+      max = tmp;
+      // interchange value of input fields
+      max_fld.val(max);
+      min_fld.val(min);
+    }
+
+    var result = Math.floor(Math.random()*(max-min+1) + min);
+    result_body.html("You got &lt;b&gt;"+result+"&lt;/b&gt; !");
+    // set style to success(green)
+    result_panel.addClass("panel-success");
+    result_panel.removeClass("panel-info");
+    result_panel.removeClass("panel-danger");
+  });
+
+});
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[【100sites #004】Firework]]></title>
+    <link href="http://easonchang.com/2016/02/14/100sites-004-firework/"/>
+    <updated>2016-02-14T16:57:00+08:00</updated>
+    <id>http://easonchang.com/2016/02/14/100sites-004-firework</id>
+    <content type="html"><![CDATA[<p><img src="http://user-image.logdown.io/user/16613/blog/15900/post/510225/w5nnd5FTnqrL6i91fdwh_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-02-15%20%E4%B8%8A%E5%8D%8812.08.44.png" alt="螢幕快照 2016-02-15 上午12.08.44.png" /></p>
+
+<h1>Firework - 享受臺北101的跨年煙火吧</h1>
+
+<p><a href="https://github.com/Kamigami55/100sites/tree/gh-pages/004_Firework">Github</a>
+<a href="http://kamigami55.github.io/100sites/004_Firework/">Live Demo</a></p>
+
+<p>我一直在尋找製作前端動畫的框架，今天我終於找到了：<a href="http://processingjs.org">Processing.js</a>。它是<a href="https://processing.org">Processing</a>的js版本，可以讓你建構各種視覺藝術(visual arts)專案。</p>
+
+<p>於是我用它來完成了今天的100sites專案：Firework，簡單的煙火動畫。</p>
+
+<!-- more -->
+
+
+<p>下面是今天的code：</p>
+
+<pre><code class="html index.html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Fireworks 101&lt;/title&gt;
+  &lt;script src="http://cdn.bootcss.com/processing.js/1.4.16/processing.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;h1&gt;Enjoy the fireworks!&lt;/h1&gt;
+  &lt;canvas data-processing-sources="firework.pde"&gt;&lt;/canvas&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<pre><code class="javascript firework.pde">int time = 0;
+ArrayList fireworks = new ArrayList();
+
+
+void setup() {
+  size(600, 600);
+  frameRate(30);
+  smooth();
+  noStroke();
+  loop();
+}
+
+
+
+void draw() {
+  background(0);
+  if(int(random(4)) == 0){
+    add_firework(50+int(random(500)), 50+int(random(350)));
+  }
+  display_firework();
+  draw_taipei101();
+  removeOldFirework();
+}
+
+
+
+void mousePressed() {
+  add_firework(mouseX, mouseY);
+}
+
+
+
+void display_firework() {
+  for(int i = 0; i &lt; fireworks.size(); ++i){
+    fireworks.get(i).display();
+  }
+}
+
+
+
+void removeOldFirework() {
+  for(int i = 0; i &lt; fireworks.size(); ++i) {
+    if(fireworks.get(i).passingTime &gt; 20) {
+      fireworks.remove(i);
+    }
+  }
+}
+
+
+
+void add_firework(int x, int y) {
+  fireworks.add(new Firework(x, y));
+}
+
+
+
+void draw_taipei101() {
+  fill(100);
+  quad(270, 560, 330, 560, 320, 600, 280, 600);
+  quad(270, 520, 330, 520, 320, 560, 280, 560);
+  quad(270, 480, 330, 480, 320, 520, 280, 520);
+  quad(270, 440, 330, 440, 320, 480, 280, 480);
+  rect(295, 410, 10, 30);
+  rect(299, 390, 2, 20);
+}
+
+
+
+class Firework {
+  int x;
+  int y;
+  int directions;
+  int passingTime;
+  int colorR;
+  int colorG;
+  int colorB;
+
+  Firework(int myX, int myY) {
+    x = myX;
+    y = myY;
+    directions = 6+int(random(16));
+    colorR = 100+int(random(155));
+    colorG = 100+int(random(155));
+    colorB = 100+int(random(155));
+    passingTime = 0;
+  }
+
+  void display() {
+    fill(colorR, colorG, colorB);
+    for(int i = 0; i &lt; directions; ++i) {
+      ellipse(x+4*passingTime*sin(TWO_PI*i/directions), y+4*passingTime*cos(TWO_PI*i/directions), 7, 7);
+    }
+    ++passingTime;
+  }
+
+}
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[【100sites #003】TodoList]]></title>
+    <link href="http://easonchang.com/2016/02/13/100sites-003-todolist/"/>
+    <updated>2016-02-13T19:12:00+08:00</updated>
+    <id>http://easonchang.com/2016/02/13/100sites-003-todolist</id>
+    <content type="html"><![CDATA[<p><img src="http://user-image.logdown.io/user/16613/blog/15900/post/510223/KvMWd2v7QUCpkLXSF4Jn_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-02-14%20%E4%B8%8A%E5%8D%882.17.42.png" alt="螢幕快照 2016-02-14 上午2.17.42.png" /></p>
+
+<p><a href="https://github.com/Kamigami55/100sites/tree/master/003_Todolist">Github</a></p>
+
+
+
+
+<p>TodoList，一個極為簡單的待辦清單。</p>
+
+
+
+
+<p>我想儘早把後端的東西也學一學，這麼一來能做的網站就更多樣了，於是我找到了這個：<a href="https://nodejust.com/category/nodejs/page/6/">Node.js學習筆記</a>。這是一個簡單的Node.js入門指南，包含了三十多篇文章，每一篇的份量都很精簡，手把手教你做出一個簡單的Node.js網頁應用。內容也同時涵括了Express.js和MongoDB。</p>
+
+
+
+
+<p>花了點時間讀完筆記後，這個TodoList就是我今天的成果了，它目前只能不斷新增Todo項目，沒有完成按鈕或刪除按鈕可以點選，之後有時間會補齊它的功能吧。</p>
+
+
+
+
+<p>使用Node.js作為後端、Express.js當框架、MongoDB當資料庫並用Monk來連結、Hogan.js當模板引擎。</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[【100sites #001】Timer]]></title>
+    <link href="http://easonchang.com/2016/02/12/100sites-001-timer/"/>
+    <updated>2016-02-12T15:56:00+08:00</updated>
+    <id>http://easonchang.com/2016/02/12/100sites-001-timer</id>
+    <content type="html"><![CDATA[<p><img src="http://user-image.logdown.io/user/16613/blog/15900/post/510219/jZ6kh8mHRDWPYyvHnLNA_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-02-12%20%E4%B8%8A%E5%8D%881.01.54.png" alt="螢幕快照 2016-02-12 上午1.01.54.png" /></p>
+
+<p><a href="https://github.com/Kamigami55/100sites/tree/master/001_Timer" target="_blank">Github</a></p>
+
+
+
+
+<p><a href="http://kamigami55.github.io/100sites/001_Timer/timer.html" target="_blank">Live Demo</a></p>
+
+
+
+
+<p>一個很簡單的倒數計時器。</p>
+
+
+
+
+<p>使用了很基本的前端老三套：HTML、CSS、JavaScript，各一個檔案來完成這個計時器。</p>
+
+
+
+
+<p>關鍵的計時功能由window.setInterval(function, delay)來完成，正常使用沒問題。</p>
+
+
+
+
+<p>目前的問題是時間拉長以後就會產生時間誤差，並且當使用者切換到別的頁面後，此時Timer在背景執行，瀏覽器分配給setInterval的資源就會變少，倒數速度就會變非常慢，甚至完全停止，我目前還找不到解決方法。</p>
+
+]]></content>
+  </entry>
+  
+</feed>

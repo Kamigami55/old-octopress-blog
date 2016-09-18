@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Putty | Eason's blog]]></title>
+  <link href="http://easonchang.com/blog/categories/putty/atom.xml" rel="self"/>
+  <link href="http://easonchang.com/"/>
+  <updated>2016-09-18T22:57:45+08:00</updated>
+  <id>http://easonchang.com/</id>
+  <author>
+    <name><![CDATA[Eason Chang]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[在MacOS使用putty Key進行ssh連線]]></title>
+    <link href="http://easonchang.com/2016/08/18/using-ssh-with-putty-key-on-macos/"/>
+    <updated>2016-08-18T11:00:00+08:00</updated>
+    <id>http://easonchang.com/2016/08/18/using-ssh-with-putty-key-on-macos</id>
+    <content type="html"><![CDATA[<p><img src="http://imgur.com/3B3Hrd4.png" alt="putty-ssh" /></p>
+
+<h1>Quick Reference：</h1>
+
+<pre><code class="bash">$ brew install putty #安裝puttygen套件
+$ puttygen &lt;your-putty-key.ppk&gt; -O private-openssh -o &lt;your-ssh-key.pem&gt; #將putty key轉換成ssh key
+$ chmod 400 &lt;your-ssh-key.pem&gt; #調整.pem權限
+$ ssh -i &lt;your-ssh-key.pem&gt; &lt;user@your.server.com&gt; #使用.pem進行ssh連線
+</code></pre>
+
+<hr />
+
+<p>突然發現學程的網站有小bug，所以需要連上網站所在的AWS(Amazon Web Service)伺服器裡修改程式碼。但建置網站的學長只留下了一個.ppk的putty專用SSH認證檔，而我這台破Mac實在沒容量給我再灌一台Windows然後裝上Putty來連線，所以我就開始研究如何讓MacOS內建的ssh指令也能吃進這支.ppk的putty key認證檔。</p>
+
+<p>以下是我找到的解法：</p>
+
+<h1>1.使用puttygen將putty key轉換成ssh可用的key</h1>
+
+<p>ssh指令無法接受.ppk的putty key，必須先轉換成ssh可以使用的key</p>
+
+<p>puttygen這支程式可以幫你轉換，你可以使用<a href="http://brew.sh/index_zh-tw.html">Homebrew</a>來安裝它：</p>
+
+<pre><code class="bash">$ brew install putty
+</code></pre>
+
+<p>接著可以輸入下面這條指令，將putty key轉換成ssh key：</p>
+
+<pre><code class="bash">$ puttygen &lt;your-putty-key.ppk&gt; -O private-openssh -o &lt;your-ssh-key.pem&gt;
+</code></pre>
+
+<h1>2.為ssh key設定適當的存取權限</h1>
+
+<p>如果你的ssh key檔的權限太過開放，伺服器會阻擋你使用這支key來連線，所以你必須為它設定適當的權限（有時候不需要設定權限就是對的了）：</p>
+
+<pre><code class="bash">$ chmod 400 &lt;your-ssh-key.pem&gt;
+</code></pre>
+
+<h1>3.連線</h1>
+
+<p>接著你可以用它來進行連線啦！</p>
+
+<pre><code class="bash">$ ssh -i &lt;your-ssh-key.pem&gt; &lt;user@your.server.com&gt;
+</code></pre>
+
+<hr />
+
+<p>Reference: <a href="https://stackoverflow.com/questions/3475069/use-ppk-file-in-mac-terminal-to-connect-to-remote-connection-over-ssh">https://stackoverflow.com/questions/3475069/use-ppk-file-in-mac-terminal-to-connect-to-remote-connection-over-ssh</a></p>
+]]></content>
+  </entry>
+  
+</feed>

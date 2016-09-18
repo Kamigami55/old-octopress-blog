@@ -1,0 +1,440 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>如何在Mac OS X上安裝Verilog環境 - Eason's blog</title>
+  <meta name="author" content="Eason Chang">
+
+  
+  <meta name="description" content="一句話摘要：使用Icarus Verilog來編譯Verilog、使用GTKWave來顯示波形 為了資工系的數位電路設計課，我們需要一個能夠編譯Verilog這個硬體描述語言(HDL)的環境，並且要能模擬電路運作狀況加上顯示波形。 老師建議的編譯環境是ModelSim，但是它只支援Windows &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://easonchang.com/2016/03/18/verilog-on-macosx/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Eason's blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-73788598-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Eason's blog</a></h1>
+  
+    <h2>I create, therefore I am.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="easonchang.com">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">如何在Mac OS X上安裝Verilog環境</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2016-03-18T17:40:00+08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>5:40 pm</span></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://easonchang.com">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><img src="http://user-image.logdown.io/user/16613/blog/15900/post/649863/aDOvWZklRTWxPWc0jh5N_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-03-18%20%E4%B8%8B%E5%8D%8811.02.59.png" alt="螢幕快照 2016-03-18 下午11.02.59.png" /></p>
+
+<blockquote><p>一句話摘要：使用Icarus Verilog來編譯Verilog、使用GTKWave來顯示波形</p></blockquote>
+
+<p>為了資工系的數位電路設計課，我們需要一個能夠編譯Verilog這個硬體描述語言(HDL)的環境，並且要能模擬電路運作狀況加上顯示波形。</p>
+
+<p>老師建議的編譯環境是<a href="https://www.mentor.com/products/fpga/model/">ModelSim</a>，但是它只支援Windows，我目前還沒找到Mac OS X或是Linux的版本，所以我只好另尋他法，找看看有沒有其他能夠編譯Verilog的工具。</p>
+
+<!-- more -->
+
+
+<p>我找到了<a href="http://iverilog.icarus.com/home">Icarus Verilog</a>，它是針對Linux的Verilog編譯器，而在Mac OS X底下，我們可以藉由Command Line來使用它。</p>
+
+<h1>安裝Icarus Verilog</h1>
+
+<p>這是<a href="http://iverilog.wikia.com/wiki/Installation_Guide">Icarus Verilog的安裝指南</a>，很完整的說明了怎麼在各種作業系統上安裝它，不過是英文的，而且字有點多。</p>
+
+<p>對於Mac OS X你有兩種安裝手段，編譯程式原始碼來安裝，或是透過套件管理系統安裝，對於我這種懶人來說，當然是選擇使用套件管理系統囉！</p>
+
+<p>我使用<a href="http://brew.sh/index_zh-tw.html">Homebrew</a>來安裝Icarus Verilog，如果你還沒有安裝Homebrew，去把它裝起來吧！身為一位Mac用戶兼資工系學生，Homebrew必備呀！</p>
+
+<p>你可以在你的Command Line裡輸入這段文字來安裝Homebrew（請忽略最左方的$符號，這是Command Line的提示字元）：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</span></code></pre></td></tr></table></div></figure>
+
+
+<p>接著使用這段homebrew的指令來安裝Icarus Verilog：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ brew install icarus-verilog</span></code></pre></td></tr></table></div></figure>
+
+
+<p>OK！現在你已經成功安裝了Icarus Verilog了！Homebrew就是這麼的神奇！</p>
+
+<h1>測試Icarus Verilog</h1>
+
+<p>安裝完了一個新程式，當然是要測試一下它的功能正不正常呀，這時就輪到經典Hello World測試程式登場了！</p>
+
+<p>首先建立一個新文件命名為hello.v，內含以下內容（Verilog的源碼檔副檔名為.v）：</p>
+
+<figure class='code'><figcaption><span>hello.v</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='Verilog'><span class='line'><span class="k">module</span> <span class="n">main</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">initial</span>
+</span><span class='line'>    <span class="k">begin</span>
+</span><span class='line'>      <span class="nb">$display</span><span class="p">(</span><span class="s">&quot;Hello, World&quot;</span><span class="p">);</span>
+</span><span class='line'>      <span class="nb">$finish</span> <span class="p">;</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'><span class="k">endmodule</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>接著使用iverilog指令來編譯hello.v，使用-o hello來指定以hello來作為產生的可執行檔檔名：</p>
+
+<figure class='code'><figcaption><span>hello.v</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='Verilog'><span class='line'><span class="err">$</span> <span class="n">iverilog</span> <span class="o">-</span><span class="n">o</span> <span class="n">hello</span> <span class="n">hello</span><span class="p">.</span><span class="n">v</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>最後，使用vvp指令來執行hello這個可執行檔，只要你看到Hello, World這個輸出，就代表你的Icarus Verilog安裝成功了：</p>
+
+<figure class='code'><figcaption><span>hello.v</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='Verilog'><span class='line'><span class="err">$</span> <span class="n">vvp</span> <span class="n">hello</span>
+</span><span class='line'><span class="n">Hello</span><span class="p">,</span> <span class="n">World</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>安裝GTKWave</h1>
+
+<p>接著，為了能夠更方便地查看電路運作的狀況，你需要一個波型顯示軟體，我使用<a href="http://gtkwave.sourceforge.net">GTKWave</a>，這是一個可以跑在Mac OS X、Linux、和Windows上的波型顯示軟體，使用效果如下圖（截圖自官網）：</p>
+
+<p><img src="http://user-image.logdown.io/user/16613/blog/15900/post/649863/38PT0oF0TN2eVAf9glNg_13010278_1324168817596781_1227376771_o.png" alt="13010278_1324168817596781_1227376771_o.png" /></p>
+
+<p>要在Mac OS X上安裝它很容易，就跟你安裝其他應用程式一樣，最大的困難可能是在官網上找到正確的下載連結&hellip;&hellip;，連結已經幫你標出來了，請在官網上找到上圖紅框處download連結把它點下去！</p>
+
+<p>接著把載下來了.zip檔解壓縮，完畢後得到的.app檔就是你要的GTKWave了！隨點隨用免安裝，那～麼～厲害！</p>
+
+<h1>使用GTKWave來顯示波形</h1>
+
+<h2>建立新的測試程式</h2>
+
+<p>先別急著打開你的GTKWave，你還需要一個新的測試程式，之前的hello world程式可根本不算是一個電路呢！</p>
+
+<p>首先建立兩個新檔案，命名為Simple_Circuit.v和t_Simple_Circuit.v（修改自我們老師的Lab0範例）：</p>
+
+<figure class='code'><figcaption><span>Simple_Circuit.v</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='Verilog'><span class='line'><span class="k">module</span> <span class="n">Simple_Circuit</span><span class="p">(</span><span class="no">A</span><span class="p">,</span> <span class="no">B</span><span class="p">,</span> <span class="no">C</span><span class="p">,</span> <span class="no">D</span><span class="p">,</span> <span class="no">E</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">output</span>   <span class="no">D</span><span class="p">,</span> <span class="no">E</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">input</span>    <span class="no">A</span><span class="p">,</span> <span class="no">B</span><span class="p">,</span> <span class="no">C</span><span class="p">;</span>
+</span><span class='line'>  <span class="kt">wire</span>    <span class="n">w1</span><span class="p">;</span>
+</span><span class='line'>  
+</span><span class='line'>  <span class="k">and</span>      <span class="no">G1</span><span class="p">(</span><span class="n">w1</span><span class="p">,</span> <span class="no">A</span><span class="p">,</span> <span class="no">B</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">not</span>      <span class="no">G2</span><span class="p">(</span><span class="no">E</span><span class="p">,</span> <span class="no">C</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">or</span>       <span class="no">G3</span><span class="p">(</span><span class="no">D</span><span class="p">,</span> <span class="n">w1</span><span class="p">,</span> <span class="no">E</span><span class="p">);</span>
+</span><span class='line'><span class="k">endmodule</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>t_Simple_Circuit.v</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='Verilog'><span class='line'><span class="k">module</span> <span class="n">t_Simple_Circuit</span><span class="p">;</span>
+</span><span class='line'>  <span class="kt">wire</span>    <span class="no">D</span><span class="p">,</span> <span class="no">E</span><span class="p">;</span>
+</span><span class='line'>  <span class="kt">reg</span>     <span class="no">A</span><span class="p">,</span> <span class="no">B</span><span class="p">,</span> <span class="no">C</span><span class="p">;</span>
+</span><span class='line'>  
+</span><span class='line'>  <span class="c1">//instantiate device under test</span>
+</span><span class='line'>  <span class="n">Simple_Circuit</span>   <span class="no">M1</span><span class="p">(</span><span class="no">A</span><span class="p">,</span> <span class="no">B</span><span class="p">,</span> <span class="no">C</span><span class="p">,</span> <span class="no">D</span><span class="p">,</span> <span class="no">E</span><span class="p">);</span>
+</span><span class='line'>  
+</span><span class='line'>  <span class="c1">//apply inputs one at a time</span>
+</span><span class='line'>  <span class="k">initial</span>  <span class="k">begin</span>
+</span><span class='line'>    <span class="err">$</span><span class="n">dumpfile</span><span class="p">(</span><span class="s">&quot;mytest.vcd&quot;</span><span class="p">);</span>
+</span><span class='line'>    <span class="err">$</span><span class="n">dumpvars</span><span class="p">;</span>
+</span><span class='line'>    <span class="no">A</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="no">B</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="no">C</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">#</span><span class="mh">100</span> <span class="no">A</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="no">B</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="no">C</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">initial</span> <span class="p">#</span><span class="mh">200</span> <span class="nb">$finish</span><span class="p">;</span>
+</span><span class='line'><span class="k">endmodule</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>將這兩個檔案編譯為mycircuit這個執行檔，並且執行它：</p>
+
+<figure class='code'><figcaption><span>t_Simple_Circuit.v</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='Verilog'><span class='line'><span class="err">$</span> <span class="n">iverilog</span> <span class="o">-</span><span class="n">o</span> <span class="n">mycircuit</span> <span class="n">t_Simple_Circuit</span><span class="p">.</span><span class="n">v</span> <span class="n">Simple_Circuit</span><span class="p">.</span><span class="n">v</span>
+</span><span class='line'><span class="err">$</span> <span class="n">vvp</span> <span class="n">mycircuit</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>因為我們在t_Simple_Circuit.v這個電路測試檔案裡頭加入了dumpfile和dumpvars，所以執行完mycircuit後，會產生一個名為mytest.vcd的檔案，裡頭包含了我們所要的波型紀錄。</p>
+
+<p>現在我們可以使用GTKWave來檢視波型了！</p>
+
+<h2>正式開啟GTKWave來檢視波型</h2>
+
+<p>開啟你的GTKWave，點擊左上角的File > Open New Tab
+選擇剛剛產生的mytest.vcd檔，你應該會很失望地發現為什麼沒有出現你要的波型，如下圖：</p>
+
+<p><img src="http://user-image.logdown.io/user/16613/blog/15900/post/649863/JsHBE20eSWpIArV9iGai_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-03-19%20%E4%B8%8A%E5%8D%881.23.20.png" alt="螢幕快照 2016-03-19 上午1.23.20.png" /></p>
+
+<p>那是因為你還沒有告訴GTKWave你想要看什麼，那我們就來告訴它吧！</p>
+
+<p>在GTKWave左側面板，你會看到一串文字寫著t_Simple_Circuit，那就是你的測試檔案，點開那個+號，點擊M1電路，下面就會列出M1電路裡所有的線路，把你想要看它波形的線路拖曳到右方的區塊吧！噠答！你要的波型顯示出來了！</p>
+
+<p><img src="http://user-image.logdown.io/user/16613/blog/15900/post/649863/KEAHISP8TpWOL5j3Sr5M_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-03-19%20%E4%B8%8A%E5%8D%881.30.18.png" alt="螢幕快照 2016-03-19 上午1.30.18.png" /></p>
+
+<p>恭喜你成功建置你的Verilog環境，現在你可以炫砲地使用你的Macbook來做數電設計作業了！</p>
+
+<h1>指令小筆記</h1>
+
+<figure class='code'><figcaption><span>t_Simple_Circuit.v</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='Verilog'><span class='line'><span class="err">$</span> <span class="n">iverilog</span> <span class="o">-</span><span class="n">o</span> <span class="o">&lt;</span><span class="k">output</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">source</span><span class="o">-</span><span class="n">file</span><span class="o">-</span><span class="mh">1</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">source</span><span class="o">-</span><span class="n">file</span><span class="o">-</span><span class="mh">2</span><span class="o">&gt;</span> <span class="p">...</span> <span class="c1">// 編譯</span>
+</span><span class='line'><span class="err">$</span> <span class="n">vvp</span> <span class="o">&lt;</span><span class="n">executable</span><span class="o">-</span><span class="n">verilog</span><span class="o">-</span><span class="n">file</span><span class="o">&gt;</span> <span class="c1">// 執行</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Eason Chang</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2016-03-18T17:40:00+08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>5:40 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/macosx/'>macosx</a>, <a class='category' href='/blog/categories/tutorial/'>tutorial</a>, <a class='category' href='/blog/categories/verilog/'>verilog</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://easonchang.com/2016/03/18/verilog-on-macosx/" data-via="" data-counturl="http://easonchang.com/2016/03/18/verilog-on-macosx/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2016/03/17/less-but-better/" title="Previous Post: 【閱讀筆記】少，但是更好——精準生活，拿回人生主控權">&laquo; 【閱讀筆記】少，但是更好——精準生活，拿回人生主控權</a>
+      
+      
+        <a class="basic-alignment right" href="/2016/03/19/100sites-007-pong/" title="Next Post: 【100sites #007】Pong，使用P5.js建構的復古遊戲">【100sites #007】Pong，使用P5.js建構的復古遊戲 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2016/08/22/dream-diary-13-before-final-exam/">【大夢日記#13】必須得一次過關的期末考！？</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2016/08/19/dream-diary-12-law/">【大夢日記#12】想飛？得先遵守遊戲規則！飛航法規！</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2016/08/18/using-ssh-with-putty-key-on-macos/">在MacOS使用putty Key進行ssh連線</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2016/08/18/dream-diary-11-flight-plan/">【大夢日記#11】撰寫飛行計劃！全部一起上吧！</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2016/08/17/dream-diary-10-flight-computer/">【大夢日記#10】飛航小道具登場！航圖 & Flight Computer</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2016 - Eason Chang -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'eason-blog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://easonchang.com/2016/03/18/verilog-on-macosx/';
+        var disqus_url = 'http://easonchang.com/2016/03/18/verilog-on-macosx/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

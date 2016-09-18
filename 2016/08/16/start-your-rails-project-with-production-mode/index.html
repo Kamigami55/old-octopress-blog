@@ -1,0 +1,498 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>使用production Mode啟動你的rails專案 - Eason's blog</title>
+  <meta name="author" content="Eason Chang">
+
+  
+  <meta name="description" content="Quick Reference: 1
+2
+3
+4
+5
+6
+7
+8
+$ RAILS_ENV=production rake db:migrate
+$ rake secret //產生secret key
+$ export SECRET_KEY_BASE=[貼入上個指令產生出來的密鑰]
+$ vim &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://easonchang.com/2016/08/16/start-your-rails-project-with-production-mode/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Eason's blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-73788598-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Eason's blog</a></h1>
+  
+    <h2>I create, therefore I am.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="easonchang.com">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">使用production Mode啟動你的rails專案</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2016-08-16T02:34:00+08:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>2:34 am</span></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://easonchang.com">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><img src="http://imgur.com/a21E49E.jpg" alt="rails-production" /></p>
+
+<h1>Quick Reference:</h1>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ RAILS_ENV</span><span class="o">=</span>production rake db:migrate
+</span><span class='line'><span class="nv">$ </span>rake secret //產生secret key
+</span><span class='line'><span class="nv">$ </span><span class="nb">export </span><span class="nv">SECRET_KEY_BASE</span><span class="o">=[</span>貼入上個指令產生出來的密鑰<span class="o">]</span>
+</span><span class='line'><span class="nv">$ </span>vim config/initializers/assets.rb  //加入用到的assets路徑
+</span><span class='line'>確認各處引用assets的方法正確
+</span><span class='line'><span class="nv">$ RAILS_ENV</span><span class="o">=</span>production rake assets:precompile
+</span><span class='line'><span class="nv">$ </span>vim config/environments/production.rb  //將這行改成true: config.serve_static_assets <span class="o">=</span> <span class="nb">true</span>
+</span><span class='line'><span class="nv">$ </span>rails s -e production
+</span></code></pre></td></tr></table></div></figure>
+
+
+<hr />
+
+<h1>什麼是production模式？為什麼要用它？</h1>
+
+<p>在通常情況下，直接在你的專案裡下<code>$ rails s</code>這條指令，我們是使用development mode來啟動你的專案</p>
+
+<p>在development模式下，大部分的修改都會直接顯現在網頁上，方便開發</p>
+
+<p>但實際讓系統上線，我們不會使用development模式，而是<strong>production模式</strong></p>
+
+<p>在production模式裡，rails會將assets預編譯在一起(pre-compile)，並放在public/資料夾底下以供存取，這能<strong>增進網站效能</strong></p>
+
+<h1>使用production mode啟動rails專案</h1>
+
+<h2>0.migrate你的資料庫</h2>
+
+<p>production mode和development mode的資料庫是分開的，所以你需要再migrate一次</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ RAILS_ENV</span><span class="o">=</span>production rake db:migrate
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>1.修改config/secret.yml，設定production mode的secret_key_base</h2>
+
+<p>要順利運行rails程式，你需要設定一個叫<strong>secret_key_base</strong>的東西，它是rails用來認證瀏覽器cookie的一串密鑰。rails已經幫你在development mode和test mode設定好了，但production mode沒有，你得自己來，它的設定在<strong>config/secret.yml</strong>這隻檔案，讓我們來看看它：</p>
+
+<figure class='code'><figcaption><span>secret.yml</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="c1">// development mode的設定</span>
+</span><span class='line'><span class="c1">// 它使用 b1f4eb...3a9 這串密鑰（隨機生成的）</span>
+</span><span class='line'><span class="nl">development</span><span class="p">:</span>
+</span><span class='line'>  <span class="nl">secret_key_base</span><span class="p">:</span> <span class="n">b1f4eb6c1d97f627fbc0a3919fc27ab5f831200cdd0ea72317f404a2b9d878192bca27d92380f56051c60d0a364c86fe53d9b9866d487a17cf06582a783723a9</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// test mode使用 fe9d...c3b 這串密鑰</span>
+</span><span class='line'><span class="nl">test</span><span class="p">:</span>
+</span><span class='line'>  <span class="nl">secret_key_base</span><span class="p">:</span> <span class="n">fe9d49b7edc8e3a4dfa47c0682974aca4572388e929ea3e4f037b3e8841747fc3029e030bbd102a62d372596b4d753dd0c419b7425a8dcceca3817cf7d5dbc3b</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// production mode從執行環境裡抓 $SECRET_KEY_BASE 這個環境變數當作密鑰，但正常情況下該變數並不存在，所以出錯</span>
+</span><span class='line'><span class="nl">production</span><span class="p">:</span>
+</span><span class='line'>  <span class="nl">secret_key_base</span><span class="p">:</span> <span class="o">&lt;%=</span> <span class="n">ENV</span><span class="p">[</span><span class="s">&quot;SECRET_KEY_BASE&quot;</span><span class="p">]</span> <span class="o">%&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>你有兩種方法能設定production mode的secret_key_base</p>
+
+<h3>(1)比較簡易的做法是直接寫死一串固定的密鑰給它：</h3>
+
+<figure class='code'><figcaption><span>secret.yml</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="c1">// 前略...</span>
+</span><span class='line'>
+</span><span class='line'><span class="nl">production</span><span class="p">:</span>
+</span><span class='line'><span class="c1">// 刪掉原本的 &lt;%= ... %&gt; ，替換成隨便一串長度30以上的英數組合字串給他當密鑰</span>
+</span><span class='line'>  <span class="nl">secret_key_base</span><span class="p">:</span> <span class="n">iameasonchangiamhandsomeiamthekingoftheworldnoonecandefeatmeiwantagirlfriendiamaloserqq</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>(2)更安全的做法是把密鑰設在執行環境中：</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>rake secret // 生成一串密鑰，顯示在終端機上
+</span><span class='line'><span class="nv">$ </span><span class="nb">export </span><span class="nv">SECRET_KEY_BASE</span><span class="o">=[</span>此處貼上你剛剛產生的密鑰<span class="o">]</span> // 把密鑰設定至環境變數 <span class="nv">$SECRET_KEY_BASE</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>但只做到這樣的話，重開終端機的話環境變數設定就消失了，所以可以把設定寫進環境設定檔裡頭</p>
+
+<p>像我使用zsh的話，環境設定檔是<strong>./.zshrc</strong>
+而Mac的terminal預設的bash，則是<strong>./.bash_profile</strong></p>
+
+<figure class='code'><figcaption><span>.zshrc</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>// 在.zshrc中插入下面這行
+</span><span class='line'><span class="nb">export </span><span class="nv">SECRET_KEY_BASE</span><span class="o">=[</span>此處貼上你剛剛產生的密鑰<span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>到此你應該可以無錯誤地使用production mode開啟你的rails專案了，你可以下<code>$ rails s -e production</code>來開啟伺服器，並且用瀏覽器連至<code>localhost:3000</code>查看目前的結果</p>
+
+<p>你的畫面應該跟我很像，怎麼醜不拉幾的？我不眠不休設計出來的精美網頁呢？</p>
+
+<p><img src="http://i.imgur.com/oVAdVyK.png?2" alt="Imgur" /></p>
+
+<p>那是因為你還沒有告訴rails你用到了哪些設計元素，接下來的步驟教你怎麼做：</p>
+
+<h2>2.告訴rails你有哪些assets需要被pre-compile</h2>
+
+<p>前面我們提過，使用production mode的理由是<strong>增進網頁讀取效能</strong>，方法是<strong>預編譯(pre-compile)各類assets</strong>，而你需要手動告訴rails你有哪些assets需要預編譯，除了圖檔，所有使用到的assets都需要加入裡頭，如js、css檔</p>
+
+<p>方法是更新<strong>config/initializers/assets.rb</strong>這隻檔案，加入你有使用到的assets的路徑：</p>
+
+<figure class='code'><figcaption><span>assets.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='c++'><span class='line'><span class="c1">// 前略...</span>
+</span><span class='line'><span class="c1">// 後面加入這一行，裡頭放入你要precompile的檔案</span>
+</span><span class='line'><span class="n">Rails</span><span class="p">.</span><span class="n">application</span><span class="p">.</span><span class="n">config</span><span class="p">.</span><span class="n">assets</span><span class="p">.</span><span class="n">precompile</span> <span class="o">+=</span> <span class="p">[</span>
+</span><span class='line'>  <span class="err">&#39;</span><span class="n">bootstrap</span><span class="p">.</span><span class="n">js</span><span class="err">&#39;</span><span class="p">,</span> <span class="c1">// 請幫我compile vendor/assets/javascripts/bootstrap.js 這支檔案</span>
+</span><span class='line'>  <span class="err">&#39;</span><span class="n">courses</span><span class="o">/</span><span class="n">content</span><span class="p">.</span><span class="n">js</span><span class="err">&#39;</span><span class="p">,</span> <span class="c1">// 還有 app/assets/javascripts/courses/content.js</span>
+</span><span class='line'>  <span class="err">&#39;</span><span class="n">courses</span><span class="o">/</span><span class="n">chart</span><span class="p">.</span><span class="n">js</span><span class="err">&#39;</span><span class="p">,</span>  <span class="c1">// app/assets/javascripts/courses/chart.js 也要</span>
+</span><span class='line'>  <span class="err">&#39;</span><span class="k">new</span><span class="o">-</span><span class="n">index</span><span class="p">.</span><span class="n">css</span><span class="err">&#39;</span><span class="p">,</span> <span class="c1">// 還有這個css，它在app/assets/stylesheets/new-index.css.scss</span>
+</span><span class='line'>  <span class="err">&#39;</span><span class="n">login</span><span class="p">.</span><span class="n">css</span><span class="err">&#39;</span><span class="p">,</span> <span class="c1">// app/assets/stylesheets/login.css.erb也要</span>
+</span><span class='line'>  <span class="err">&#39;</span><span class="n">newcomer</span><span class="o">/*</span><span class="p">.</span><span class="n">css</span><span class="err">&#39;</span><span class="p">,</span> <span class="c1">// app/assets/stylesheets/newcomer/裡面的css檔都要！</span>
+</span><span class='line'>  <span class="err">&#39;</span><span class="n">NotoSans</span><span class="o">-</span><span class="n">Regular</span><span class="o">-</span><span class="n">ttf</span><span class="err">&#39;</span> <span class="c1">// 這個是字形檔唷！它在app/assets/fonts/NotoSans-Regular-ttf</span>
+</span><span class='line'><span class="p">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>rails會去 <strong>app/assets/</strong> 和 <strong>vendor/assets/</strong> 這兩個資料夾去找你的assets檔案，並且會根據副檔名尋找對應的路徑：</p>
+
+<ul>
+<li>js檔會去找底下的 <strong>javascripts/</strong></li>
+<li>css檔會去找底下的 <strong>stylesheets/</strong></li>
+<li>font檔會去找底下的 <strong>fonts/</strong></li>
+<li>image檔會去找底下的 <strong>images/</strong></li>
+</ul>
+
+
+<p>但rails預設會幫你compile所有的圖檔，所以<strong>.png、.jpg等圖檔就不用加進去</strong>了</p>
+
+<h2>3.確認你引入assets的方法有沒有誤</h2>
+
+<p>compile後的assets，檔名會改變，所以傳統引入assets的方法會失效，必須改用rails提供的方法</p>
+
+<ul>
+<li>引入js檔使用 <code>&lt;%= javascript_include_tag 'your-js-path' %&gt;</code></li>
+<li>引入css檔使用 <code>&lt;%= stylesheet_link_tag 'your-css-path' %&gt;</code></li>
+<li>引入圖檔使用 <code>&lt;%= image_tag 'your-image-path' %&gt;</code></li>
+<li>js檔裡要再引入asset請使用 <code>&lt;%= asset_path('your-img-path') %&gt;</code></li>
+</ul>
+
+
+<h2>4.Pre-compile it!</h2>
+
+<p>在你的專案目錄裡下指令：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ RAILS_ENV</span><span class="o">=</span>production rake assets:precompile
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>就會將assets pre-compile進/public/assets裡頭</p>
+
+<h2>5.修改production的模式設定</h2>
+
+<p>雖然compile了，但production模式預設是不會讓使用者讀取/public/assets的檔案</p>
+
+<p>必須修改 <strong>config/environments/production.rb</strong> 這個檔案</p>
+
+<p>將位在第24行左右的</p>
+
+<figure class='code'><figcaption><span>production.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">config</span><span class="o">.</span><span class="n">serve_static_assets</span> <span class="o">=</span> <span class="kp">false</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>改為 <strong>true</strong>:</p>
+
+<figure class='code'><figcaption><span>production.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">config</span><span class="o">.</span><span class="n">serve_static_assets</span> <span class="o">=</span> <span class="kp">true</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>6.使用production mode啟動吧!!</h2>
+
+<p>在專案的目錄裡下指令：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>rails s -e production
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>就可以使用production mode開啟你的rails專案啦！</p>
+
+<p>使用瀏覽器連入<code>localhost:3000</code>，就可以看到你速度大幅提升的美麗網頁啦！</p>
+
+<p><img src="http://imgur.com/IGxS4QM.jpg" alt="imgur" /></p>
+
+<hr />
+
+<p>測試環境：</p>
+
+<ul>
+<li>OS: Mac OS X</li>
+<li>Rails version: 4.2.6</li>
+<li>Ruby version: 2.0.0p481</li>
+<li>Shell: zsh</li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Eason Chang</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2016-08-16T02:34:00+08:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>2:34 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/rails/'>rails</a>, <a class='category' href='/blog/categories/tutorial/'>tutorial</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://easonchang.com/2016/08/16/start-your-rails-project-with-production-mode/" data-via="" data-counturl="http://easonchang.com/2016/08/16/start-your-rails-project-with-production-mode/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2016/08/15/dream-diary-09-fxxking-meteorology/" title="Previous Post: 【大夢日記#09】令人崩潰的氣象學">&laquo; 【大夢日記#09】令人崩潰的氣象學</a>
+      
+      
+        <a class="basic-alignment right" href="/2016/08/17/dream-diary-10-flight-computer/" title="Next Post: 【大夢日記#10】飛航小道具登場！航圖 & Flight Computer">【大夢日記#10】飛航小道具登場！航圖 & Flight Computer &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2016/08/22/dream-diary-13-before-final-exam/">【大夢日記#13】必須得一次過關的期末考！？</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2016/08/19/dream-diary-12-law/">【大夢日記#12】想飛？得先遵守遊戲規則！飛航法規！</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2016/08/18/using-ssh-with-putty-key-on-macos/">在MacOS使用putty Key進行ssh連線</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2016/08/18/dream-diary-11-flight-plan/">【大夢日記#11】撰寫飛行計劃！全部一起上吧！</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2016/08/17/dream-diary-10-flight-computer/">【大夢日記#10】飛航小道具登場！航圖 & Flight Computer</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2016 - Eason Chang -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'eason-blog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://easonchang.com/2016/08/16/start-your-rails-project-with-production-mode/';
+        var disqus_url = 'http://easonchang.com/2016/08/16/start-your-rails-project-with-production-mode/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

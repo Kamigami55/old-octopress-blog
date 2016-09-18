@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Rails | Eason's blog]]></title>
+  <link href="http://easonchang.com/blog/categories/rails/atom.xml" rel="self"/>
+  <link href="http://easonchang.com/"/>
+  <updated>2016-09-18T22:57:45+08:00</updated>
+  <id>http://easonchang.com/</id>
+  <author>
+    <name><![CDATA[Eason Chang]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[使用production Mode啟動你的rails專案]]></title>
+    <link href="http://easonchang.com/2016/08/16/start-your-rails-project-with-production-mode/"/>
+    <updated>2016-08-16T02:34:00+08:00</updated>
+    <id>http://easonchang.com/2016/08/16/start-your-rails-project-with-production-mode</id>
+    <content type="html"><![CDATA[<p><img src="http://imgur.com/a21E49E.jpg" alt="rails-production" /></p>
+
+<h1>Quick Reference:</h1>
+
+<pre><code class="bash">$ RAILS_ENV=production rake db:migrate
+$ rake secret //產生secret key
+$ export SECRET_KEY_BASE=[貼入上個指令產生出來的密鑰]
+$ vim config/initializers/assets.rb  //加入用到的assets路徑
+確認各處引用assets的方法正確
+$ RAILS_ENV=production rake assets:precompile
+$ vim config/environments/production.rb  //將這行改成true: config.serve_static_assets = true
+$ rails s -e production
+</code></pre>
+
+<hr />
+
+<h1>什麼是production模式？為什麼要用它？</h1>
+
+<p>在通常情況下，直接在你的專案裡下<code>$ rails s</code>這條指令，我們是使用development mode來啟動你的專案</p>
+
+<p>在development模式下，大部分的修改都會直接顯現在網頁上，方便開發</p>
+
+<p>但實際讓系統上線，我們不會使用development模式，而是<strong>production模式</strong></p>
+
+<p>在production模式裡，rails會將assets預編譯在一起(pre-compile)，並放在public/資料夾底下以供存取，這能<strong>增進網站效能</strong></p>
+
+<h1>使用production mode啟動rails專案</h1>
+
+<h2>0.migrate你的資料庫</h2>
+
+<p>production mode和development mode的資料庫是分開的，所以你需要再migrate一次</p>
+
+<pre><code class="bash">$ RAILS_ENV=production rake db:migrate
+</code></pre>
+
+<h2>1.修改config/secret.yml，設定production mode的secret_key_base</h2>
+
+<p>要順利運行rails程式，你需要設定一個叫<strong>secret_key_base</strong>的東西，它是rails用來認證瀏覽器cookie的一串密鑰。rails已經幫你在development mode和test mode設定好了，但production mode沒有，你得自己來，它的設定在<strong>config/secret.yml</strong>這隻檔案，讓我們來看看它：</p>
+
+<pre><code class="c secret.yml">// development mode的設定
+// 它使用 b1f4eb...3a9 這串密鑰（隨機生成的）
+development:
+  secret_key_base: b1f4eb6c1d97f627fbc0a3919fc27ab5f831200cdd0ea72317f404a2b9d878192bca27d92380f56051c60d0a364c86fe53d9b9866d487a17cf06582a783723a9
+
+// test mode使用 fe9d...c3b 這串密鑰
+test:
+  secret_key_base: fe9d49b7edc8e3a4dfa47c0682974aca4572388e929ea3e4f037b3e8841747fc3029e030bbd102a62d372596b4d753dd0c419b7425a8dcceca3817cf7d5dbc3b
+
+// production mode從執行環境裡抓 $SECRET_KEY_BASE 這個環境變數當作密鑰，但正常情況下該變數並不存在，所以出錯
+production:
+  secret_key_base: &lt;%= ENV["SECRET_KEY_BASE"] %&gt;
+</code></pre>
+
+<p>你有兩種方法能設定production mode的secret_key_base</p>
+
+<h3>(1)比較簡易的做法是直接寫死一串固定的密鑰給它：</h3>
+
+<pre><code class="c secret.yml">// 前略...
+
+production:
+// 刪掉原本的 &lt;%= ... %&gt; ，替換成隨便一串長度30以上的英數組合字串給他當密鑰
+    secret_key_base: iameasonchangiamhandsomeiamthekingoftheworldnoonecandefeatmeiwantagirlfriendiamaloserqq
+</code></pre>
+
+<h3>(2)更安全的做法是把密鑰設在執行環境中：</h3>
+
+<pre><code class="bash">$ rake secret // 生成一串密鑰，顯示在終端機上
+$ export SECRET_KEY_BASE=[此處貼上你剛剛產生的密鑰] // 把密鑰設定至環境變數 $SECRET_KEY_BASE
+</code></pre>
+
+<p>但只做到這樣的話，重開終端機的話環境變數設定就消失了，所以可以把設定寫進環境設定檔裡頭</p>
+
+<p>像我使用zsh的話，環境設定檔是<strong>./.zshrc</strong>
+而Mac的terminal預設的bash，則是<strong>./.bash_profile</strong></p>
+
+<pre><code class="bash .zshrc">// 在.zshrc中插入下面這行
+export SECRET_KEY_BASE=[此處貼上你剛剛產生的密鑰]
+</code></pre>
+
+<p>到此你應該可以無錯誤地使用production mode開啟你的rails專案了，你可以下<code>$ rails s -e production</code>來開啟伺服器，並且用瀏覽器連至<code>localhost:3000</code>查看目前的結果</p>
+
+<p>你的畫面應該跟我很像，怎麼醜不拉幾的？我不眠不休設計出來的精美網頁呢？</p>
+
+<p><img src="http://i.imgur.com/oVAdVyK.png?2" alt="Imgur" /></p>
+
+<p>那是因為你還沒有告訴rails你用到了哪些設計元素，接下來的步驟教你怎麼做：</p>
+
+<h2>2.告訴rails你有哪些assets需要被pre-compile</h2>
+
+<p>前面我們提過，使用production mode的理由是<strong>增進網頁讀取效能</strong>，方法是<strong>預編譯(pre-compile)各類assets</strong>，而你需要手動告訴rails你有哪些assets需要預編譯，除了圖檔，所有使用到的assets都需要加入裡頭，如js、css檔</p>
+
+<p>方法是更新<strong>config/initializers/assets.rb</strong>這隻檔案，加入你有使用到的assets的路徑：</p>
+
+<pre><code class="c++ assets.rb">// 前略...
+// 後面加入這一行，裡頭放入你要precompile的檔案
+Rails.application.config.assets.precompile += [
+  'bootstrap.js', // 請幫我compile vendor/assets/javascripts/bootstrap.js 這支檔案
+    'courses/content.js', // 還有 app/assets/javascripts/courses/content.js
+    'courses/chart.js',  // app/assets/javascripts/courses/chart.js 也要
+    'new-index.css', // 還有這個css，它在app/assets/stylesheets/new-index.css.scss
+    'login.css', // app/assets/stylesheets/login.css.erb也要
+    'newcomer/*.css', // app/assets/stylesheets/newcomer/裡面的css檔都要！
+    'NotoSans-Regular-ttf' // 這個是字形檔唷！它在app/assets/fonts/NotoSans-Regular-ttf
+]
+</code></pre>
+
+<p>rails會去 <strong>app/assets/</strong> 和 <strong>vendor/assets/</strong> 這兩個資料夾去找你的assets檔案，並且會根據副檔名尋找對應的路徑：</p>
+
+<ul>
+<li>js檔會去找底下的 <strong>javascripts/</strong></li>
+<li>css檔會去找底下的 <strong>stylesheets/</strong></li>
+<li>font檔會去找底下的 <strong>fonts/</strong></li>
+<li>image檔會去找底下的 <strong>images/</strong></li>
+</ul>
+
+
+<p>但rails預設會幫你compile所有的圖檔，所以<strong>.png、.jpg等圖檔就不用加進去</strong>了</p>
+
+<h2>3.確認你引入assets的方法有沒有誤</h2>
+
+<p>compile後的assets，檔名會改變，所以傳統引入assets的方法會失效，必須改用rails提供的方法</p>
+
+<ul>
+<li>引入js檔使用 <code>&lt;%= javascript_include_tag 'your-js-path' %&gt;</code></li>
+<li>引入css檔使用 <code>&lt;%= stylesheet_link_tag 'your-css-path' %&gt;</code></li>
+<li>引入圖檔使用 <code>&lt;%= image_tag 'your-image-path' %&gt;</code></li>
+<li>js檔裡要再引入asset請使用 <code>&lt;%= asset_path('your-img-path') %&gt;</code></li>
+</ul>
+
+
+<h2>4.Pre-compile it!</h2>
+
+<p>在你的專案目錄裡下指令：</p>
+
+<pre><code class="bash">$ RAILS_ENV=production rake assets:precompile
+</code></pre>
+
+<p>就會將assets pre-compile進/public/assets裡頭</p>
+
+<h2>5.修改production的模式設定</h2>
+
+<p>雖然compile了，但production模式預設是不會讓使用者讀取/public/assets的檔案</p>
+
+<p>必須修改 <strong>config/environments/production.rb</strong> 這個檔案</p>
+
+<p>將位在第24行左右的</p>
+
+<pre><code class="ruby production.rb">config.serve_static_assets = false
+</code></pre>
+
+<p>改為 <strong>true</strong>:</p>
+
+<pre><code class="ruby production.rb">config.serve_static_assets = true
+</code></pre>
+
+<h2>6.使用production mode啟動吧!!</h2>
+
+<p>在專案的目錄裡下指令：</p>
+
+<pre><code class="bash">$ rails s -e production
+</code></pre>
+
+<p>就可以使用production mode開啟你的rails專案啦！</p>
+
+<p>使用瀏覽器連入<code>localhost:3000</code>，就可以看到你速度大幅提升的美麗網頁啦！</p>
+
+<p><img src="http://imgur.com/IGxS4QM.jpg" alt="imgur" /></p>
+
+<hr />
+
+<p>測試環境：</p>
+
+<ul>
+<li>OS: Mac OS X</li>
+<li>Rails version: 4.2.6</li>
+<li>Ruby version: 2.0.0p481</li>
+<li>Shell: zsh</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

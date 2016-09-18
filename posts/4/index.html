@@ -1,0 +1,656 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Eason's blog</title>
+  <meta name="author" content="Eason Chang">
+
+  
+  <meta name="description" content="Github TodoList，一個極為簡單的待辦清單。 我想儘早把後端的東西也學一學，這麼一來能做的網站就更多樣了，於是我找到了這個：Node.js學習筆記。這是一個簡單的Node.js入門指南，包含了三十多篇文章，每一篇的份量都很精簡，手把手教你做出一個簡單的Node.js網頁應用。 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://easonchang.com/posts/4/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Eason's blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-73788598-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Eason's blog</a></h1>
+  
+    <h2>I create, therefore I am.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="easonchang.com">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2016/02/13/100sites-003-todolist/">【100sites #003】TodoList</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2016-02-13T19:12:00+08:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>13</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>7:12 pm</span></time>
+        
+           | <a href="/2016/02/13/100sites-003-todolist/#disqus_thread"
+             data-disqus-identifier="http://easonchang.com/2016/02/13/100sites-003-todolist/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="http://user-image.logdown.io/user/16613/blog/15900/post/510223/KvMWd2v7QUCpkLXSF4Jn_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-02-14%20%E4%B8%8A%E5%8D%882.17.42.png" alt="螢幕快照 2016-02-14 上午2.17.42.png" /></p>
+
+<p><a href="https://github.com/Kamigami55/100sites/tree/master/003_Todolist">Github</a></p>
+
+
+
+
+<p>TodoList，一個極為簡單的待辦清單。</p>
+
+
+
+
+<p>我想儘早把後端的東西也學一學，這麼一來能做的網站就更多樣了，於是我找到了這個：<a href="https://nodejust.com/category/nodejs/page/6/">Node.js學習筆記</a>。這是一個簡單的Node.js入門指南，包含了三十多篇文章，每一篇的份量都很精簡，手把手教你做出一個簡單的Node.js網頁應用。內容也同時涵括了Express.js和MongoDB。</p>
+
+
+
+
+<p>花了點時間讀完筆記後，這個TodoList就是我今天的成果了，它目前只能不斷新增Todo項目，沒有完成按鈕或刪除按鈕可以點選，之後有時間會補齊它的功能吧。</p>
+
+
+
+
+<p>使用Node.js作為後端、Express.js當框架、MongoDB當資料庫並用Monk來連結、Hogan.js當模板引擎。</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2016/02/12/100sites-002-pomodoro/">【100sites #002】Pomodoro</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2016-02-12T16:07:00+08:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>12</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>4:07 pm</span></time>
+        
+           | <a href="/2016/02/12/100sites-002-pomodoro/#disqus_thread"
+             data-disqus-identifier="http://easonchang.com/2016/02/12/100sites-002-pomodoro/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="http://user-image.logdown.io/user/16613/blog/15900/post/510221/8wxplpD9Tk6C05CT1vPm_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-02-13%20%E4%B8%8A%E5%8D%8812.00.31.png" alt="螢幕快照 2016-02-13 上午12.00.31.png" /></p>
+
+<p><a href="https://github.com/Kamigami55/100sites/tree/master/002_Pomodoro">Github</a></p>
+
+
+
+
+<p><a href="http://kamigami55.github.io/100sites/002_Pomodoro/pomodoro.html" target="_blank">Live Demo</a></p>
+
+
+
+
+<p>一個簡單的<a href="https://zh.wikipedia.org/zh-tw/番茄工作法" target="_blank">番茄鐘工作法</a>計時器，沿用了<a href="https://yishenchang.wordpress.com/2016/02/12/timer-100sites001/" target="_blank">#001Timer</a>的程式碼做了一些修改與優化。</p>
+
+
+
+
+<p>我Google到了一個interval函數可以自動修正誤差，如此一來時間誤差問題就解決了。</p>
+
+
+
+
+<p>但將Pomodoro放到背景執行後，時間凍結問題依舊還沒辦法解決，title的時間依然會有極大的誤差。</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2016/02/12/100sites-001-timer/">【100sites #001】Timer</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2016-02-12T15:56:00+08:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>12</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>3:56 pm</span></time>
+        
+           | <a href="/2016/02/12/100sites-001-timer/#disqus_thread"
+             data-disqus-identifier="http://easonchang.com/2016/02/12/100sites-001-timer/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="http://user-image.logdown.io/user/16613/blog/15900/post/510219/jZ6kh8mHRDWPYyvHnLNA_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-02-12%20%E4%B8%8A%E5%8D%881.01.54.png" alt="螢幕快照 2016-02-12 上午1.01.54.png" /></p>
+
+<p><a href="https://github.com/Kamigami55/100sites/tree/master/001_Timer" target="_blank">Github</a></p>
+
+
+
+
+<p><a href="http://kamigami55.github.io/100sites/001_Timer/timer.html" target="_blank">Live Demo</a></p>
+
+
+
+
+<p>一個很簡單的倒數計時器。</p>
+
+
+
+
+<p>使用了很基本的前端老三套：HTML、CSS、JavaScript，各一個檔案來完成這個計時器。</p>
+
+
+
+
+<p>關鍵的計時功能由window.setInterval(function, delay)來完成，正常使用沒問題。</p>
+
+
+
+
+<p>目前的問題是時間拉長以後就會產生時間誤差，並且當使用者切換到別的頁面後，此時Timer在背景執行，瀏覽器分配給setInterval的資源就會變少，倒數速度就會變非常慢，甚至完全停止，我目前還找不到解決方法。</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2016/02/12/100sites-000/">【100sites #000】我的全端工程師之路</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2016-02-12T15:28:00+08:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>12</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>3:28 pm</span></time>
+        
+           | <a href="/2016/02/12/100sites-000/#disqus_thread"
+             data-disqus-identifier="http://easonchang.com/2016/02/12/100sites-000/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="http://imgur.com/i5gPgdO.png" alt="100Sites.png" /></p>
+
+<p>為了成為全端工程師，我決定開始做大量的side-project，從做中學，高效地提升我所需要的能力。</p>
+
+<p>這就是100sites，從現在起我會寫出100個網頁並將其上傳，然後盡可能地說明我使用了哪些技術和工具。</p>
+
+<p><a href="http://easonchang.logdown.com/posts/510219">【100sites #001】Timer</a></p>
+
+<p><a href="http://easonchang.logdown.com/posts/510221">【100sites #002】Pomodoro</a></p>
+
+<p><a href="http://easonchang.logdown.com/posts/510223">【100sites #003】TodoList</a></p>
+
+<p><a href="http://easonchang.logdown.com/posts/510225">【100sites #004】Firework</a></p>
+
+<p><a href="http://easonchang.logdown.com/posts/514460-100sites005-drawer">【100sites #005】Drawer</a></p>
+
+<p><a href="http://easonchang.logdown.com/posts/516675">【100sites #006】Snack</a></p>
+
+<p><a href="http://easonchang.logdown.com/posts/658107">【100sites #007】Pong，使用P5.js建構的復古遊戲</a></p>
+
+<p><a href="http://easonchang.logdown.com/posts/663620-100sites-008-showcase-single-%0Apage-website-design-showcase-my-portfolio">【100sites #008】Showcase，單頁式網站設計展示我的作品集</a></p>
+
+<p><a href="http://easonchang.logdown.com/posts/670772">【100sites #009】Flame，P5js酷炫小動畫</a></p>
+
+<p><a href="http://easonchang.logdown.com/posts/680679">【100sites #010】Piano，用P5js的sound函式庫實作虛擬鋼琴</a></p>
+
+<p><a href="http://easonchang.logdown.com/posts/684909">【100sites #011】LifeGame，生命遊戲模擬無限的可能性</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2016/01/31/go-tron/">「構。創」，一場意義非凡的旅程</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2016-01-31T21:49:00+08:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>31</span><span class='date-suffix'>st</span>, <span class='date-year'>2016</span></span> <span class='time'>9:49 pm</span></time>
+        
+           | <a href="/2016/01/31/go-tron/#disqus_thread"
+             data-disqus-identifier="http://easonchang.com/2016/01/31/go-tron/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>『構。創 2016/01/25 - 2016/01/29』</p>
+
+<p>「構。創」，一個由台大與交大合辦的創業營隊結束了，但它所帶給我們的悸動還清晰地留存著。</p>
+
+<p>我抱著認識同伴、認清自我的心態來參加構創，而構創給我的多到超乎想像。</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/2016/01/31/go-tron/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2015/12/31/myself-autobio-happyny/">自傳、座談會、新年快樂</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-12-31T06:48:00+08:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>31</span><span class='date-suffix'>st</span>, <span class='date-year'>2015</span></span> <span class='time'>6:48 am</span></time>
+        
+           | <a href="/2015/12/31/myself-autobio-happyny/#disqus_thread"
+             data-disqus-identifier="http://easonchang.com/2015/12/31/myself-autobio-happyny/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>又到了寫自傳的時候了，寫自傳實在是一種很奇妙的體驗，如何突破尺度把自己最光鮮亮麗的一面呈現出來；如何讓僅有的幾項成績展現出最大的價值；如何發揮文字的魔力掙取到最大錄取機率，這種掙扎過程真的很有趣。</p>
+
+<p>昨天參加了導師時間的與校長有約座談會，重點一如預期的扯上了合校議題 ，我的看法是現在既然還在理念交換的階段，我們要做的就是把我們學生期望的交大未來藍圖提出來，我們希望交大未來朝向哪個方向發展？要如何才能達到這樣的期望？與陽明合併是最好的方法嗎？現階段在細節上吹毛求疵是無濟於事的，畢竟還未到討論實行計畫的階段。</p>
+
+<p>除了併效議題之外，有同學問到導師時間的意義何在？這真的是一針見血的問題呀，學務長打太極我們就別提了，導師時間到底為何而存在？就我觀察，現在導師時間實行成效就是把我們抓在一起聽演講、或是宣傳一些活動，僅此而已，所謂促進師生良好互動，或是遇見生命中的貴人之類的美好願景，效果不大，至少我自己是這樣。</p>
+
+<p>我自己是滿喜歡聽演講的啦，有些演講著實不錯，例如天下雜誌的志氣論壇，就算沒有導師時間我也會主動參加，有些就真的挺浪費時間的啦，硬把我們綁在一起聽我們沒有興趣或根本沒有意義的演講。</p>
+
+<p>但這也許是我們心態上的問題，我們不夠開放，不願接受我們沒興趣的東西，但難道這樣校方就可以打著「為了你好」的旗號，強迫我們接受他們認為我們應該聽的東西嗎？還是如果把這段時間省下來，讓我們去自由探索自己有興趣的東西，會比較有意義一些？</p>
+
+<p>今天也看到了一部很勵志的影片，這是<a href="https://www.youtube.com/channel/UCMGf-4TZDqNG97yqY5WPTCA/feed">Violin Noobie</a>，一位二十多歲的女孩子，她從2013年三月開始學習小提琴，她將她這兩年的練習過程整理成了下面這部影片，你可以很明顯的看見她的進步，從最初驚人的Happy Birthday，到現在令人讚嘆的River Flows In You。</p>
+
+<p><a href="https://www.youtube.com/watch?v=DaugRxMz7tw">https://www.youtube.com/watch?v=DaugRxMz7tw</a></p>
+
+<p>進步是需要長期累積的，新的一年，給自己許下一個新的目標，並且持之以恆的實踐它吧！</p>
+
+<p>新年快樂！</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2015/12/29/github-expo-school-merge/">Github、展覽、併校說明會</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-12-29T17:33:00+08:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>29</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>5:33 pm</span></time>
+        
+           | <a href="/2015/12/29/github-expo-school-merge/#disqus_thread"
+             data-disqus-identifier="http://easonchang.com/2015/12/29/github-expo-school-merge/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Github之旅</h2>
+
+<p>今天做了很多事情。早上貢獻了一下Github上的<a href="https://github.com/cdnjs/cdnjs">cdnjs</a>，把<a href="https://github.com/cdnjs/cdnjs/tree/master/ajax/libs/arbor">arbor</a>的license給補上了，感謝peter的建議，我學會了如何只pull特定檔案、如何更新fork出來的repository、如何rebase到最新的branch上。明天應該會把餘下尚未補齊的license資訊給補齊，這真的很有趣，我想我愛上Github了。</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/2015/12/29/github-expo-school-merge/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2015/11/09/aiesec-nctu/">「講座心得」AIESEC NCTU大人物講座，陳時霖「創造語言的力量」</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-11-09T16:45:00+08:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>9</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>4:45 pm</span></time>
+        
+           | <a href="/2015/11/09/aiesec-nctu/#disqus_thread"
+             data-disqus-identifier="http://easonchang.com/2015/11/09/aiesec-nctu/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>前天下午，我參加的AIESECxNCTU的大人物講座。這場講座的講師陳時霖，分享了如何「創造語言的力量」。</p>
+
+<p>這是一場「探索人生的簡報課」，主題聚焦在「簡報技巧」及「積極人生」。</p>
+
+<p>關於做好簡報，時霖分享了許多核心觀念與實用技巧，</p>
+
+<ul>
+<li>簡報要滿足聽眾的需求，而更高竿的則是「創造」聽眾的需求。</li>
+<li>拿到麥克風的前30秒是最重要的時刻，你要讓你自己和聽眾們都熱起來。想一個最與眾不同的開場白吧！</li>
+<li>溝通的三要素，肢體動作最重要，聲音語調是其次，最後才是實際的內容。</li>
+<li>用眼神的「時針移動法」環顧會場裡的每一位聽眾，讓他們感覺受到重視。</li>
+<li>可以嘗試用這四項內容做開場：聽講益處、核心問題、經典數據、引人故事。</li>
+<li>結尾則能選用這四種方法： 統整重點、說故事、感召大家做行動、一句話做結論。</li>
+</ul>
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/2015/11/09/aiesec-nctu/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2015/10/27/lever-reading/">「閱讀筆記」槓桿閱讀術——本田直之</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-10-27T18:07:00+08:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>6:07 pm</span></time>
+        
+           | <a href="/2015/10/27/lever-reading/#disqus_thread"
+             data-disqus-identifier="http://easonchang.com/2015/10/27/lever-reading/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="http://image.anobii.com/anobi/image_book.php?item_id=01fdecafeff15f5c07&amp;time=&amp;type=4" alt="lever-reading" /></p>
+
+<hr />
+
+<p>《槓桿閱讀術》
+作者：本田直之(Honda Naoyuki)
+譯者：葉冰婷
+出版社：漫遊者文化</p>
+
+<hr />
+
+<h2>目的：</h2>
+
+<p>提升商業書「閱讀效益」，以「投資」的角度進行閱讀。</p>
+
+<h2>哲學：</h2>
+
+<ul>
+<li>根據作者經驗，讀書的投資報酬率為10000%。</li>
+<li>僅僅做「輸入」的動作，只不過是自我滿足而已，如果能「輸出」使用，才是真正勝負的關鍵。</li>
+<li>槓桿效益閱讀術是徹底把書用盡，直到一本書支離破碎。</li>
+<li>如果經常帶著閱讀筆記，並反覆閱讀幾次的話，逐漸會對該內容融會貫通。猶如用慣的工具和手掌結為一體一般。</li>
+</ul>
+
+
+<h2>方法：</h2>
+
+<ul>
+<li>秉持「目的」意識，捨棄不重要的部分，進行「掃讀」。</li>
+<li>培養即戰力，挑選「經驗類型」的書籍。</li>
+<li>徹底閱讀同類別書籍，每一本書都提到的內容就是該領域的重點。</li>
+<li>在實體書店發現新書，在網路書店主動購買。</li>
+<li>在書上劃線、紀錄想法、摺角，徹底發揮書籍的最大效益。</li>
+<li>製作「<strong>閱讀筆記</strong>」（我認為是本書最有價值的部分），之後就反覆閱讀你的筆記，除非書籍超好，否則不要再去讀那本書了。</li>
+</ul>
+
+
+<hr />
+
+<p>圖片引用自Anobii：<a href="http://www.anobii.com/books/%E6%A7%93%E6%A1%BF%E9%96%B1%E8%AE%80%E8%A1%93/9789866858192/01fdecafeff15f5c07">http://www.anobii.com/books/槓桿閱讀術/9789866858192/01fdecafeff15f5c07</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/posts/3">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2016/08/22/dream-diary-13-before-final-exam/">【大夢日記#13】必須得一次過關的期末考！？</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2016/08/19/dream-diary-12-law/">【大夢日記#12】想飛？得先遵守遊戲規則！飛航法規！</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2016/08/18/using-ssh-with-putty-key-on-macos/">在MacOS使用putty Key進行ssh連線</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2016/08/18/dream-diary-11-flight-plan/">【大夢日記#11】撰寫飛行計劃！全部一起上吧！</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2016/08/17/dream-diary-10-flight-computer/">【大夢日記#10】飛航小道具登場！航圖 & Flight Computer</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2016 - Eason Chang -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'eason-blog';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
