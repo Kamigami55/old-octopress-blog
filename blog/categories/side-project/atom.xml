@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Side-project | Eason's blog]]></title>
   <link href="https://easonchang.com/blog/categories/side-project/atom.xml" rel="self"/>
   <link href="https://easonchang.com/"/>
-  <updated>2016-09-19T01:16:54+08:00</updated>
+  <updated>2016-09-19T02:01:02+08:00</updated>
   <id>https://easonchang.com/</id>
   <author>
     <name><![CDATA[Eason Chang]]></name>
@@ -280,10 +280,10 @@ class Food {
 
 <p>今天搬回新竹，實在沒多少時間寫程式，於是就寫了一個簡單卻實用的小抽籤程式。</p>
 
-<p>目前寫出來的功能很簡單，使用者輸入最小值和最大值，點擊按鈕後就能抽到一個隨機數字。</p>
-
 <!-- more -->
 
+
+<p>目前寫出來的功能很簡單，使用者輸入最小值和最大值，點擊按鈕後就能抽到一個隨機數字。</p>
 
 <p>框架上只使用到了JQuery和Bootstrap，我最愛的兩個框架。</p>
 
@@ -561,6 +561,11 @@ class Firework {
 
 
 
+<!-- more -->
+
+
+
+
 <p>我想儘早把後端的東西也學一學，這麼一來能做的網站就更多樣了，於是我找到了這個：<a href="https://nodejust.com/category/nodejs/page/6/">Node.js學習筆記</a>。這是一個簡單的Node.js入門指南，包含了三十多篇文章，每一篇的份量都很精簡，手把手教你做出一個簡單的Node.js網頁應用。內容也同時涵括了Express.js和MongoDB。</p>
 
 
@@ -594,6 +599,11 @@ class Firework {
 
 
 <p>一個很簡單的倒數計時器。</p>
+
+
+
+
+<!-- more -->
 
 
 

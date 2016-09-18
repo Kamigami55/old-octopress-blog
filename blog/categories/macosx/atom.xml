@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Macosx | Eason's blog]]></title>
   <link href="https://easonchang.com/blog/categories/macosx/atom.xml" rel="self"/>
   <link href="https://easonchang.com/"/>
-  <updated>2016-09-19T01:16:54+08:00</updated>
+  <updated>2016-09-19T02:01:02+08:00</updated>
   <id>https://easonchang.com/</id>
   <author>
     <name><![CDATA[Eason Chang]]></name>
@@ -27,6 +27,9 @@ $ puttygen &lt;your-putty-key.ppk&gt; -O private-openssh -o &lt;your-ssh-key.pem
 $ chmod 400 &lt;your-ssh-key.pem&gt; #調整.pem權限
 $ ssh -i &lt;your-ssh-key.pem&gt; &lt;user@your.server.com&gt; #使用.pem進行ssh連線
 </code></pre>
+
+<!-- more -->
+
 
 <hr />
 
@@ -79,10 +82,10 @@ $ ssh -i &lt;your-ssh-key.pem&gt; &lt;user@your.server.com&gt; #使用.pem進行
 
 <p>為了資工系的數位電路設計課，我們需要一個能夠編譯Verilog這個硬體描述語言(HDL)的環境，並且要能模擬電路運作狀況加上顯示波形。</p>
 
-<p>老師建議的編譯環境是<a href="https://www.mentor.com/products/fpga/model/">ModelSim</a>，但是它只支援Windows，我目前還沒找到Mac OS X或是Linux的版本，所以我只好另尋他法，找看看有沒有其他能夠編譯Verilog的工具。</p>
-
 <!-- more -->
 
+
+<p>老師建議的編譯環境是<a href="https://www.mentor.com/products/fpga/model/">ModelSim</a>，但是它只支援Windows，我目前還沒找到Mac OS X或是Linux的版本，所以我只好另尋他法，找看看有沒有其他能夠編譯Verilog的工具。</p>
 
 <p>我找到了<a href="http://iverilog.icarus.com/home">Icarus Verilog</a>，它是針對Linux的Verilog編譯器，而在Mac OS X底下，我們可以藉由Command Line來使用它。</p>
 

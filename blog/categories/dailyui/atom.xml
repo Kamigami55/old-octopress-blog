@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Dailyui | Eason's blog]]></title>
   <link href="https://easonchang.com/blog/categories/dailyui/atom.xml" rel="self"/>
   <link href="https://easonchang.com/"/>
-  <updated>2016-09-19T01:16:54+08:00</updated>
+  <updated>2016-09-19T02:01:02+08:00</updated>
   <id>https://easonchang.com/</id>
   <author>
     <name><![CDATA[Eason Chang]]></name>
@@ -61,6 +61,9 @@
 
 <p>做一做就上癮了，所以當然要趁勝追擊繼續創造很厲害很厲害的UI！</p>
 
+<!-- more -->
+
+
 <p>我發現CSS還有很多特性是我還不了解的、pseudo-element(偽元素)、animetion、@keyframes、transform、&hellip;&hellip;
 我對於前端設計的掌握度還是非常低，無法隨心所欲地作出想要的效果，不過在挑戰DailyUI的過程中，確實可以明顯感覺到自己正在進步，希望完成這100天的挑戰後，自己能成為一位上的了檯面的前端工程師！</p>
 ]]></content>
@@ -79,10 +82,10 @@
 
 <p>今天的題目是<strong>&ldquo;Sign Up&rdquo;</strong>，設計一個註冊介面。</p>
 
-<p>而我希望「註冊」這個行為可以脫離「填表單」這個框架。註冊也可以像是一位導遊，引領遊客們進入你精心設計的網站中探索，因此這個過程應該是以「對話、引導」的方式呈現，於是乎我就借用了通訊軟體的設計，將註冊表單包裹在與導遊的對話之中。</p>
-
 <!-- more -->
 
+
+<p>而我希望「註冊」這個行為可以脫離「填表單」這個框架。註冊也可以像是一位導遊，引領遊客們進入你精心設計的網站中探索，因此這個過程應該是以「對話、引導」的方式呈現，於是乎我就借用了通訊軟體的設計，將註冊表單包裹在與導遊的對話之中。</p>
 
 <p><a href="http://kamigami55.github.io/DailyUI/001_signup/">點我玩線上Demo</a></p>
 
@@ -102,15 +105,15 @@
 <p>在網上衝浪的時候，不小心又看到了一個驚人的網站：DailyUI.co
 這是一個協助你成為更專業的 UI Designer 的服務，透過激勵你連續 100 天進行 UI 設計，他的運作方式是這樣的：</p>
 
+<!-- more -->
+
+
 <ul>
 <li>每天都會寄一封 email 給你，告訴你今天的 UI 設計題目（假日沒有，假日是用來遊山玩水的）</li>
 <li>題目只會指出大方向，沒有太多限制，發揮創意打造出最強 UI！It&rsquo;s show time!</li>
 <li>將你的設計發上 Twitter 或是 Dribble，向全世界分享你的創意！</li>
 <li>偶爾會有驚喜獎勵，不要被嚇到了:)</li>
 </ul>
-
-
-<!-- more -->
 
 
 <p>這種互動模式實在是太驚人了！而且我也想知道有什麼驚喜獎勵～</p>

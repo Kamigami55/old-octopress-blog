@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Lifegame | Eason's blog]]></title>
   <link href="https://easonchang.com/blog/categories/lifegame/atom.xml" rel="self"/>
   <link href="https://easonchang.com/"/>
-  <updated>2016-09-19T01:16:54+08:00</updated>
+  <updated>2016-09-19T02:01:02+08:00</updated>
   <id>https://easonchang.com/</id>
   <author>
     <name><![CDATA[Eason Chang]]></name>
@@ -30,6 +30,9 @@
 <li>ENTER：暫停</li>
 <li>滑鼠左鍵：放置或刪除細胞</li>
 </ul>
+
+
+<!-- more -->
 
 
 <h2>什麼是生命遊戲？</h2>

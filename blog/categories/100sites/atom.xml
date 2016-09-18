@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 100sites | Eason's blog]]></title>
   <link href="https://easonchang.com/blog/categories/100sites/atom.xml" rel="self"/>
   <link href="https://easonchang.com/"/>
-  <updated>2016-09-19T01:16:54+08:00</updated>
+  <updated>2016-09-19T02:01:02+08:00</updated>
   <id>https://easonchang.com/</id>
   <author>
     <name><![CDATA[Eason Chang]]></name>
@@ -30,6 +30,9 @@
 <li>ENTER：暫停</li>
 <li>滑鼠左鍵：放置或刪除細胞</li>
 </ul>
+
+
+<!-- more -->
 
 
 <h2>什麼是生命遊戲？</h2>
@@ -1144,12 +1147,12 @@ li {
 
 <blockquote><p>一句話摘要：使用P5.js這個JavaScript繪圖框架，重建Pong這個復古遊戲，並重新開動100sites專案</p></blockquote>
 
+<!-- more -->
+
+
 <p>因為一直很忙加上懶惰加上拖延，已經快一個月沒有持續我的100sites專案了，然現在我終於忙完了，是時候該重拾行囊，繼續走完這段成為專業全端工程師的修行之路了！</p>
 
 <p>這次的#007成品是Pong，一個很經典遊戲，左右兩位玩家操縱著各自的棒棒將球反彈給對方，漏球最多的一方輸。</p>
-
-<!-- more -->
-
 
 <p>前些日子在SITCON年有講者分享<a href="http://p5js.org">P5.js</a>這個框架，他算是我在#006 Snack裡面使用的<a href="http://processingjs.org">Processing.js</a>的兄弟，Processing.js使用Processing語言，但P5.js使用JavaScript來達到相同的功能，對於現在JS大熱門的趨勢來看，P5.js也是一個很值得學起來的框架之一呀！</p>
 
