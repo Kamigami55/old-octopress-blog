@@ -2,7 +2,7 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://easonchang.com
+url: https://easonchang.com
 title: "Eason's blog"
 subtitle: I create, therefore I am.
 author: Eason Chang
@@ -20,6 +20,14 @@ subscribe_rss: /atom.xml
 subscribe_email:
 # RSS feeds can list your email address if you like
 email:
+
+# ----------------------- #
+#   HPSTR theme setting   #
+# ----------------------- #
+
+keywords: ["Code", "Maker", "Create", "Programming"]
+avatar: "https://i.imgur.com/sv0OeoG.jpg"
+author_bio: "Hi! I am Eason! I create awesome things!"
 
 # ----------------------- #
 #    Jekyll & Plugins     #
