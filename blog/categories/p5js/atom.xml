@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: P5js | Eason's blog]]></title>
-  <link href="http://easonchang.com/blog/categories/p5js/atom.xml" rel="self"/>
-  <link href="http://easonchang.com/"/>
-  <updated>2016-09-18T23:25:05+08:00</updated>
-  <id>http://easonchang.com/</id>
+  <link href="https://easonchang.com/blog/categories/p5js/atom.xml" rel="self"/>
+  <link href="https://easonchang.com/"/>
+  <updated>2016-09-19T00:57:22+08:00</updated>
+  <id>https://easonchang.com/</id>
   <author>
     <name><![CDATA[Eason Chang]]></name>
     
@@ -15,10 +15,10 @@
   
   <entry>
     <title type="html"><![CDATA[【100sites #011】LifeGame，生命遊戲模擬無限的可能性]]></title>
-    <link href="http://easonchang.com/2016/03/28/100sites-011-lifegame/"/>
+    <link href="https://easonchang.com/2016/03/28/100sites-011-lifegame/"/>
     <updated>2016-03-28T03:54:00+08:00</updated>
-    <id>http://easonchang.com/2016/03/28/100sites-011-lifegame</id>
-    <content type="html"><![CDATA[<p><img src="http://user-image.logdown.io/user/16613/blog/15900/post/684909/8mC95QjaSfClTaJWlwvV_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-03-27%20%E4%B8%8A%E5%8D%8812.35.39.png" alt="螢幕快照 2016-03-27 上午12.35.39.png" /></p>
+    <id>https://easonchang.com/2016/03/28/100sites-011-lifegame</id>
+    <content type="html"><![CDATA[<p><img src="https://i.imgur.com/pZmuBeF.jpg" alt="螢幕快照 2016-03-27 上午12.35.39.png" /></p>
 
 <h1>LifeGame，生命遊戲模擬無限的可能性</h1>
 
@@ -50,7 +50,7 @@
 <p>僅僅這4條規則，就可以建構出一個複雜而美妙的生物遊戲世界。我們可以找到一些特殊形狀的生物單位，他們會表現出一些有趣的行為模式。</p>
 
 <p>三種經典的特殊生物單位：
-<img src="http://user-image.logdown.io/user/16613/blog/15900/post/684909/Hy1eY4clQV6fteeJUtMB_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-03-28%20%E4%B8%8A%E5%8D%8811.36.59.png" alt="螢幕快照 2016-03-28 上午11.36.59.png" />
+<img src="https://i.imgur.com/tCVC0LI.jpg" alt="螢幕快照 2016-03-28 上午11.36.59.png" />
 - 左邊的Blinker(信號燈)會以特定週期變化
 - 中間的Spaceship(太空船)會往右下角移動（你也可以設計出往其他方向移動的船)
 - 右邊的Beehive(蜂窩)則會保持靜止</p>
@@ -290,10 +290,10 @@ function freshMap() {
   
   <entry>
     <title type="html"><![CDATA[【100sites #010】Piano，用P5js的sound函式庫實作虛擬鋼琴]]></title>
-    <link href="http://easonchang.com/2016/03/25/100sites-010-piano/"/>
+    <link href="https://easonchang.com/2016/03/25/100sites-010-piano/"/>
     <updated>2016-03-25T17:57:00+08:00</updated>
-    <id>http://easonchang.com/2016/03/25/100sites-010-piano</id>
-    <content type="html"><![CDATA[<p><img src="http://user-image.logdown.io/user/16613/blog/15900/post/680679/LBpcbJhTT1ClVUbKTHPm_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-03-26%20%E4%B8%8A%E5%8D%881.18.01.png" alt="螢幕快照 2016-03-26 上午1.18.01.png" /></p>
+    <id>https://easonchang.com/2016/03/25/100sites-010-piano</id>
+    <content type="html"><![CDATA[<p><img src="https://i.imgur.com/8aBbIhk.jpg" alt="螢幕快照 2016-03-26 上午1.18.01.png" /></p>
 
 <h1>Piano，用P5js的sound函式庫實作虛擬鋼琴</h1>
 
@@ -602,10 +602,10 @@ function keyReleased() {
   
   <entry>
     <title type="html"><![CDATA[【100sites #009】Flame，P5js酷炫小動畫]]></title>
-    <link href="http://easonchang.com/2016/03/23/100sites-009-flame/"/>
+    <link href="https://easonchang.com/2016/03/23/100sites-009-flame/"/>
     <updated>2016-03-23T07:05:00+08:00</updated>
-    <id>http://easonchang.com/2016/03/23/100sites-009-flame</id>
-    <content type="html"><![CDATA[<p><img src="http://user-image.logdown.io/user/16613/blog/15900/post/670772/PoU9jCY6SQGh74CXEgC3_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-03-23%20%E4%B8%8A%E5%8D%884.08.53.png" alt="螢幕快照 2016-03-23 上午4.08.53.png" /></p>
+    <id>https://easonchang.com/2016/03/23/100sites-009-flame</id>
+    <content type="html"><![CDATA[<p><img src="https://i.imgur.com/rqkEbP4.jpg" alt="螢幕快照 2016-03-23 上午4.08.53.png" /></p>
 
 <blockquote><p>一句話摘要：使用P5.js製作的類火焰互動效果</p></blockquote>
 
@@ -623,7 +623,7 @@ function keyReleased() {
 <p>點滑鼠左鍵可以切換樣式，共有4種樣式。</p>
 
 <p>另外一種樣式：
-<img src="http://user-image.logdown.io/user/16613/blog/15900/post/670772/1wuhemM4Tu6djxvgu8Pv_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-03-23%20%E4%B8%8A%E5%8D%884.09.52.png" alt="螢幕快照 2016-03-23 上午4.09.52.png" /></p>
+<img src="https://i.imgur.com/2hriTFz.jpg" alt="螢幕快照 2016-03-23 上午4.09.52.png" /></p>
 
 <p>原始碼：
 <figure class='code'><figcaption><span>index.html</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>

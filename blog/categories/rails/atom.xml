@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Rails | Eason's blog]]></title>
-  <link href="http://easonchang.com/blog/categories/rails/atom.xml" rel="self"/>
-  <link href="http://easonchang.com/"/>
-  <updated>2016-09-18T23:25:05+08:00</updated>
-  <id>http://easonchang.com/</id>
+  <link href="https://easonchang.com/blog/categories/rails/atom.xml" rel="self"/>
+  <link href="https://easonchang.com/"/>
+  <updated>2016-09-19T00:57:22+08:00</updated>
+  <id>https://easonchang.com/</id>
   <author>
     <name><![CDATA[Eason Chang]]></name>
     
@@ -15,10 +15,10 @@
   
   <entry>
     <title type="html"><![CDATA[使用production Mode啟動你的rails專案]]></title>
-    <link href="http://easonchang.com/2016/08/16/start-your-rails-project-with-production-mode/"/>
+    <link href="https://easonchang.com/2016/08/16/start-your-rails-project-with-production-mode/"/>
     <updated>2016-08-16T02:34:00+08:00</updated>
-    <id>http://easonchang.com/2016/08/16/start-your-rails-project-with-production-mode</id>
-    <content type="html"><![CDATA[<p><img src="http://imgur.com/a21E49E.jpg" alt="rails-production" /></p>
+    <id>https://easonchang.com/2016/08/16/start-your-rails-project-with-production-mode</id>
+    <content type="html"><![CDATA[<p><img src="https://imgur.com/a21E49E.jpg" alt="rails-production" /></p>
 
 <h1>Quick Reference:</h1>
 
@@ -101,7 +101,7 @@ export SECRET_KEY_BASE=[此處貼上你剛剛產生的密鑰]
 
 <p>你的畫面應該跟我很像，怎麼醜不拉幾的？我不眠不休設計出來的精美網頁呢？</p>
 
-<p><img src="http://i.imgur.com/oVAdVyK.png?2" alt="Imgur" /></p>
+<p><img src="https://i.imgur.com/oVAdVyK.png?2" alt="Imgur" /></p>
 
 <p>那是因為你還沒有告訴rails你用到了哪些設計元素，接下來的步驟教你怎麼做：</p>
 
@@ -184,7 +184,7 @@ Rails.application.config.assets.precompile += [
 
 <p>使用瀏覽器連入<code>localhost:3000</code>，就可以看到你速度大幅提升的美麗網頁啦！</p>
 
-<p><img src="http://imgur.com/IGxS4QM.jpg" alt="imgur" /></p>
+<p><img src="https://imgur.com/IGxS4QM.jpg" alt="imgur" /></p>
 
 <hr />
 

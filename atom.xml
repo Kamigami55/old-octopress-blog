@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Eason's blog]]></title>
-  <link href="http://easonchang.com/atom.xml" rel="self"/>
-  <link href="http://easonchang.com/"/>
-  <updated>2016-09-18T23:25:05+08:00</updated>
-  <id>http://easonchang.com/</id>
+  <link href="https://easonchang.com/atom.xml" rel="self"/>
+  <link href="https://easonchang.com/"/>
+  <updated>2016-09-19T00:57:22+08:00</updated>
+  <id>https://easonchang.com/</id>
   <author>
     <name><![CDATA[Eason Chang]]></name>
     
@@ -15,10 +15,10 @@
   
   <entry>
     <title type="html"><![CDATA[【大夢日記#13】必須得一次過關的期末考！？]]></title>
-    <link href="http://easonchang.com/2016/08/22/dream-diary-13-before-final-exam/"/>
+    <link href="https://easonchang.com/2016/08/22/dream-diary-13-before-final-exam/"/>
     <updated>2016-08-22T21:43:15+08:00</updated>
-    <id>http://easonchang.com/2016/08/22/dream-diary-13-before-final-exam</id>
-    <content type="html"><![CDATA[<p><img src="http://i.imgur.com/QZzcEml.jpg?2" alt="flower" /></p>
+    <id>https://easonchang.com/2016/08/22/dream-diary-13-before-final-exam</id>
+    <content type="html"><![CDATA[<p><img src="https://i.imgur.com/QZzcEml.jpg?2" alt="flower" /></p>
 
 <p>-2016.08.22-</p>
 
@@ -54,10 +54,10 @@
   
   <entry>
     <title type="html"><![CDATA[【大夢日記#12】想飛？得先遵守遊戲規則！飛航法規！]]></title>
-    <link href="http://easonchang.com/2016/08/19/dream-diary-12-law/"/>
+    <link href="https://easonchang.com/2016/08/19/dream-diary-12-law/"/>
     <updated>2016-08-19T08:24:00+08:00</updated>
-    <id>http://easonchang.com/2016/08/19/dream-diary-12-law</id>
-    <content type="html"><![CDATA[<p><img src="http://imgur.com/dmlO457.jpg" alt="imgur" /></p>
+    <id>https://easonchang.com/2016/08/19/dream-diary-12-law</id>
+    <content type="html"><![CDATA[<p><img src="https://imgur.com/dmlO457.jpg" alt="imgur" /></p>
 
 <p>-2016.08.19-</p>
 
@@ -101,7 +101,7 @@
 
 <p>它在機場的另一頭，閃爍速率比想像中的慢，而且超暗的，光線都被旁邊的照明燈蓋過去了，實在是挺不好找的，不過找到了還是令人挺興奮的。</p>
 
-<p><img src="http://imgur.com/DgmADOw.jpg" alt="imgur" /></p>
+<p><img src="https://imgur.com/DgmADOw.jpg" alt="imgur" /></p>
 
 <p>（左上角的紅圈處就是機場警示燈，由於手上沒有晚上的照片，根據我的記憶應該是那顆東西沒錯，反正我想表達的意思就是他真的很難找）</p>
 ]]></content>
@@ -109,10 +109,10 @@
   
   <entry>
     <title type="html"><![CDATA[在MacOS使用putty Key進行ssh連線]]></title>
-    <link href="http://easonchang.com/2016/08/18/using-ssh-with-putty-key-on-macos/"/>
+    <link href="https://easonchang.com/2016/08/18/using-ssh-with-putty-key-on-macos/"/>
     <updated>2016-08-18T11:00:00+08:00</updated>
-    <id>http://easonchang.com/2016/08/18/using-ssh-with-putty-key-on-macos</id>
-    <content type="html"><![CDATA[<p><img src="http://imgur.com/3B3Hrd4.png" alt="putty-ssh" /></p>
+    <id>https://easonchang.com/2016/08/18/using-ssh-with-putty-key-on-macos</id>
+    <content type="html"><![CDATA[<p><img src="https://imgur.com/3B3Hrd4.png" alt="putty-ssh" /></p>
 
 <h1>Quick Reference：</h1>
 
@@ -177,10 +177,10 @@
   
   <entry>
     <title type="html"><![CDATA[【大夢日記#11】撰寫飛行計劃！全部一起上吧！]]></title>
-    <link href="http://easonchang.com/2016/08/18/dream-diary-11-flight-plan/"/>
+    <link href="https://easonchang.com/2016/08/18/dream-diary-11-flight-plan/"/>
     <updated>2016-08-18T05:38:00+08:00</updated>
-    <id>http://easonchang.com/2016/08/18/dream-diary-11-flight-plan</id>
-    <content type="html"><![CDATA[<p><img src="http://imgur.com/JOwNCEy.jpg" alt="flight-plan" /></p>
+    <id>https://easonchang.com/2016/08/18/dream-diary-11-flight-plan</id>
+    <content type="html"><![CDATA[<p><img src="https://imgur.com/JOwNCEy.jpg" alt="flight-plan" /></p>
 
 <p>-2016.08.18-</p>
 
@@ -213,10 +213,10 @@
   
   <entry>
     <title type="html"><![CDATA[【大夢日記#10】飛航小道具登場！航圖 & Flight Computer]]></title>
-    <link href="http://easonchang.com/2016/08/17/dream-diary-10-flight-computer/"/>
+    <link href="https://easonchang.com/2016/08/17/dream-diary-10-flight-computer/"/>
     <updated>2016-08-17T14:10:00+08:00</updated>
-    <id>http://easonchang.com/2016/08/17/dream-diary-10-flight-computer</id>
-    <content type="html"><![CDATA[<p><img src="http://imgur.com/TeflR9p.jpg" alt="ploter" /></p>
+    <id>https://easonchang.com/2016/08/17/dream-diary-10-flight-computer</id>
+    <content type="html"><![CDATA[<p><img src="https://imgur.com/TeflR9p.jpg" alt="ploter" /></p>
 
 <p>-2016.08.17-</p>
 
@@ -228,7 +228,7 @@
 
 <p>下面這就是一份航圖：</p>
 
-<p><img src="http://imgur.com/YRoHdn1.jpg" alt="sky-map" /></p>
+<p><img src="https://imgur.com/YRoHdn1.jpg" alt="sky-map" /></p>
 
 <p>資料來源：SkyVector <a href="https://skyvector.com/">https://skyvector.com/</a></p>
 
@@ -281,10 +281,10 @@
   
   <entry>
     <title type="html"><![CDATA[使用production Mode啟動你的rails專案]]></title>
-    <link href="http://easonchang.com/2016/08/16/start-your-rails-project-with-production-mode/"/>
+    <link href="https://easonchang.com/2016/08/16/start-your-rails-project-with-production-mode/"/>
     <updated>2016-08-16T02:34:00+08:00</updated>
-    <id>http://easonchang.com/2016/08/16/start-your-rails-project-with-production-mode</id>
-    <content type="html"><![CDATA[<p><img src="http://imgur.com/a21E49E.jpg" alt="rails-production" /></p>
+    <id>https://easonchang.com/2016/08/16/start-your-rails-project-with-production-mode</id>
+    <content type="html"><![CDATA[<p><img src="https://imgur.com/a21E49E.jpg" alt="rails-production" /></p>
 
 <h1>Quick Reference:</h1>
 
@@ -403,7 +403,7 @@
 
 <p>你的畫面應該跟我很像，怎麼醜不拉幾的？我不眠不休設計出來的精美網頁呢？</p>
 
-<p><img src="http://i.imgur.com/oVAdVyK.png?2" alt="Imgur" /></p>
+<p><img src="https://i.imgur.com/oVAdVyK.png?2" alt="Imgur" /></p>
 
 <p>那是因為你還沒有告訴rails你用到了哪些設計元素，接下來的步驟教你怎麼做：</p>
 
@@ -506,7 +506,7 @@
 
 <p>使用瀏覽器連入<code>localhost:3000</code>，就可以看到你速度大幅提升的美麗網頁啦！</p>
 
-<p><img src="http://imgur.com/IGxS4QM.jpg" alt="imgur" /></p>
+<p><img src="https://imgur.com/IGxS4QM.jpg" alt="imgur" /></p>
 
 <hr />
 
@@ -524,10 +524,10 @@
   
   <entry>
     <title type="html"><![CDATA[【大夢日記#09】令人崩潰的氣象學]]></title>
-    <link href="http://easonchang.com/2016/08/15/dream-diary-09-fxxking-meteorology/"/>
+    <link href="https://easonchang.com/2016/08/15/dream-diary-09-fxxking-meteorology/"/>
     <updated>2016-08-15T12:23:00+08:00</updated>
-    <id>http://easonchang.com/2016/08/15/dream-diary-09-fxxking-meteorology</id>
-    <content type="html"><![CDATA[<p><img src="http://imgur.com/6reRO3i.jpg" alt="weather" /></p>
+    <id>https://easonchang.com/2016/08/15/dream-diary-09-fxxking-meteorology</id>
+    <content type="html"><![CDATA[<p><img src="https://imgur.com/6reRO3i.jpg" alt="weather" /></p>
 
 <p>-2016.08.15-</p>
 
@@ -551,7 +551,7 @@
 
 <p>下面這張圖就是一份METAR（唸作「咪塔」），這是我在撰文當下，台東豐年機場的天氣。</p>
 
-<p><img src="http://imgur.com/H1ZBYib.jpg" alt="metar" /></p>
+<p><img src="https://imgur.com/H1ZBYib.jpg" alt="metar" /></p>
 
 <p>有時候我們只看得到右下角的這串咒語</p>
 
@@ -563,7 +563,7 @@
 
 <p>至於怎麼轉換呢？我們先來看看下面這張精美的符號對照表～</p>
 
-<p><img src="http://imgur.com/CLkDR9E.jpg" alt="metar-code" /></p>
+<p><img src="https://imgur.com/CLkDR9E.jpg" alt="metar-code" /></p>
 
 <p>METAR/TAF Abbreviations: <a href="http://www.moratech.com/aviation/metaf-abbrev.html">http://www.moratech.com/aviation/metaf-abbrev.html</a></p>
 
@@ -601,10 +601,10 @@
   
   <entry>
     <title type="html"><![CDATA[【大夢日記#08】期中考！！]]></title>
-    <link href="http://easonchang.com/2016/08/10/dream-diary-08-mid-exam/"/>
+    <link href="https://easonchang.com/2016/08/10/dream-diary-08-mid-exam/"/>
     <updated>2016-08-10T09:54:00+08:00</updated>
-    <id>http://easonchang.com/2016/08/10/dream-diary-08-mid-exam</id>
-    <content type="html"><![CDATA[<p><img src="http://imgur.com/z5O6iTZ.jpg" alt="test" /></p>
+    <id>https://easonchang.com/2016/08/10/dream-diary-08-mid-exam</id>
+    <content type="html"><![CDATA[<p><img src="https://imgur.com/z5O6iTZ.jpg" alt="test" /></p>
 
 <p>-2016.08.10-</p>
 
@@ -638,10 +638,10 @@
   
   <entry>
     <title type="html"><![CDATA[【大夢日記#07】期中試煉前夕]]></title>
-    <link href="http://easonchang.com/2016/08/09/dream-diary-07-before-mid-exam/"/>
+    <link href="https://easonchang.com/2016/08/09/dream-diary-07-before-mid-exam/"/>
     <updated>2016-08-09T00:36:00+08:00</updated>
-    <id>http://easonchang.com/2016/08/09/dream-diary-07-before-mid-exam</id>
-    <content type="html"><![CDATA[<p><img src="http://imgur.com/7OzBwWf.jpg" alt="cloud" /></p>
+    <id>https://easonchang.com/2016/08/09/dream-diary-07-before-mid-exam</id>
+    <content type="html"><![CDATA[<p><img src="https://imgur.com/7OzBwWf.jpg" alt="cloud" /></p>
 
 <p>-2016.08.09-</p>
 
@@ -669,10 +669,10 @@
   
   <entry>
     <title type="html"><![CDATA[【大夢日記#06】衝衝衝！課程進度！]]></title>
-    <link href="http://easonchang.com/2016/08/08/dream-diary-06-gogogo/"/>
+    <link href="https://easonchang.com/2016/08/08/dream-diary-06-gogogo/"/>
     <updated>2016-08-08T00:32:00+08:00</updated>
-    <id>http://easonchang.com/2016/08/08/dream-diary-06-gogogo</id>
-    <content type="html"><![CDATA[<p><img src="http://imgur.com/otqBC6g.jpg" alt="compass" /></p>
+    <id>https://easonchang.com/2016/08/08/dream-diary-06-gogogo</id>
+    <content type="html"><![CDATA[<p><img src="https://imgur.com/otqBC6g.jpg" alt="compass" /></p>
 
 <p>-2016.08.08-</p>
 
@@ -702,10 +702,10 @@
   
   <entry>
     <title type="html"><![CDATA[【大夢日記#05】逐漸適應的日常]]></title>
-    <link href="http://easonchang.com/2016/08/05/dream-diary-05-daily-life/"/>
+    <link href="https://easonchang.com/2016/08/05/dream-diary-05-daily-life/"/>
     <updated>2016-08-05T08:52:00+08:00</updated>
-    <id>http://easonchang.com/2016/08/05/dream-diary-05-daily-life</id>
-    <content type="html"><![CDATA[<p><img src="http://imgur.com/8UIaur6.jpg" alt="commute" /></p>
+    <id>https://easonchang.com/2016/08/05/dream-diary-05-daily-life</id>
+    <content type="html"><![CDATA[<p><img src="https://imgur.com/8UIaur6.jpg" alt="commute" /></p>
 
 <p>-2016.08.05-</p>
 
@@ -741,10 +741,10 @@
   
   <entry>
     <title type="html"><![CDATA[【大夢日記#04】精神不濟的一天]]></title>
-    <link href="http://easonchang.com/2016/08/04/dream-diary-04-a-tired-day/"/>
+    <link href="https://easonchang.com/2016/08/04/dream-diary-04-a-tired-day/"/>
     <updated>2016-08-04T10:08:00+08:00</updated>
-    <id>http://easonchang.com/2016/08/04/dream-diary-04-a-tired-day</id>
-    <content type="html"><![CDATA[<p><img src="http://imgur.com/1sLkrhm.jpg" alt="USB" /></p>
+    <id>https://easonchang.com/2016/08/04/dream-diary-04-a-tired-day</id>
+    <content type="html"><![CDATA[<p><img src="https://imgur.com/1sLkrhm.jpg" alt="USB" /></p>
 
 <p>-2016.08.04-</p>
 
@@ -776,10 +776,10 @@
   
   <entry>
     <title type="html"><![CDATA[【大夢日記#03】Self Study！晚自習時間]]></title>
-    <link href="http://easonchang.com/2016/08/03/dream-diary-03-self-study/"/>
+    <link href="https://easonchang.com/2016/08/03/dream-diary-03-self-study/"/>
     <updated>2016-08-03T10:39:00+08:00</updated>
-    <id>http://easonchang.com/2016/08/03/dream-diary-03-self-study</id>
-    <content type="html"><![CDATA[<p><img src="http://imgur.com/bMdYmyf.jpg" alt="notes" /></p>
+    <id>https://easonchang.com/2016/08/03/dream-diary-03-self-study</id>
+    <content type="html"><![CDATA[<p><img src="https://imgur.com/bMdYmyf.jpg" alt="notes" /></p>
 
 <p>-2016.08.03-</p>
 
@@ -809,10 +809,10 @@
   
   <entry>
     <title type="html"><![CDATA[【大夢日記#02】挑戰襲來，全新的知識]]></title>
-    <link href="http://easonchang.com/2016/08/02/dream-diary-02-coming-challenges/"/>
+    <link href="https://easonchang.com/2016/08/02/dream-diary-02-coming-challenges/"/>
     <updated>2016-08-02T14:51:00+08:00</updated>
-    <id>http://easonchang.com/2016/08/02/dream-diary-02-coming-challenges</id>
-    <content type="html"><![CDATA[<p><img src="http://imgur.com/bQIQxO1.jpg" alt="Supporter" /></p>
+    <id>https://easonchang.com/2016/08/02/dream-diary-02-coming-challenges</id>
+    <content type="html"><![CDATA[<p><img src="https://imgur.com/bQIQxO1.jpg" alt="Supporter" /></p>
 
 <p>-2016.08.02-</p>
 
@@ -848,10 +848,10 @@
   
   <entry>
     <title type="html"><![CDATA[【大夢日記#01】故事開始！適應新環境]]></title>
-    <link href="http://easonchang.com/2016/08/01/dream-diary-01-start/"/>
+    <link href="https://easonchang.com/2016/08/01/dream-diary-01-start/"/>
     <updated>2016-08-01T00:37:00+08:00</updated>
-    <id>http://easonchang.com/2016/08/01/dream-diary-01-start</id>
-    <content type="html"><![CDATA[<p><img src="http://imgur.com/Bm0rRxK.jpg" alt="apex" /></p>
+    <id>https://easonchang.com/2016/08/01/dream-diary-01-start</id>
+    <content type="html"><![CDATA[<p><img src="https://imgur.com/Bm0rRxK.jpg" alt="apex" /></p>
 
 <p>-2016/08/01-</p>
 
@@ -895,12 +895,12 @@
   
   <entry>
     <title type="html"><![CDATA[【DailyUI #003】Landing Page]]></title>
-    <link href="http://easonchang.com/2016/05/10/dailyui-003-landing-page/"/>
+    <link href="https://easonchang.com/2016/05/10/dailyui-003-landing-page/"/>
     <updated>2016-05-10T19:43:00+08:00</updated>
-    <id>http://easonchang.com/2016/05/10/dailyui-003-landing-page</id>
-    <content type="html"><![CDATA[<p><img src="http://user-image.logdown.io/user/16613/blog/15900/post/731867/KwBQj7lSZKA1S3kuSlxn_%E6%A5%B5%E9%99%90%E5%9C%88landing-page.jpg" alt="極限圈landing-page.jpg" /></p>
+    <id>https://easonchang.com/2016/05/10/dailyui-003-landing-page</id>
+    <content type="html"><![CDATA[<p><img src="https://i.imgur.com/5nDhx57.jpg" alt="極限圈landing-page.jpg" /></p>
 
-<p><a href="http://imgur.com/SXfzDlx">HD圖檔</a></p>
+<p><a href="https://imgur.com/SXfzDlx">HD圖檔</a></p>
 
 <p>這是今天DailyUI的成果，極限圈的Landing Page。</p>
 
@@ -928,10 +928,10 @@
   
   <entry>
     <title type="html"><![CDATA[【DailyUI #002】Credit Card Checkout]]></title>
-    <link href="http://easonchang.com/2016/05/09/dailyui-002-credit-card-checkout/"/>
+    <link href="https://easonchang.com/2016/05/09/dailyui-002-credit-card-checkout/"/>
     <updated>2016-05-09T21:03:00+08:00</updated>
-    <id>http://easonchang.com/2016/05/09/dailyui-002-credit-card-checkout</id>
-    <content type="html"><![CDATA[<p><img src="http://user-image.logdown.io/user/16613/blog/15900/post/731508/NPDyMcXORaWdN4bj9uDj_dailyui_002_credit.png" alt="dailyui_002_credit.png" /></p>
+    <id>https://easonchang.com/2016/05/09/dailyui-002-credit-card-checkout</id>
+    <content type="html"><![CDATA[<p><img src="https://i.imgur.com/hEbjURo.jpg" alt="dailyui_002_credit.png" /></p>
 
 <p><a href="http://kamigami55.github.io/DailyUI/002_creditCardCheckout/">點我試試Live Demo</a></p>
 
@@ -948,10 +948,10 @@
   
   <entry>
     <title type="html"><![CDATA[【DailyUI #001】Sign Up]]></title>
-    <link href="http://easonchang.com/2016/05/09/dailyui-001-sign-up/"/>
+    <link href="https://easonchang.com/2016/05/09/dailyui-001-sign-up/"/>
     <updated>2016-05-09T07:28:00+08:00</updated>
-    <id>http://easonchang.com/2016/05/09/dailyui-001-sign-up</id>
-    <content type="html"><![CDATA[<p><img src="http://user-image.logdown.io/user/16613/blog/15900/post/731238/gGkjq5L8SMyz9NMS0In2_Daily-UI-001.png" alt="Daily-UI-001.png" /></p>
+    <id>https://easonchang.com/2016/05/09/dailyui-001-sign-up</id>
+    <content type="html"><![CDATA[<p><img src="https://i.imgur.com/rWNKTqv.jpg" alt="Daily-UI-001.png" /></p>
 
 <h1>我今天做了什麼</h1>
 
@@ -972,10 +972,10 @@
   
   <entry>
     <title type="html"><![CDATA[【DailyUI #000】成為最強前端設計師吧]]></title>
-    <link href="http://easonchang.com/2016/05/08/dailyui-000-become-awesome-front-end-designer/"/>
+    <link href="https://easonchang.com/2016/05/08/dailyui-000-become-awesome-front-end-designer/"/>
     <updated>2016-05-08T14:50:00+08:00</updated>
-    <id>http://easonchang.com/2016/05/08/dailyui-000-become-awesome-front-end-designer</id>
-    <content type="html"><![CDATA[<p><img src="http://user-image.logdown.io/user/16613/blog/15900/post/731238/JEjpZ1kkQpSUtPAwZ0gw_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-05-09%20%E4%B8%8B%E5%8D%883.16.31.png" alt="DailyUI.png" /></p>
+    <id>https://easonchang.com/2016/05/08/dailyui-000-become-awesome-front-end-designer</id>
+    <content type="html"><![CDATA[<p><img src="https://i.imgur.com/yMgo3z4.jpg" alt="DailyUI.png" /></p>
 
 <h1>什麼是 DailyUI</h1>
 
@@ -999,20 +999,20 @@
 
 <h1>我的挑戰紀錄</h1>
 
-<p><a href="http://easonchang.com/2016/05/09/dailyui-001-sign-up/">【DailyUI #001】Sign Up</a></p>
+<p><a href="https://easonchang.com/2016/05/09/dailyui-001-sign-up/">【DailyUI #001】Sign Up</a></p>
 
-<p><a href="http://easonchang.com/2016/05/09/dailyui-002-credit-card-checkout/">【DailyUI #002】Credit Card Checkout</a></p>
+<p><a href="https://easonchang.com/2016/05/09/dailyui-002-credit-card-checkout/">【DailyUI #002】Credit Card Checkout</a></p>
 
-<p><a href="http://easonchang.com/2016/05/10/dailyui-003-landing-page/">【DailyUI #003】Landing Page</a></p>
+<p><a href="https://easonchang.com/2016/05/10/dailyui-003-landing-page/">【DailyUI #003】Landing Page</a></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[【閱讀筆記】從《他是玩真的！》汲取鋼鐵人Elon Musk創造未來的關鍵能力]]></title>
-    <link href="http://easonchang.com/2016/04/16/10-keys-of-elon-musk/"/>
+    <link href="https://easonchang.com/2016/04/16/10-keys-of-elon-musk/"/>
     <updated>2016-04-16T18:30:00+08:00</updated>
-    <id>http://easonchang.com/2016/04/16/10-keys-of-elon-musk</id>
-    <content type="html"><![CDATA[<p><img src="http://user-image.logdown.io/user/16613/blog/15900/post/711332/N4eayMy0Q1qj99bbDyPk_IMG_2441.JPG" alt="IMG_2441.JPG" /></p>
+    <id>https://easonchang.com/2016/04/16/10-keys-of-elon-musk</id>
+    <content type="html"><![CDATA[<p><img src="https://i.imgur.com/HqlXDN7.jpg" alt="IMG_2441.JPG" /></p>
 
 <p>《他是玩真的！：「鋼鐵人」伊隆·馬斯克改變未來的10種能力》
 作者：楊士範(Mario)、吳居叡(G Wu)、鄭緯筌(Vista)</p>
