@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://kamigami55.github.io/sitemap.xml 
+Sitemap: http://easonchang.com/sitemap.xml 
