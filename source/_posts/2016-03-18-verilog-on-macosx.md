@@ -12,9 +12,9 @@ categories: [Verilog, Tutorial, MacOSX]
 
 為了資工系的數位電路設計課，我們需要一個能夠編譯Verilog這個硬體描述語言(HDL)的環境，並且要能模擬電路運作狀況加上顯示波形。
 
-老師建議的編譯環境是[ModelSim](https://www.mentor.com/products/fpga/model/)，但是它只支援Windows，我目前還沒找到Mac OS X或是Linux的版本，所以我只好另尋他法，找看看有沒有其他能夠編譯Verilog的工具。
-
 <!-- more -->
+
+老師建議的編譯環境是[ModelSim](https://www.mentor.com/products/fpga/model/)，但是它只支援Windows，我目前還沒找到Mac OS X或是Linux的版本，所以我只好另尋他法，找看看有沒有其他能夠編譯Verilog的工具。
 
 我找到了[Icarus Verilog](http://iverilog.icarus.com/home)，它是針對Linux的Verilog編譯器，而在Mac OS X底下，我們可以藉由Command Line來使用它。
 

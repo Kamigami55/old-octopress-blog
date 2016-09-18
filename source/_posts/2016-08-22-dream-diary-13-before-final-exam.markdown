@@ -14,6 +14,8 @@ categories: 大夢日記
 
 今日課程為「VOR」以及「航空生理學」，真夠嗆的。
 
+<!-- more -->
+
 # VOR
 
 VHF Omni-directional Range (VOR)，中文為「[特高頻全向信標定位台](https://zh.wikipedia.org/wiki/%E7%94%9A%E9%AB%98%E9%A2%91%E5%85%A8%E5%90%91%E4%BF%A1%E6%A0%87)」。你可以把它想像成固定在地面上的基地台，他會向空中發射360度雷達波，天上的飛機接收到了，就可以知道自己正在VOR站的哪個方位，可以用於定位。

@@ -20,6 +20,8 @@ $ vim config/environments/production.rb  //將這行改成true: config.serve_sta
 $ rails s -e production
 ```
 
+<!-- more -->
+
 ---
 
 # 什麼是production模式？為什麼要用它？

@@ -16,6 +16,8 @@ $ chmod 400 <your-ssh-key.pem> #調整.pem權限
 $ ssh -i <your-ssh-key.pem> <user@your.server.com> #使用.pem進行ssh連線
 ```
 
+<!-- more -->
+
 ---
 
 突然發現學程的網站有小bug，所以需要連上網站所在的AWS(Amazon Web Service)伺服器裡修改程式碼。但建置網站的學長只留下了一個.ppk的putty專用SSH認證檔，而我這台破Mac實在沒容量給我再灌一台Windows然後裝上Putty來連線，所以我就開始研究如何讓MacOS內建的ssh指令也能吃進這支.ppk的putty key認證檔。

@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "使用Octopress寫部落格"
+title: "建置Octopress"
 date: 2016-08-21 02:00:49 +0800
 comments: true
-categories: [Octopress, blog, Tutorial]
+categories: [Octopress, Blog, Tutorial]
 published: false
 ---
 
@@ -15,6 +15,8 @@ cd octopress
 bundle install
 rake install
 ```
+
+<!-- more -->
 
 在github上新建一個repo，命名為 `your_username.github.io` ，your_username請自行替換為你的github帳號的名稱
 
