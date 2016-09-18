@@ -3,7 +3,7 @@ layout: post
 title: '【DailyUI #001】Sign Up'
 date: 2016-05-09 07:28
 comments: true
-categories: [DaliyUI, Project]
+categories: [DailyUI, Project, Design]
 ---
 ![Daily-UI-001.png](http://user-image.logdown.io/user/16613/blog/15900/post/731238/gGkjq5L8SMyz9NMS0In2_Daily-UI-001.png)
 
@@ -18,4 +18,5 @@ categories: [DaliyUI, Project]
 <!-- more -->
 
 [點我玩線上Demo](http://kamigami55.github.io/DailyUI/001_signup/)
+
 [點我查看Github原始碼](https://github.com/Kamigami55/DailyUI/tree/master/001_signup)

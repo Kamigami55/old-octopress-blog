@@ -3,11 +3,12 @@ layout: post
 title: '【DailyUI #002】Credit Card Checkout'
 date: 2016-05-09 21:03
 comments: true
-categories: 
+categories: [DailyUI, Design, Project]
 ---
 ![dailyui_002_credit.png](http://user-image.logdown.io/user/16613/blog/15900/post/731508/NPDyMcXORaWdN4bj9uDj_dailyui_002_credit.png)
 
 [點我試試Live Demo](http://kamigami55.github.io/DailyUI/002_creditCardCheckout/)
+
 [點我看看Github原始碼(可是完全沒有整理超級亂我覺得你還是不要看好了)](https://github.com/Kamigami55/DailyUI/tree/master/002_creditCardCheckout)
 
 It's DailyUI day #2!

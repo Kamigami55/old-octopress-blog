@@ -3,7 +3,7 @@ layout: post
 title: '【DailyUI #000】成為最強前端設計師吧'
 date: 2016-05-08 14:50
 comments: true
-categories: [DailyUI, Design]
+categories: [DailyUI, Design, Project]
 ---
 ![DailyUI.png](http://user-image.logdown.io/user/16613/blog/15900/post/731238/JEjpZ1kkQpSUtPAwZ0gw_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-05-09%20%E4%B8%8B%E5%8D%883.16.31.png)
 
@@ -25,6 +25,8 @@ categories: [DailyUI, Design]
 
 # 我的挑戰紀錄
 
-[【DailyUI #001】Sign Up](http://easonchang.logdown.com/posts/731238-dailyui-001-sign-up)
-[【DailyUI #002】Credit Card Checkout](http://easonchang.logdown.com/posts/731508-dailyui-002-credit-card-checkout)
-[【DailyUI #003】Landing Page](http://easonchang.logdown.com/posts/731867-dailyui-003-landing-page)
+[【DailyUI #001】Sign Up](http://easonchang.com/2016/05/09/dailyui-001-sign-up/)
+
+[【DailyUI #002】Credit Card Checkout](http://easonchang.com/2016/05/09/dailyui-002-credit-card-checkout/)
+
+[【DailyUI #003】Landing Page](http://easonchang.com/2016/05/10/dailyui-003-landing-page/)

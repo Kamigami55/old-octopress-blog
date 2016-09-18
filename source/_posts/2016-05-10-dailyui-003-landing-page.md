@@ -17,7 +17,9 @@ categories: [DailyUI, Project, Design]
 <!-- more -->
 
 這次我使用Keynote作為拼圖軟體（非常坑爹，可是沒錢買PS和AI啊，之後應該會去找開源的替代方案）
+
 背景圖片來源：[Librestock](librestock.com)（超推）
+
 向量圖片來源：[Freepik](freepik.com)（也是超推）
 
 在山峰上放字的靈感來源是這支影片(3:28處)：https://www.youtube.com/watch?v=1Huz2P7tdYk
