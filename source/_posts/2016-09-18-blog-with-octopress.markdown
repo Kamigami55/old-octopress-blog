@@ -3,7 +3,7 @@ layout: post
 title: "使用Octopress寫部落格"
 date: 2016-08-21 02:00:49 +0800
 comments: true
-categories: [Octopress, blog]
+categories: [Octopress, blog, Tutorial]
 published: false
 ---
 
