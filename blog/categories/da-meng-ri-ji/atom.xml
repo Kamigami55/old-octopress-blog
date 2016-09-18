@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
-  <link href="http://kamigami55.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: 大夢日記 | My Octopress Blog]]></title>
+  <link href="http://kamigami55.github.io/blog/categories/da-meng-ri-ji/atom.xml" rel="self"/>
   <link href="http://kamigami55.github.io/"/>
   <updated>2016-09-18T17:02:32+08:00</updated>
   <id>http://kamigami55.github.io/</id>
@@ -66,55 +66,6 @@
 <p>不管怎樣明天終究是要面對考試的，思考人生什麼的就先擱一邊，我還有大半本的法規、氣象解碼符號表、及兩張練習卷尚未檢討呢！就讓我先去努力一陣吧！至少期末考的準備程度會比期中考高，雖然範圍大小是好幾倍所以整個算起來沒差&hellip;&hellip;。總之加油吧！</p>
 
 <p>目標永遠是一次過關！讓後天的松山機場塔台行可以專心<del>玩耍！</del>交流！</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[使用Octopress寫部落格]]></title>
-    <link href="http://kamigami55.github.io/blog/2016/08/21/write-blog-with-octopress/"/>
-    <updated>2016-08-21T02:00:49+08:00</updated>
-    <id>http://kamigami55.github.io/blog/2016/08/21/write-blog-with-octopress</id>
-    <content type="html"><![CDATA[<p>要先安裝git和ruby</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>git clone git://github.com/imathis/octopress.git octopress
-</span><span class='line'><span class="nb">cd </span>octopress
-</span><span class='line'>bundle install
-</span><span class='line'>rake install
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>在github上新建一個repo，命名為 <code>your_username.github.io</code> ，your_username請自行替換為你的github帳號的名稱</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake setup_github_pages
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>將<code>https://github.com/Kamigami55/Kamigami55.github.io.git</code>貼進去</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake generate
-</span><span class='line'>rake deploy
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>git add .
-</span><span class='line'>git commit -m <span class="s1">&#39;Start my blog&#39;</span>
-</span><span class='line'>git push origin <span class="nb">source</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>至此就可以在<code>https://kamigami55.github.io/</code>看到你的部落格了！（只有好好看的外觀而已，完全還沒有內容）</p>
 ]]></content>
   </entry>
   
