@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://kamigami55.github.io/atom.xml" rel="self"/>
   <link href="http://kamigami55.github.io/"/>
-  <updated>2016-09-18T17:04:15+08:00</updated>
+  <updated>2016-09-18T17:10:59+08:00</updated>
   <id>http://kamigami55.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -14,107 +14,21 @@
 
   
   <entry>
-    <title type="html"><![CDATA[【大夢日記#16】參訪松山機場！]]></title>
-    <link href="http://kamigami55.github.io/blog/2016/08/24/visit-rcss/"/>
-    <updated>2016-08-24T17:54:43+08:00</updated>
-    <id>http://kamigami55.github.io/blog/2016/08/24/visit-rcss</id>
-    <content type="html"><![CDATA[<p>期末考結束了！今天參觀松山機場塔台和氣象台</p>
+    <title type="html"><![CDATA[My-first-post]]></title>
+    <link href="http://kamigami55.github.io/blog/2016/09/18/my-first-post/"/>
+    <updated>2016-09-18T17:09:44+08:00</updated>
+    <id>http://kamigami55.github.io/blog/2016/09/18/my-first-post</id>
+    <content type="html"><![CDATA[<h1>YOOOOOO</h1>
 
-<p>原本行程是要去桃園機場的，但那裡架次太繁忙，參訪會打擾他們執勤，塔台不讓進，所以我們改來松山機場參訪</p>
+<p>This is my first post</p>
 
-<h1>氣象台</h1>
-
-<p>前面我們先去了氣象台。</p>
-
-<p>氣象台負責整個松山機場的天氣資訊的發佈，每30分鐘會發布一次METAR，這和我們地面學科所學的並無二致。氣象觀測相對於飛機駕駛，這又是另一門專業了，身為飛行員，我們並不需要瞭解氣象資訊量測的方法，我們只需要會判讀他們發佈出來的報表即可。但我們依然有些很好奇的部分，像是雲的高度到底是如何測量出來的。METAR報裡的BLK050、SCT120，後面的數字就是雲高，這些數字是如何得出的？我們今天終於得到了解答。</p>
-
-<p>就松山機場氣象台的運作而言，真的就如我們猜測的，是觀測員肉眼看出來的。METAR報發佈前五分鐘，我們就會看到觀測員走到外面的走廊，在外頭繞一圈看看天上，前後不超過兩分鐘，回到席位上時各項雲高數值就已經確定了，速度快得難以想像，這就是人家的經驗和專業了！</p>
-
-<p>氣象台的環境真的是超好的，冷氣舒適、設備齊全、零嘴飲料樣樣有，尤其最讚的是它的景觀，雖然氣象台的視野只有前方170度左右，不像塔台360度全方位無死角，但其前方就是跑道、且面朝101大樓，不管是航空迷喜歡看飛機起降，還是跨年看101煙火，這裡絕對有著最佳視野！（可惜這兒是管制區域平常沒法進！）</p>
-
-<h1>塔台</h1>
-
-<p>下半場是塔台。</p>
-
-<p>前面我們先聽了塔台臺長的簡報，瞭解了松山的概況。松山佔地約4平方公里，是軍民合用機場，平均每日起降飛機架次200架，有10/28這一條跑道。</p>
-
-<p>塔台空間較小，而且勤務較繁忙，沒辦法讓我們在裡頭久待，所以我們分兩批進去。</p>
-
-<p>塔台分三區，地面滑行管制的地面塔台、起飛和降落的進場台、以及高空的區域管制台。</p>
-
-<p>後天我們才會上ATC無線電通訊的課程，所以上去以後管制員的對話有半數我聽不懂，</p>
-
-<p>我們玩了lost com的時候使用的閃燈，也拿望遠鏡看了即將降落的飛機，管制員他們不用望遠鏡就可以看到，而我即使拿了望遠鏡也找不到飛機在哪，這又是一個經驗和專業的不同啊</p>
-
-<p>塔台和氣象台人力都很精簡，我本以為航務這方面的業務是要double check再double check的，所以應該會需要很多人力，但到現場看到，氣象台和塔台現場的勤務人員加起來不超過10人。也許是因為現在大多數的作業都交給電腦去計算的、以及航務人員訓練成本高（看看那滿山高的課本）、加上松山航情並不是太繁忙，所以人力的需求並不如我想像中的那麼高。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[【大夢日記#14】必須得一次過關的期末考！？]]></title>
-    <link href="http://kamigami55.github.io/blog/2016/08/22/before-final-exam/"/>
-    <updated>2016-08-22T21:43:15+08:00</updated>
-    <id>http://kamigami55.github.io/blog/2016/08/22/before-final-exam</id>
-    <content type="html"><![CDATA[<p>教官又在恐嚇我們了，我們所有人只能一次過關！不能給我補考QQ</p>
-
-<p>今天上了VOR、航空生理學，真的是夠嗆的</p>
-
-<p>我真的超級糟糕的，這個週末完全沒唸書，我總是愛臨時抱佛腳沒辦法QQ，偏偏每次抱佛腳都給我成功，真的是很討厭ㄋXD</p>
-
-<p>到底什麼才是我應該留給大家的？有時候真的會感覺來這兒聽一聽就沒了，好像也沒什麼意義，我發現有時候我的心根本不在這上面，寫程式研究blog比念這比天高的書有趣多了，這樣好像對沒辦法來參加計畫的夥伴們很對不起，但有時真的會這麼想，到底我們這一遭的意義何在呢？好像每次大考前、遭遇重大壓力時，都會不自覺地想要審視自己的初衷，但偏偏又沒有時間讓我們靜下心來思考，所以好像每次都不知道為何而戰地就上了戰場，結束後就覺得爽翻天去開趴，也沒回頭來重新思考，就即將迎來了下一個挑戰，如此循環不已，成就了我現在了人生XD</p>
-
-<p>不管怎樣明天終究是要面對考試的，思考人生什麼的就先擱一邊，我還有大半本的法規、氣象解碼符號表、及兩張練習卷尚未檢討呢！就讓我先去努力一陣吧！至少期末考的準備程度會比期中考高，雖然範圍大小是好幾倍所以整個算起來沒差&hellip;&hellip;。總之加油吧！</p>
-
-<p>目標永遠是一次過關！讓後天的松山機場塔台行可以專心<del>玩耍！</del>交流！</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[使用Octopress寫部落格]]></title>
-    <link href="http://kamigami55.github.io/blog/2016/08/21/write-blog-with-octopress/"/>
-    <updated>2016-08-21T02:00:49+08:00</updated>
-    <id>http://kamigami55.github.io/blog/2016/08/21/write-blog-with-octopress</id>
-    <content type="html"><![CDATA[<p>要先安裝git和ruby</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>git clone git://github.com/imathis/octopress.git octopress
-</span><span class='line'><span class="nb">cd </span>octopress
-</span><span class='line'>bundle install
-</span><span class='line'>rake install
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>在github上新建一個repo，命名為 <code>your_username.github.io</code> ，your_username請自行替換為你的github帳號的名稱</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake setup_github_pages
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>將<code>https://github.com/Kamigami55/Kamigami55.github.io.git</code>貼進去</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>rake generate
-</span><span class='line'>rake deploy
-</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>code test
+</span><span class='line'>second code line</span></code></pre></td></tr></table></div></figure>
 
 
 
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>git add .
-</span><span class='line'>git commit -m <span class="s1">&#39;Start my blog&#39;</span>
-</span><span class='line'>git push origin <span class="nb">source</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>至此就可以在<code>https://kamigami55.github.io/</code>看到你的部落格了！（只有好好看的外觀而已，完全還沒有內容）</p>
 ]]></content>
   </entry>
   
