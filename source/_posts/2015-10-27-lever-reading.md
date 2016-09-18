@@ -6,7 +6,7 @@ comments: true
 categories: Reading
 ---
 
-![lever-reading](http://image.anobii.com/anobi/image_book.php?item_id=01fdecafeff15f5c07&time=&type=4)
+![lever-reading](https://i.imgur.com/9V5G9NC.jpg)
 
 ---
 

@@ -5,7 +5,7 @@ date: 2016-08-19 08:24
 comments: true
 categories: 大夢日記
 ---
-![imgur](http://imgur.com/dmlO457.jpg)
+![imgur](https://imgur.com/dmlO457.jpg)
 
 -2016.08.19-
 
@@ -46,6 +46,6 @@ categories: 大夢日記
 
 它在機場的另一頭，閃爍速率比想像中的慢，而且超暗的，光線都被旁邊的照明燈蓋過去了，實在是挺不好找的，不過找到了還是令人挺興奮的。
 
-![imgur](http://imgur.com/DgmADOw.jpg)
+![imgur](https://imgur.com/DgmADOw.jpg)
 
 （左上角的紅圈處就是機場警示燈，由於手上沒有晚上的照片，根據我的記憶應該是那顆東西沒錯，反正我想表達的意思就是他真的很難找）

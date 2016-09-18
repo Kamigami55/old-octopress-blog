@@ -5,7 +5,7 @@ date: 2016-03-17 08:20
 comments: true
 categories: Reading
 ---
-![IMG_2342.JPG](http://user-image.logdown.io/user/16613/blog/15900/post/628511/pALC8yjQR6PKI9GPwzxx_IMG_2342.JPG)
+![IMG_2342.JPG](https://i.imgur.com/P0nkaLj.jpg)
 
 《少，但是更好(Essentialism)》
 作者：葛瑞格・麥基昂(Greg McKeown)

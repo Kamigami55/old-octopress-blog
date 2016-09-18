@@ -5,7 +5,7 @@ date: 2016-08-16 02:34
 comments: true
 categories: [Rails, Tutorial]
 ---
-![rails-production](http://imgur.com/a21E49E.jpg)
+![rails-production](https://imgur.com/a21E49E.jpg)
 
 # Quick Reference:
 
@@ -94,7 +94,7 @@ export SECRET_KEY_BASE=[此處貼上你剛剛產生的密鑰]
 
 你的畫面應該跟我很像，怎麼醜不拉幾的？我不眠不休設計出來的精美網頁呢？
 
-![Imgur](http://i.imgur.com/oVAdVyK.png?2)
+![Imgur](https://i.imgur.com/oVAdVyK.png?2)
 
 那是因為你還沒有告訴rails你用到了哪些設計元素，接下來的步驟教你怎麼做：
 
@@ -176,7 +176,7 @@ $ rails s -e production
 
 使用瀏覽器連入`localhost:3000`，就可以看到你速度大幅提升的美麗網頁啦！
 
-![imgur](http://imgur.com/IGxS4QM.jpg)
+![imgur](https://imgur.com/IGxS4QM.jpg)
 
 ---
 

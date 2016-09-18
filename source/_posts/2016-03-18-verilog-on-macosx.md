@@ -6,7 +6,7 @@ comments: true
 categories: [Verilog, Tutorial, MacOSX]
 ---
 
-![螢幕快照 2016-03-18 下午11.02.59.png](http://user-image.logdown.io/user/16613/blog/15900/post/649863/aDOvWZklRTWxPWc0jh5N_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-03-18%20%E4%B8%8B%E5%8D%8811.02.59.png)
+![螢幕快照 2016-03-18 下午11.02.59.png](https://i.imgur.com/5qKcx3Q.jpg)
 
 > 一句話摘要：使用Icarus Verilog來編譯Verilog、使用GTKWave來顯示波形
 
@@ -62,7 +62,7 @@ Hello, World
 # 安裝GTKWave
 接著，為了能夠更方便地查看電路運作的狀況，你需要一個波型顯示軟體，我使用[GTKWave](http://gtkwave.sourceforge.net)，這是一個可以跑在Mac OS X、Linux、和Windows上的波型顯示軟體，使用效果如下圖（截圖自官網）：
 
-![13010278_1324168817596781_1227376771_o.png](http://user-image.logdown.io/user/16613/blog/15900/post/649863/38PT0oF0TN2eVAf9glNg_13010278_1324168817596781_1227376771_o.png)
+![13010278_1324168817596781_1227376771_o.png](https://i.imgur.com/qRG7zAU.jpg)
 
 要在Mac OS X上安裝它很容易，就跟你安裝其他應用程式一樣，最大的困難可能是在官網上找到正確的下載連結......，連結已經幫你標出來了，請在官網上找到上圖紅框處download連結把它點下去！
 
@@ -122,13 +122,13 @@ $ vvp mycircuit
 開啟你的GTKWave，點擊左上角的File > Open New Tab
 選擇剛剛產生的mytest.vcd檔，你應該會很失望地發現為什麼沒有出現你要的波型，如下圖：
 
-![螢幕快照 2016-03-19 上午1.23.20.png](http://user-image.logdown.io/user/16613/blog/15900/post/649863/JsHBE20eSWpIArV9iGai_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-03-19%20%E4%B8%8A%E5%8D%881.23.20.png)
+![螢幕快照 2016-03-19 上午1.23.20.png](https://i.imgur.com/RJIQuvS.jpg)
 
 那是因為你還沒有告訴GTKWave你想要看什麼，那我們就來告訴它吧！
 
 在GTKWave左側面板，你會看到一串文字寫著t_Simple_Circuit，那就是你的測試檔案，點開那個+號，點擊M1電路，下面就會列出M1電路裡所有的線路，把你想要看它波形的線路拖曳到右方的區塊吧！噠答！你要的波型顯示出來了！
 
-![螢幕快照 2016-03-19 上午1.30.18.png](http://user-image.logdown.io/user/16613/blog/15900/post/649863/KEAHISP8TpWOL5j3Sr5M_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-03-19%20%E4%B8%8A%E5%8D%881.30.18.png)
+![螢幕快照 2016-03-19 上午1.30.18.png](https://i.imgur.com/86eXv9b.jpg)
 
 恭喜你成功建置你的Verilog環境，現在你可以炫砲地使用你的Macbook來做數電設計作業了！
 

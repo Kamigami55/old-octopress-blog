@@ -5,7 +5,7 @@ date: 2016-08-17 14:10
 comments: true
 categories: [大夢日記]
 ---
-![ploter](http://imgur.com/TeflR9p.jpg)
+![ploter](https://imgur.com/TeflR9p.jpg)
 
 -2016.08.17-
 
@@ -17,7 +17,7 @@ categories: [大夢日記]
 
 下面這就是一份航圖：
 
-![sky-map](http://imgur.com/YRoHdn1.jpg)
+![sky-map](https://imgur.com/YRoHdn1.jpg)
 
 資料來源：SkyVector [https://skyvector.com/](https://skyvector.com/)
 

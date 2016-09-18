@@ -5,7 +5,7 @@ date: 2016-05-08 14:50
 comments: true
 categories: [DailyUI, Design, Project]
 ---
-![DailyUI.png](http://user-image.logdown.io/user/16613/blog/15900/post/731238/JEjpZ1kkQpSUtPAwZ0gw_%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202016-05-09%20%E4%B8%8B%E5%8D%883.16.31.png)
+![DailyUI.png](https://i.imgur.com/yMgo3z4.jpg)
 
 # 什麼是 DailyUI
 
@@ -25,8 +25,8 @@ categories: [DailyUI, Design, Project]
 
 # 我的挑戰紀錄
 
-[【DailyUI #001】Sign Up](http://easonchang.com/2016/05/09/dailyui-001-sign-up/)
+[【DailyUI #001】Sign Up](https://easonchang.com/2016/05/09/dailyui-001-sign-up/)
 
-[【DailyUI #002】Credit Card Checkout](http://easonchang.com/2016/05/09/dailyui-002-credit-card-checkout/)
+[【DailyUI #002】Credit Card Checkout](https://easonchang.com/2016/05/09/dailyui-002-credit-card-checkout/)
 
-[【DailyUI #003】Landing Page](http://easonchang.com/2016/05/10/dailyui-003-landing-page/)
+[【DailyUI #003】Landing Page](https://easonchang.com/2016/05/10/dailyui-003-landing-page/)

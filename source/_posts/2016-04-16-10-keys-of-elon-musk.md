@@ -5,7 +5,7 @@ date: 2016-04-16 18:30
 comments: true
 categories: [Reading, ElonMusk, IronMan]
 ---
-![IMG_2441.JPG](http://user-image.logdown.io/user/16613/blog/15900/post/711332/N4eayMy0Q1qj99bbDyPk_IMG_2441.JPG)
+![IMG_2441.JPG](https://i.imgur.com/HqlXDN7.jpg)
 
 《他是玩真的！：「鋼鐵人」伊隆·馬斯克改變未來的10種能力》
 作者：楊士範(Mario)、吳居叡(G Wu)、鄭緯筌(Vista)

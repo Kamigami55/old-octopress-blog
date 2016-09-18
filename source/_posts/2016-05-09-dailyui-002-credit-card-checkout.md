@@ -5,7 +5,7 @@ date: 2016-05-09 21:03
 comments: true
 categories: [DailyUI, Design, Project]
 ---
-![dailyui_002_credit.png](http://user-image.logdown.io/user/16613/blog/15900/post/731508/NPDyMcXORaWdN4bj9uDj_dailyui_002_credit.png)
+![dailyui_002_credit.png](https://i.imgur.com/hEbjURo.jpg)
 
 [點我試試Live Demo](http://kamigami55.github.io/DailyUI/002_creditCardCheckout/)
 

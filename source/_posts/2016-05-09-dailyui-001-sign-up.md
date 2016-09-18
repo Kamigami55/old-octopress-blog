@@ -5,7 +5,7 @@ date: 2016-05-09 07:28
 comments: true
 categories: [DailyUI, Project, Design]
 ---
-![Daily-UI-001.png](http://user-image.logdown.io/user/16613/blog/15900/post/731238/gGkjq5L8SMyz9NMS0In2_Daily-UI-001.png)
+![Daily-UI-001.png](https://i.imgur.com/rWNKTqv.jpg)
 
 # 我今天做了什麼
 

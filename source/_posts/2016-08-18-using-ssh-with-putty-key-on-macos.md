@@ -5,7 +5,7 @@ date: 2016-08-18 11:00
 comments: true
 categories: [MacOSX, SSH, Putty, Tutorial]
 ---
-![putty-ssh](http://imgur.com/3B3Hrd4.png)
+![putty-ssh](https://imgur.com/3B3Hrd4.png)
 
 # Quick Reference：
 

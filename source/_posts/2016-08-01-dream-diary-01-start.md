@@ -5,7 +5,7 @@ date: 2016-08-01 00:37
 comments: true
 categories: [大夢日記]
 ---
-![apex](http://imgur.com/Bm0rRxK.jpg)
+![apex](https://imgur.com/Bm0rRxK.jpg)
 
 -2016/08/01-
 
@@ -25,7 +25,7 @@ categories: [大夢日記]
 
 接著是清點教材，這兒就可深刻感受到沈沈的壓力，廢話不多說請看下圖：
 
-![books](http://i.imgur.com/8hcloqy.jpg)
+![books](https://i.imgur.com/8hcloqy.jpg)
 
 這些是我們桌上堆著的教材山，快跟我的水瓶一樣高了，30天內要K完這些書，還沒算入隨身碟裡面的電子檔呢！只能說真夠刺激的......。
 

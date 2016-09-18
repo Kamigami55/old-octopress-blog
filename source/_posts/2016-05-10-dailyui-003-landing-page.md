@@ -6,9 +6,9 @@ comments: true
 categories: [DailyUI, Project, Design]
 ---
 
-![極限圈landing-page.jpg](http://user-image.logdown.io/user/16613/blog/15900/post/731867/KwBQj7lSZKA1S3kuSlxn_%E6%A5%B5%E9%99%90%E5%9C%88landing-page.jpg)
+![極限圈landing-page.jpg](https://i.imgur.com/5nDhx57.jpg)
 
-[HD圖檔](http://imgur.com/SXfzDlx)
+[HD圖檔](https://imgur.com/SXfzDlx)
 
 這是今天DailyUI的成果，極限圈的Landing Page。
 

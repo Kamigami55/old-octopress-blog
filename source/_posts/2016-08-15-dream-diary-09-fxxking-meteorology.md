@@ -5,7 +5,7 @@ date: 2016-08-15 12:23
 comments: true
 categories: [大夢日記]
 ---
-![weather](http://imgur.com/6reRO3i.jpg)
+![weather](https://imgur.com/6reRO3i.jpg)
 
 -2016.08.15-
 
@@ -29,7 +29,7 @@ categories: [大夢日記]
 
 下面這張圖就是一份METAR（唸作「咪塔」），這是我在撰文當下，台東豐年機場的天氣。
 
-![metar](http://imgur.com/H1ZBYib.jpg)
+![metar](https://imgur.com/H1ZBYib.jpg)
 
 有時候我們只看得到右下角的這串咒語
 
@@ -41,7 +41,7 @@ METAR RCFN 260830Z 13004KT 050V190 9999 FEW035 BKN300 32/25 Q1004 NOSIG RMK A296
 
 至於怎麼轉換呢？我們先來看看下面這張精美的符號對照表～
 
-![metar-code](http://imgur.com/CLkDR9E.jpg)
+![metar-code](https://imgur.com/CLkDR9E.jpg)
 
 METAR/TAF Abbreviations: [http://www.moratech.com/aviation/metaf-abbrev.html](http://www.moratech.com/aviation/metaf-abbrev.html)
 
