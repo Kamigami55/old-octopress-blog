@@ -4,8 +4,9 @@ title: '【大夢日記#07】期中試煉前夕'
 date: 2016-08-09 00:36
 comments: true
 categories: [大夢日記]
+image:
+  feature: "https://imgur.com/7OzBwWf.jpg"
 ---
-![cloud](https://imgur.com/7OzBwWf.jpg)
 
 -2016.08.09-
 

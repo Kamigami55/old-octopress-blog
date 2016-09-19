@@ -4,8 +4,9 @@ title: '【大夢日記#03】Self Study！晚自習時間'
 date: 2016-08-03 10:39
 comments: true
 categories: [大夢日記]
+image:
+  feature: "https://imgur.com/bMdYmyf.jpg"
 ---
-![notes](https://imgur.com/bMdYmyf.jpg)
 
 -2016.08.03-
 

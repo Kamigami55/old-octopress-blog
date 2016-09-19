@@ -4,8 +4,10 @@ title: '【大夢日記#10】飛航小道具登場！航圖 & Flight Computer'
 date: 2016-08-17 14:10
 comments: true
 categories: [大夢日記]
+image:
+  feature: "https://imgur.com/TeflR9p.jpg"
 ---
-![ploter](https://imgur.com/TeflR9p.jpg)
+
 
 -2016.08.17-
 

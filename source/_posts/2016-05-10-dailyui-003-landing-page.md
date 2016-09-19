@@ -4,17 +4,19 @@ title: '【DailyUI #003】Landing Page'
 date: 2016-05-10 19:43
 comments: true
 categories: [DailyUI, Project, Design]
+image:
+  feature: "https://i.imgur.com/5nDhx57.jpg"
 ---
+
+這是今天DailyUI的成果，極限圈的Landing Page。
+
+<!-- more -->
+
+我實在不希望太晚睡搞壞身體（現在是凌晨3點QAQ），所以就不實作成網頁了，今天只有圖檔:)。
 
 ![極限圈landing-page.jpg](https://i.imgur.com/5nDhx57.jpg)
 
 [HD圖檔](https://imgur.com/SXfzDlx)
-
-這是今天DailyUI的成果，極限圈的Landing Page。
-
-我實在不希望太晚睡搞壞身體（現在是凌晨3點QAQ），所以就不實作成網頁了，今天只有圖檔:)。
-
-<!-- more -->
 
 這次我使用Keynote作為拼圖軟體（非常坑爹，可是沒錢買PS和AI啊，之後應該會去找開源的替代方案）
 

@@ -4,9 +4,9 @@ title: '如何在Mac OS X上安裝Verilog環境'
 date: 2016-03-18 17:40
 comments: true
 categories: [Verilog, Tutorial, MacOSX]
+image:
+  feature: "https://i.imgur.com/5qKcx3Q.jpg"
 ---
-
-![螢幕快照 2016-03-18 下午11.02.59.png](https://i.imgur.com/5qKcx3Q.jpg)
 
 > 一句話摘要：使用Icarus Verilog來編譯Verilog、使用GTKWave來顯示波形
 

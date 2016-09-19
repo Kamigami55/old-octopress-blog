@@ -4,8 +4,9 @@ title: '在MacOS使用putty key進行ssh連線'
 date: 2016-08-18 11:00
 comments: true
 categories: [MacOSX, SSH, Putty, Tutorial]
+image:
+  feature: "https://imgur.com/3B3Hrd4.png"
 ---
-![putty-ssh](https://imgur.com/3B3Hrd4.png)
 
 # Quick Reference：
 

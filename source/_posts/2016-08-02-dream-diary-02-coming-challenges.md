@@ -4,8 +4,9 @@ title: '【大夢日記#02】挑戰襲來，全新的知識'
 date: 2016-08-02 14:51
 comments: true
 categories: [大夢日記]
+image:
+  feature: "https://imgur.com/bQIQxO1.jpg"
 ---
-![Supporter](https://imgur.com/bQIQxO1.jpg)
 
 -2016.08.02-
 

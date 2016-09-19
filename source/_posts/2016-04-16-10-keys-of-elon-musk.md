@@ -4,8 +4,9 @@ title: '【閱讀筆記】從《他是玩真的！》汲取鋼鐵人Elon Musk創
 date: 2016-04-16 18:30
 comments: true
 categories: [Reading, ElonMusk, IronMan]
+image:
+  feature: "https://i.imgur.com/HqlXDN7.jpg"
 ---
-![IMG_2441.JPG](https://i.imgur.com/HqlXDN7.jpg)
 
 《他是玩真的！：「鋼鐵人」伊隆·馬斯克改變未來的10種能力》
 作者：楊士範(Mario)、吳居叡(G Wu)、鄭緯筌(Vista)

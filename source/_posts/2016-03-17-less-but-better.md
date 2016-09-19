@@ -4,8 +4,9 @@ title: '【閱讀筆記】少，但是更好——精準生活，拿回人生主
 date: 2016-03-17 08:20
 comments: true
 categories: Reading
+image:
+  feature: "https://i.imgur.com/P0nkaLj.jpg"
 ---
-![IMG_2342.JPG](https://i.imgur.com/P0nkaLj.jpg)
 
 《少，但是更好(Essentialism)》
 作者：葛瑞格・麥基昂(Greg McKeown)
@@ -14,6 +15,8 @@ categories: Reading
 > 一句話書摘：對你不是完全喜歡的事情說不，運用80/20法則，過上精準生活，拿回人生主控權
 
 <!-- more -->
+
+![IMG_2342.JPG](https://i.imgur.com/P0nkaLj.jpg)
 
 我最近剛忙完創業論壇的活動，覺得生活需要更健康規律，我不想再繼續過著窮忙生活了，而此時剛好看到《少，但是更好》，我立刻就知道它是我現在最需要的一本書，於是我決定給它一個機會，而它扭轉了我的生活。
 

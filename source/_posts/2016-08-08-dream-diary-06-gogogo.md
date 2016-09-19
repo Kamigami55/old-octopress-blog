@@ -4,8 +4,9 @@ title: '【大夢日記#06】衝衝衝！課程進度！'
 date: 2016-08-08 00:32
 comments: true
 categories: [大夢日記]
+image:
+  feature: "https://imgur.com/otqBC6g.jpg"
 ---
-![compass](https://imgur.com/otqBC6g.jpg)
 
 -2016.08.08-
 

@@ -4,16 +4,18 @@ title: '「閱讀筆記」槓桿閱讀術——本田直之'
 date: 2015-10-27 18:07
 comments: true
 categories: Reading
----
-
-![lever-reading](https://i.imgur.com/9V5G9NC.jpg)
-
+image:
+  feature: "https://i.imgur.com/9V5G9NC.jpg"
 ---
 
 《槓桿閱讀術》
 作者：本田直之(Honda Naoyuki)
 譯者：葉冰婷
 出版社：漫遊者文化
+
+<!-- more -->
+
+![lever-reading](https://i.imgur.com/9V5G9NC.jpg)
 
 ---
 
@@ -27,8 +29,6 @@ categories: Reading
 - 僅僅做「輸入」的動作，只不過是自我滿足而已，如果能「輸出」使用，才是真正勝負的關鍵。
 - 槓桿效益閱讀術是徹底把書用盡，直到一本書支離破碎。
 - 如果經常帶著閱讀筆記，並反覆閱讀幾次的話，逐漸會對該內容融會貫通。猶如用慣的工具和手掌結為一體一般。
-
-<!-- more -->
 
 ## 方法：
 
