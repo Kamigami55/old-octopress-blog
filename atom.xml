@@ -4,7 +4,7 @@
   <title><![CDATA[Eason's blog]]></title>
   <link href="https://easonchang.com/atom.xml" rel="self"/>
   <link href="https://easonchang.com/"/>
-  <updated>2016-09-19T12:38:29+08:00</updated>
+  <updated>2016-09-19T12:57:37+08:00</updated>
   <id>https://easonchang.com/</id>
   <author>
     <name><![CDATA[Eason Chang]]></name>
@@ -795,9 +795,7 @@
     <link href="https://easonchang.com/2016/08/03/dream-diary-03-self-study/"/>
     <updated>2016-08-03T10:39:00+08:00</updated>
     <id>https://easonchang.com/2016/08/03/dream-diary-03-self-study</id>
-    <content type="html"><![CDATA[<p><img src="https://imgur.com/bMdYmyf.jpg" alt="notes" /></p>
-
-<p>-2016.08.03-</p>
+    <content type="html"><![CDATA[<p>-2016.08.03-</p>
 
 <p>課程進度一刻也不停歇，新的章節又開始了。今天的課程內容是飛機的操縱與引擎的構造。</p>
 
@@ -831,9 +829,7 @@
     <link href="https://easonchang.com/2016/08/02/dream-diary-02-coming-challenges/"/>
     <updated>2016-08-02T14:51:00+08:00</updated>
     <id>https://easonchang.com/2016/08/02/dream-diary-02-coming-challenges</id>
-    <content type="html"><![CDATA[<p><img src="https://imgur.com/bQIQxO1.jpg" alt="Supporter" /></p>
-
-<p>-2016.08.02-</p>
+    <content type="html"><![CDATA[<p>-2016.08.02-</p>
 
 <p>昨天的課程果真只是開胃小菜一盤，今天我真的開始感受到了不小的壓力。</p>
 
@@ -873,9 +869,7 @@
     <link href="https://easonchang.com/2016/08/01/dream-diary-01-start/"/>
     <updated>2016-08-01T00:37:00+08:00</updated>
     <id>https://easonchang.com/2016/08/01/dream-diary-01-start</id>
-    <content type="html"><![CDATA[<p><img src="https://imgur.com/Bm0rRxK.jpg" alt="apex" /></p>
-
-<p>-2016/08/01-</p>
+    <content type="html"><![CDATA[<p>-2016/08/01-</p>
 
 <p>在因緣際會下，我有幸前往台灣的一家飛行員訓練學校參與培訓，一路上受到非常多夥伴們的幫助，真的非常感謝！</p>
 
@@ -923,16 +917,16 @@
     <link href="https://easonchang.com/2016/05/10/dailyui-003-landing-page/"/>
     <updated>2016-05-10T19:43:00+08:00</updated>
     <id>https://easonchang.com/2016/05/10/dailyui-003-landing-page</id>
-    <content type="html"><![CDATA[<p><img src="https://i.imgur.com/5nDhx57.jpg" alt="極限圈landing-page.jpg" /></p>
-
-<p><a href="https://imgur.com/SXfzDlx">HD圖檔</a></p>
-
-<p>這是今天DailyUI的成果，極限圈的Landing Page。</p>
-
-<p>我實在不希望太晚睡搞壞身體（現在是凌晨3點QAQ），所以就不實作成網頁了，今天只有圖檔:)。</p>
+    <content type="html"><![CDATA[<p>這是今天DailyUI的成果，極限圈的Landing Page。</p>
 
 <!-- more -->
 
+
+<p>我實在不希望太晚睡搞壞身體（現在是凌晨3點QAQ），所以就不實作成網頁了，今天只有圖檔:)。</p>
+
+<p><img src="https://i.imgur.com/5nDhx57.jpg" alt="極限圈landing-page.jpg" /></p>
+
+<p><a href="https://imgur.com/SXfzDlx">HD圖檔</a></p>
 
 <p>這次我使用Keynote作為拼圖軟體（非常坑爹，可是沒錢買PS和AI啊，之後應該會去找開源的替代方案）</p>
 
@@ -956,9 +950,7 @@
     <link href="https://easonchang.com/2016/05/09/dailyui-002-credit-card-checkout/"/>
     <updated>2016-05-09T21:03:00+08:00</updated>
     <id>https://easonchang.com/2016/05/09/dailyui-002-credit-card-checkout</id>
-    <content type="html"><![CDATA[<p><img src="https://i.imgur.com/hEbjURo.jpg" alt="dailyui_002_credit.png" /></p>
-
-<p><a href="http://kamigami55.github.io/DailyUI/002_creditCardCheckout/">點我試試Live Demo</a></p>
+    <content type="html"><![CDATA[<p><a href="http://kamigami55.github.io/DailyUI/002_creditCardCheckout/">點我試試Live Demo</a></p>
 
 <p><a href="https://github.com/Kamigami55/DailyUI/tree/master/002_creditCardCheckout">點我看看Github原始碼(可是完全沒有整理超級亂我覺得你還是不要看好了)</a></p>
 
@@ -968,6 +960,8 @@
 
 <!-- more -->
 
+
+<p><img src="https://i.imgur.com/hEbjURo.jpg" alt="dailyui_002_credit.png" /></p>
 
 <p>我發現CSS還有很多特性是我還不了解的、pseudo-element(偽元素)、animetion、@keyframes、transform、&hellip;&hellip;
 我對於前端設計的掌握度還是非常低，無法隨心所欲地作出想要的效果，不過在挑戰DailyUI的過程中，確實可以明顯感覺到自己正在進步，希望完成這100天的挑戰後，自己能成為一位上的了檯面的前端工程師！</p>
@@ -979,9 +973,7 @@
     <link href="https://easonchang.com/2016/05/09/dailyui-001-sign-up/"/>
     <updated>2016-05-09T07:28:00+08:00</updated>
     <id>https://easonchang.com/2016/05/09/dailyui-001-sign-up</id>
-    <content type="html"><![CDATA[<p><img src="https://i.imgur.com/rWNKTqv.jpg" alt="Daily-UI-001.png" /></p>
-
-<h1>我今天做了什麼</h1>
+    <content type="html"><![CDATA[<h1>我今天做了什麼</h1>
 
 <p>新專案啟動！這是DailyUI！</p>
 
@@ -989,6 +981,8 @@
 
 <!-- more -->
 
+
+<p><img src="https://i.imgur.com/rWNKTqv.jpg" alt="Daily-UI-001.png" /></p>
 
 <p>而我希望「註冊」這個行為可以脫離「填表單」這個框架。註冊也可以像是一位導遊，引領遊客們進入你精心設計的網站中探索，因此這個過程應該是以「對話、引導」的方式呈現，於是乎我就借用了通訊軟體的設計，將註冊表單包裹在與導遊的對話之中。</p>
 
@@ -1003,9 +997,7 @@
     <link href="https://easonchang.com/2016/05/08/dailyui-000-become-awesome-front-end-designer/"/>
     <updated>2016-05-08T14:50:00+08:00</updated>
     <id>https://easonchang.com/2016/05/08/dailyui-000-become-awesome-front-end-designer</id>
-    <content type="html"><![CDATA[<p><img src="https://i.imgur.com/yMgo3z4.jpg" alt="DailyUI.png" /></p>
-
-<h1>什麼是 DailyUI</h1>
+    <content type="html"><![CDATA[<h1>什麼是 DailyUI</h1>
 
 <p>在網上衝浪的時候，不小心又看到了一個驚人的網站：DailyUI.co
 這是一個協助你成為更專業的 UI Designer 的服務，透過激勵你連續 100 天進行 UI 設計，他的運作方式是這樣的：</p>
@@ -1040,9 +1032,7 @@
     <link href="https://easonchang.com/2016/04/16/10-keys-of-elon-musk/"/>
     <updated>2016-04-16T18:30:00+08:00</updated>
     <id>https://easonchang.com/2016/04/16/10-keys-of-elon-musk</id>
-    <content type="html"><![CDATA[<p><img src="https://i.imgur.com/HqlXDN7.jpg" alt="IMG_2441.JPG" /></p>
-
-<p>《他是玩真的！：「鋼鐵人」伊隆·馬斯克改變未來的10種能力》
+    <content type="html"><![CDATA[<p>《他是玩真的！：「鋼鐵人」伊隆·馬斯克改變未來的10種能力》
 作者：楊士範(Mario)、吳居叡(G Wu)、鄭緯筌(Vista)</p>
 
 <blockquote><p>一句話書摘：去思考！去辯論！像個鋼鐵人般做出改變吧！培養洞察力、執行力、領導力！賭上你的願景！</p></blockquote>

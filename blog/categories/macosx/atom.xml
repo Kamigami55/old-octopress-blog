@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Macosx | Eason's blog]]></title>
   <link href="https://easonchang.com/blog/categories/macosx/atom.xml" rel="self"/>
   <link href="https://easonchang.com/"/>
-  <updated>2016-09-19T12:38:29+08:00</updated>
+  <updated>2016-09-19T12:57:37+08:00</updated>
   <id>https://easonchang.com/</id>
   <author>
     <name><![CDATA[Eason Chang]]></name>
@@ -74,9 +74,7 @@ $ ssh -i &lt;your-ssh-key.pem&gt; &lt;user@your.server.com&gt; #使用.pem進行
     <link href="https://easonchang.com/2016/03/18/verilog-on-macosx/"/>
     <updated>2016-03-18T17:40:00+08:00</updated>
     <id>https://easonchang.com/2016/03/18/verilog-on-macosx</id>
-    <content type="html"><![CDATA[<p><img src="https://i.imgur.com/5qKcx3Q.jpg" alt="螢幕快照 2016-03-18 下午11.02.59.png" /></p>
-
-<blockquote><p>一句話摘要：使用Icarus Verilog來編譯Verilog、使用GTKWave來顯示波形</p></blockquote>
+    <content type="html"><![CDATA[<blockquote><p>一句話摘要：使用Icarus Verilog來編譯Verilog、使用GTKWave來顯示波形</p></blockquote>
 
 <p>為了資工系的數位電路設計課，我們需要一個能夠編譯Verilog這個硬體描述語言(HDL)的環境，並且要能模擬電路運作狀況加上顯示波形。</p>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Side-project | Eason's blog]]></title>
   <link href="https://easonchang.com/blog/categories/side-project/atom.xml" rel="self"/>
   <link href="https://easonchang.com/"/>
-  <updated>2016-09-19T12:38:29+08:00</updated>
+  <updated>2016-09-19T12:57:37+08:00</updated>
   <id>https://easonchang.com/</id>
   <author>
     <name><![CDATA[Eason Chang]]></name>
@@ -18,18 +18,18 @@
     <link href="https://easonchang.com/2016/02/16/100sites-006-snack/"/>
     <updated>2016-02-16T12:41:00+08:00</updated>
     <id>https://easonchang.com/2016/02/16/100sites-006-snack</id>
-    <content type="html"><![CDATA[<p><img src="https://i.imgur.com/BfDXbAU.jpg" alt="螢幕快照 2016-02-16 下午8.39.27.png" /></p>
-
-<h1>Snack - 貪食蛇，吃掉那些點點吧！</h1>
+    <content type="html"><![CDATA[<h1>Snack - 貪食蛇，吃掉那些點點吧！</h1>
 
 <p><a href="https://github.com/Kamigami55/100sites/tree/gh-pages/006_Snack">Github</a></p>
 
 <p><a href="http://kamigami55.github.io/100sites/006_Snack/">Live Demo</a></p>
 
-<p>今天比較有閒有空，把之前一直想做的貪食蛇遊戲做出來了，使用Processing.js。</p>
-
 <!-- more -->
 
+
+<p><img src="https://i.imgur.com/BfDXbAU.jpg" alt="螢幕快照 2016-02-16 下午8.39.27.png" /></p>
+
+<p>今天比較有閒有空，把之前一直想做的貪食蛇遊戲做出來了，使用Processing.js。</p>
 
 <p>規則如同經典的貪食蛇，目標是不斷的吃點點，讓自己越長越長，但如果撞到自己就輸了。</p>
 
@@ -270,18 +270,18 @@ class Food {
     <link href="https://easonchang.com/2016/02/15/100sites-005-drawer/"/>
     <updated>2016-02-15T17:49:00+08:00</updated>
     <id>https://easonchang.com/2016/02/15/100sites-005-drawer</id>
-    <content type="html"><![CDATA[<p><img src="https://i.imgur.com/k5wMk9z.jpg" alt="螢幕快照 2016-02-16 上午1.47.27.png" /></p>
-
-<h1>Drawer - 簡單抽數字</h1>
+    <content type="html"><![CDATA[<h1>Drawer - 簡單抽數字</h1>
 
 <p><a href="https://github.com/Kamigami55/100sites/tree/gh-pages/005_Drawer">Github</a></p>
 
 <p><a href="http://kamigami55.github.io/100sites/005_Drawer/">Live Demo</a></p>
 
-<p>今天搬回新竹，實在沒多少時間寫程式，於是就寫了一個簡單卻實用的小抽籤程式。</p>
-
 <!-- more -->
 
+
+<p><img src="https://i.imgur.com/k5wMk9z.jpg" alt="螢幕快照 2016-02-16 上午1.47.27.png" /></p>
+
+<p>今天搬回新竹，實在沒多少時間寫程式，於是就寫了一個簡單卻實用的小抽籤程式。</p>
 
 <p>目前寫出來的功能很簡單，使用者輸入最小值和最大值，點擊按鈕後就能抽到一個隨機數字。</p>
 
@@ -413,20 +413,20 @@ class Food {
     <link href="https://easonchang.com/2016/02/14/100sites-004-firework/"/>
     <updated>2016-02-14T16:57:00+08:00</updated>
     <id>https://easonchang.com/2016/02/14/100sites-004-firework</id>
-    <content type="html"><![CDATA[<p><img src="https://i.imgur.com/wHyk3xI.jpg" alt="螢幕快照 2016-02-15 上午12.08.44.png" /></p>
-
-<h1>Firework - 享受臺北101的跨年煙火吧</h1>
+    <content type="html"><![CDATA[<h1>Firework - 享受臺北101的跨年煙火吧</h1>
 
 <p><a href="https://github.com/Kamigami55/100sites/tree/gh-pages/004_Firework">Github</a></p>
 
 <p><a href="http://kamigami55.github.io/100sites/004_Firework/">Live Demo</a></p>
 
+<!-- more -->
+
+
+<p><img src="https://i.imgur.com/wHyk3xI.jpg" alt="螢幕快照 2016-02-15 上午12.08.44.png" /></p>
+
 <p>我一直在尋找製作前端動畫的框架，今天我終於找到了：<a href="http://processingjs.org">Processing.js</a>。它是<a href="https://processing.org">Processing</a>的js版本，可以讓你建構各種視覺藝術(visual arts)專案。</p>
 
 <p>於是我用它來完成了今天的100sites專案：Firework，簡單的煙火動畫。</p>
-
-<!-- more -->
-
 
 <p>下面是今天的code：</p>
 
@@ -549,9 +549,7 @@ class Firework {
     <link href="https://easonchang.com/2016/02/13/100sites-003-todolist/"/>
     <updated>2016-02-13T19:12:00+08:00</updated>
     <id>https://easonchang.com/2016/02/13/100sites-003-todolist</id>
-    <content type="html"><![CDATA[<p><img src="https://i.imgur.com/GVtN27w.jpg" alt="螢幕快照 2016-02-14 上午2.17.42.png" /></p>
-
-<p><a href="https://github.com/Kamigami55/100sites/tree/master/003_Todolist">Github</a></p>
+    <content type="html"><![CDATA[<p><a href="https://github.com/Kamigami55/100sites/tree/master/003_Todolist">Github</a></p>
 
 
 
@@ -564,7 +562,7 @@ class Firework {
 <!-- more -->
 
 
-
+<p><img src="https://i.imgur.com/GVtN27w.jpg" alt="螢幕快照 2016-02-14 上午2.17.42.png" /></p>
 
 <p>我想儘早把後端的東西也學一學，這麼一來能做的網站就更多樣了，於是我找到了這個：<a href="https://nodejust.com/category/nodejs/page/6/">Node.js學習筆記</a>。這是一個簡單的Node.js入門指南，包含了三十多篇文章，每一篇的份量都很精簡，手把手教你做出一個簡單的Node.js網頁應用。內容也同時涵括了Express.js和MongoDB。</p>
 
@@ -582,23 +580,16 @@ class Firework {
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[【100sites #001】Timer]]></title>
-    <link href="https://easonchang.com/2016/02/12/100sites-001-timer/"/>
-    <updated>2016-02-12T15:56:00+08:00</updated>
-    <id>https://easonchang.com/2016/02/12/100sites-001-timer</id>
-    <content type="html"><![CDATA[<p><img src="https://i.imgur.com/7fMXTrA.jpg" alt="螢幕快照 2016-02-12 上午1.01.54.png" /></p>
-
-<p><a href="https://github.com/Kamigami55/100sites/tree/master/001_Timer" target="_blank">Github</a></p>
+    <title type="html"><![CDATA[【100sites #002】Pomodoro]]></title>
+    <link href="https://easonchang.com/2016/02/12/100sites-002-pomodoro/"/>
+    <updated>2016-02-12T16:07:00+08:00</updated>
+    <id>https://easonchang.com/2016/02/12/100sites-002-pomodoro</id>
+    <content type="html"><![CDATA[<p><a href="https://github.com/Kamigami55/100sites/tree/master/002_Pomodoro">Github</a></p>
 
 
 
 
-<p><a href="http://kamigami55.github.io/100sites/001_Timer/timer.html" target="_blank">Live Demo</a></p>
-
-
-
-
-<p>一個很簡單的倒數計時器。</p>
+<p><a href="http://kamigami55.github.io/100sites/002_Pomodoro/pomodoro.html" target="_blank">Live Demo</a></p>
 
 
 
@@ -606,19 +597,21 @@ class Firework {
 <!-- more -->
 
 
+<p><img src="https://i.imgur.com/9qcTEZY.jpg" alt="螢幕快照 2016-02-13 上午12.00.31.png" /></p>
 
+<p>一個簡單的<a href="https://zh.wikipedia.org/zh-tw/番茄工作法" target="_blank">番茄鐘工作法</a>計時器。
 
-<p>使用了很基本的前端老三套：HTML、CSS、JavaScript，各一個檔案來完成這個計時器。</p>
-
-
-
-
-<p>關鍵的計時功能由window.setInterval(function, delay)來完成，正常使用沒問題。</p>
+沿用了<a href="http://easonchang.com/2016/02/12/100sites-001-timer/" target="_blank">#001Timer</a>的程式碼做了一些修改與優化。</p>
 
 
 
 
-<p>目前的問題是時間拉長以後就會產生時間誤差，並且當使用者切換到別的頁面後，此時Timer在背景執行，瀏覽器分配給setInterval的資源就會變少，倒數速度就會變非常慢，甚至完全停止，我目前還找不到解決方法。</p>
+<p>我Google到了一個interval函數可以自動修正誤差，如此一來時間誤差問題就解決了。</p>
+
+
+
+
+<p>但將Pomodoro放到背景執行後，時間凍結問題依舊還沒辦法解決，title的時間依然會有極大的誤差。</p>
 
 ]]></content>
   </entry>
