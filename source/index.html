@@ -1,11 +1,11 @@
 ---
 layout: default
-title: A Tech Blog by Jake Zimmerman
-description: "A tech blog by Jake Zimmerman. Updates occaisonally with tips, tricks, and hacks that have helped me out."
-categories: [Jekyll, theme, themes, responsive, blog, modern, tech, hacks]
-keywords: Jekyll theme themes responsive blog modern tech hacks
+title:
+description: "I create, therefore I am"
+categories: [code, programming, make, diy]
+keywords: code, programming, make, diy
 image:
-  feature: /images/threaded-blue-on-black-cropped.jpg
+  feature: /images/black-white-background.jpg
 ---
 
 {% assign index = true %}
@@ -20,10 +20,10 @@ image:
     {% if paginator.previous_page == 1 %}
       <a href="/" class="btn">Previous</a>
     {% else %}
-      <a href="{{ root_url }}{ paginator.previous_page_path }}" class="btn">Previous</a>
+      <a href="{{ root_url }}{{ paginator.previous_page_path }}" class="btn">Previous</a>
     {% endif %}
   {% endif %}
-  <a href="{{ root_url }}/archives">Blog Archives</a>
+  <a href="{{ root_url }}/posts">All Posts</a>
   {% if paginator.next_page %}
     <a href="{{ root_url }}{{ paginator.next_page_path }}" class="btn">Next</a>
   {% endif %}
