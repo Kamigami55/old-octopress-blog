@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Rails | Eason's blog]]></title>
   <link href="https://easonchang.com/blog/categories/rails/atom.xml" rel="self"/>
   <link href="https://easonchang.com/"/>
-  <updated>2016-09-19T12:25:49+08:00</updated>
+  <updated>2016-09-19T12:38:29+08:00</updated>
   <id>https://easonchang.com/</id>
   <author>
     <name><![CDATA[Eason Chang]]></name>
@@ -18,9 +18,7 @@
     <link href="https://easonchang.com/2016/08/16/start-your-rails-project-with-production-mode/"/>
     <updated>2016-08-16T02:34:00+08:00</updated>
     <id>https://easonchang.com/2016/08/16/start-your-rails-project-with-production-mode</id>
-    <content type="html"><![CDATA[<p><img src="https://imgur.com/a21E49E.jpg" alt="rails-production" /></p>
-
-<h1>Quick Reference:</h1>
+    <content type="html"><![CDATA[<h1>Quick Reference:</h1>
 
 <pre><code class="bash">$ RAILS_ENV=production rake db:migrate
 $ rake secret //產生secret key
