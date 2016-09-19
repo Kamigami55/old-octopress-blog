@@ -8,6 +8,11 @@ the index page or a normal post page.
 {% capture titlecased %}{% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}{% endcapture %}
 
 <header>
+  {% if post.image.feature %}
+    <div class="entry-image-index">
+      <a href="{{ root_url }}{{ post.url }}" title="{{ titlecased }}"><img src="{{ post.image.feature }}" alt="{{ titlecased }}"></a>
+    </div><!-- /.entry-image -->
+  {% endif %}
   <div class="entry-meta">
     <span class="entry-date date published updated">
       <time datetime="{{ post.date | date_to_xmlschema }}">
