@@ -19,7 +19,7 @@ date_format: "ordinal"
 subscribe_rss: /atom.xml
 subscribe_email:
 # RSS feeds can list your email address if you like
-email:
+email: eason@easonchang.com
 
 url: https://easonchang.com
 enforce_ssl: easonchang.com
@@ -75,7 +75,7 @@ default_asides: [asides/recent_posts.html, asides/github.html, asides/delicious.
 # ----------------------- #
 
 # Github repositories
-github_user: 
+github_user: Kamigami55
 github_repo_count: 0
 github_show_profile_link: false
 github_skip_forks: false

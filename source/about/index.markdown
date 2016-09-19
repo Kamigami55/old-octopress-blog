@@ -1,10 +1,12 @@
 ---
 layout: page
-title: "about"
+title: "關於我以及Eason's blog"
 date: 2016-09-18 22:31
-comments: true
+comments: false
 sharing: true
 footer: true
+image:
+  feature: "../images/black-white-background.jpg"
 ---
 
 嗨！我是 **Eason Chang**，我是一位程式設計師，歡迎來到我的部落格！
@@ -17,4 +19,4 @@ footer: true
 
 我也有個同步更新的Facebook粉絲專頁 [Eason's blog](https://www.facebook.com/eason.blog/)，歡迎點讚以訂閱我的最新動態！
 
-> 部落格內所有文章皆歡迎轉載，轉載請註明「原文來自[Eason's blog](http://easonchang.com/)」
+> 部落格內所有文章皆歡迎轉載，轉載請註明「原文來自[Eason's blog](https://easonchang.com/)」
