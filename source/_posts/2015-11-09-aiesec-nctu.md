@@ -3,6 +3,7 @@ layout: post
 title: '「講座心得」AIESEC NCTU大人物講座，陳時霖「創造語言的力量」'
 date: 2015-11-09 16:45
 comments: true
+share: true
 categories: 
 ---
 前天下午，我參加的AIESECxNCTU的大人物講座。這場講座的講師陳時霖，分享了如何「創造語言的力量」。

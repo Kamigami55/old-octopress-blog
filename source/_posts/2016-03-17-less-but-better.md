@@ -4,6 +4,7 @@ title: '【閱讀筆記】少，但是更好——精準生活，拿回人生主
 date: 2016-03-17 08:20
 comments: true
 categories: Reading
+share: true
 image:
   feature: "https://i.imgur.com/P0nkaLj.jpg"
 ---

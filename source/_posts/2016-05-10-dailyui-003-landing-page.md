@@ -4,6 +4,7 @@ title: '【DailyUI #003】Landing Page'
 date: 2016-05-10 19:43
 comments: true
 categories: [DailyUI, Project, Design]
+share: true
 image:
   feature: "https://i.imgur.com/5nDhx57.jpg"
 ---

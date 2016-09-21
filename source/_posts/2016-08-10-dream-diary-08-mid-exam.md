@@ -4,6 +4,7 @@ title: '【大夢日記#08】期中考！！'
 date: 2016-08-10 09:54
 comments: true
 categories: [大夢日記]
+share: true
 image:
   feature: "https://imgur.com/z5O6iTZ.jpg"
 ---

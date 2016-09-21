@@ -3,6 +3,7 @@ layout: post
 title: '自傳、座談會、新年快樂'
 date: 2015-12-31 06:48
 comments: true
+share: true
 categories: 
 ---
 

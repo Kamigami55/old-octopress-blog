@@ -4,6 +4,7 @@ title: '【大夢日記#12】想飛？得先遵守遊戲規則！飛航法規！
 date: 2016-08-19 08:24
 comments: true
 categories: 大夢日記
+share: true
 image:
   feature: "https://imgur.com/dmlO457.jpg"
 ---

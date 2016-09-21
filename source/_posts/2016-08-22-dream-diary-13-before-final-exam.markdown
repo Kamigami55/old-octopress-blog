@@ -4,6 +4,7 @@ title: "【大夢日記#13】必須得一次過關的期末考！？"
 date: 2016-08-22 21:43:15 +0800
 comments: true
 categories: 大夢日記
+share: true
 image:
   feature: "https://i.imgur.com/QZzcEml.jpg?2"
 ---

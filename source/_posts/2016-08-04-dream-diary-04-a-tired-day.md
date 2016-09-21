@@ -4,6 +4,7 @@ title: '【大夢日記#04】精神不濟的一天'
 date: 2016-08-04 10:08
 comments: true
 categories: [大夢日記]
+share: true
 image:
   feature: "https://imgur.com/1sLkrhm.jpg"
 ---

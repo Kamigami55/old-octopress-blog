@@ -4,6 +4,7 @@ title: '【大夢日記#01】故事開始！適應新環境'
 date: 2016-08-01 00:37
 comments: true
 categories: [大夢日記]
+share: true
 image:
   feature: "https://imgur.com/Bm0rRxK.jpg"
 ---

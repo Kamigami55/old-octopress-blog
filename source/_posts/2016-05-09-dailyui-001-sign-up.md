@@ -4,6 +4,7 @@ title: '【DailyUI #001】Sign Up'
 date: 2016-05-09 07:28
 comments: true
 categories: [DailyUI, Project, Design]
+share: true
 image:
   feature: "https://i.imgur.com/rWNKTqv.jpg"
 ---

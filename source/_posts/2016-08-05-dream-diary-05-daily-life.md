@@ -4,6 +4,7 @@ title: '【大夢日記#05】逐漸適應的日常'
 date: 2016-08-05 08:52
 comments: true
 categories: [大夢日記]
+share: true
 image:
   feature: "https://imgur.com/8UIaur6.jpg"
 ---

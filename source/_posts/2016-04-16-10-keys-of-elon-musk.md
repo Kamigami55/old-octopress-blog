@@ -4,6 +4,7 @@ title: '【閱讀筆記】從《他是玩真的！》汲取鋼鐵人Elon Musk創
 date: 2016-04-16 18:30
 comments: true
 categories: [Reading, ElonMusk, IronMan]
+share: true
 image:
   feature: "https://i.imgur.com/HqlXDN7.jpg"
 ---

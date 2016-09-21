@@ -4,6 +4,7 @@ title: '【大夢日記#09】令人崩潰的氣象學'
 date: 2016-08-15 12:23
 comments: true
 categories: [大夢日記]
+share: true
 image:
   feature: "https://imgur.com/6reRO3i.jpg"
 ---
