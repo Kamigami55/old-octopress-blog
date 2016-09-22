@@ -4,7 +4,7 @@
   <title><![CDATA[Eason's blog]]></title>
   <link href="https://easonchang.com/atom.xml" rel="self"/>
   <link href="https://easonchang.com/"/>
-  <updated>2016-09-21T23:35:38+08:00</updated>
+  <updated>2016-09-22T13:08:14+08:00</updated>
   <id>https://easonchang.com/</id>
   <author>
     <name><![CDATA[Eason Chang]]></name>
@@ -12,6 +12,74 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress，為什麼我選擇它]]></title>
+    <link href="https://easonchang.com/2016/09/22/why-octopress/"/>
+    <updated>2016-09-22T13:06:00+08:00</updated>
+    <id>https://easonchang.com/2016/09/22/why-octopress</id>
+    <content type="html"><![CDATA[<h1>什麼是Octopress</h1>
+
+<p><a href="http://octopress.org/">Octopress</a>是一個部落格框架，專門設計給「技客(Geeks)(<a href="#notes">註1</a>)」們使用。</p>
+
+<p>它使用「Markdown(<a href="#notes">註2</a>)」作為寫作的語言。寫作者可使用終端機下指令給Octopress，輕鬆地將Markdown寫成的文章，轉譯成HTML靜態網頁，並推送至指定的網站伺服器上。</p>
+
+<!--more-->
+
+
+<h1>我為什麼選用Octopress來寫部落格</h1>
+
+<p>在這之前，我嘗試使用過<a href="https://zh-tw.wordpress.com/create/">Wordpress</a>和<a href="http://logdown.com/">Logdown</a>來寫部落格，這兩個寫作平台都非常出色，但無法滿足我的需求。</p>
+
+<p>我會搬來Octopress理由有四：</p>
+
+<ol>
+<li>想要完全的可自訂性</li>
+<li>想要設定自訂網域</li>
+<li>想要刷<a href="https://github.com/">Github</a>貢獻</li>
+<li>用終端機寫文章就是屌</li>
+</ol>
+
+
+<h2>1. 想要完全的可自訂性</h2>
+
+<p>雖然Wordpress有大量插件可以使用、Logdown可以自訂主題，但說到可自訂性，這兩個平台完全比不上Octopress。</p>
+
+<p>畢竟三者的用戶取向不同，Octopress是為技客而生，開發出來就是要讓你帶回家捏成你要的樣子的。</p>
+
+<p>隨著文章的累積，我也開始想對我的部落格做各式各樣的實驗與調整，Logdown已無法滿足我的需求了，因此，我轉來使用Octopress。</p>
+
+<h2>2. 想要設定自訂網域</h2>
+
+<p>為了讓我的部落格有更好的搜尋引擎最佳化(SEO)(<a href="#notes">註3</a>)，我買了easonchang.com這個頂級網域。要在Logdown自訂網域的話，需要升級為高級會員，但我不想花錢（學生窮咩）。然後我發現使用Octopress+<a href="https://pages.github.com/">Github Pages</a>(<a href="#notes">註4</a>)這個組合，就能不花多餘的錢套用自訂網域，因此我轉來了Octopress。</p>
+
+<h2>3. 想要刷Github貢獻</h2>
+
+<p>第三、第四點就比較不正經了。俗話說「要看一個工程師的能力有多強，看他的Github貢獻就好。」然後我在測試時發現更新Octopress文章至Github Pages時，居然也會算進Github貢獻，如此好康真是太吸引人了！</p>
+
+<h2>4. 用終端機寫文章就是屌</h2>
+
+<p>身為專業技客，就是要用終端機，能用鍵盤做的事絕對不用滑鼠做，專業技客的電腦不需要滑鼠！Octopress讓我只用終端機，就能完成所有部落格的操作！用終端機寫文章就是屌！</p>
+
+<h1>結論</h1>
+
+<p>專業技客就該使用Octopress來寫部落格！</p>
+
+<hr />
+
+<p><a name='notes'></a></p>
+
+<h2>Notes</h2>
+
+<p>註1：技客(Geeks)，現常被用於形容對計算機和網絡技術有狂熱興趣並投入大量時間鑽研的人。(<a href="https://zh.wikipedia.org/wiki/%E6%9E%81%E5%AE%A2">維基百科#極客</a>)</p>
+
+<p>註2：Markdown，是一個輕量的標記語言，讓人們可以不用複雜繁長的HTML語法，就能夠標記格式，而達到管理文件的目的。(<a href="https://www.openfoundry.org/tw/resourcecatalog/Program-Development/Markup-Languages/markdown">自由軟體鑄造場#Markdown</a>)</p>
+
+<p>註3：搜尋引擎最佳化(Search Engine Optimization)，是一種透過了解搜尋引擎的運作規則來調整網站，以及提高目的網站在有關搜尋引擎內排名的方式。使用頂級網域的網站可以具有更好的SEO結果。(<a href="https://zh.wikipedia.org/wiki/%E6%90%9C%E5%B0%8B%E5%BC%95%E6%93%8E%E6%9C%80%E4%BD%B3%E5%8C%96">維基百科#搜尋引擎最佳化</a>)</p>
+
+<p>註4：Github Pages，是Github提供的靜態網站架設服務。將Octopress生成的靜態網站程式碼上傳上Github，並設定Github Pages，就成了一個能夠運作的靜態網站了。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[【大夢日記#13】必須得一次過關的期末考！？]]></title>
@@ -919,10 +987,10 @@
     <id>https://easonchang.com/2016/05/10/dailyui-003-landing-page</id>
     <content type="html"><![CDATA[<p>這是今天DailyUI的成果，極限圈的Landing Page。</p>
 
+<p>我實在不希望太晚睡搞壞身體（現在是凌晨3點QAQ），所以就不實作成網頁了，今天只有圖檔:)。</p>
+
 <!-- more -->
 
-
-<p>我實在不希望太晚睡搞壞身體（現在是凌晨3點QAQ），所以就不實作成網頁了，今天只有圖檔:)。</p>
 
 <p><img src="https://i.imgur.com/5nDhx57.jpg" alt="極限圈landing-page.jpg" /></p>
 
@@ -1024,58 +1092,6 @@
 <p><a href="https://easonchang.com/2016/05/09/dailyui-002-credit-card-checkout/">【DailyUI #002】Credit Card Checkout</a></p>
 
 <p><a href="https://easonchang.com/2016/05/10/dailyui-003-landing-page/">【DailyUI #003】Landing Page</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[【閱讀筆記】從《他是玩真的！》汲取鋼鐵人Elon Musk創造未來的關鍵能力]]></title>
-    <link href="https://easonchang.com/2016/04/16/10-keys-of-elon-musk/"/>
-    <updated>2016-04-16T18:30:00+08:00</updated>
-    <id>https://easonchang.com/2016/04/16/10-keys-of-elon-musk</id>
-    <content type="html"><![CDATA[<p>《他是玩真的！：「鋼鐵人」伊隆·馬斯克改變未來的10種能力》
-作者：楊士範(Mario)、吳居叡(G Wu)、鄭緯筌(Vista)</p>
-
-<blockquote><p>一句話書摘：去思考！去辯論！像個鋼鐵人般做出改變吧！培養洞察力、執行力、領導力！賭上你的願景！</p></blockquote>
-
-<h1>誰是馬斯克？</h1>
-
-<p>伊隆·馬斯克(Elon Musk)，被稱為繼賈伯斯後最具創新能力的企業家，先後創立了多家成功企業，每次出擊都為世界帶來了驚人的改變。</p>
-
-<!-- more -->
-
-
-<p>馬斯克生於南非，他很早就確定了他想努力的方向。大學時期他問了自己這個問題：「什麼是未來最能影響人類的事物？」，他的答案是這五大領域：網路、太空探索、潔淨能源、人工智慧、和生物科技。他之後的每一個行動都是為了實現這些願景，目前前三項領域是他的主力目標，他先後創立了X.com(PayPal的前身)、SpaceX、Tesla、SolarCity，在這些領域取得了重大成就。</p>
-
-<h1>為什麼馬斯克做得到？</h1>
-
-<p>《他是玩真的！》歸納出了10項馬斯克創造未來的關鍵能力，這邊整理為我認為比較重要的三點：</p>
-
-<ol>
-<li>洞察力：預見未來，並深入思考掌握本質</li>
-<li>執行力：主動拉近現實與未來的距離，自己定義規則，不到手絕不放棄</li>
-<li>領導力：群策群力，挽起袖子和部屬一起解決問題</li>
-</ol>
-
-
-<p>好了，以上為本書的觀點，以下是我想說的：</p>
-
-<h1>你為什麼喜歡閱讀成功人士？</h1>
-
-<p>書店裡及網路上不乏這類告訴你如何鍊成一位成功人士的書與文章，基本上觀念都大同小異：</p>
-
-<blockquote><p>誠信、堅持不輟、追求完美、專注目標、雕琢細節、有遠見、擅長演講、熟於驅動團隊、有人脈、行動力、&hellip;&hellip;</p></blockquote>
-
-<p>它會告訴你這些成功人士因為具備了上述特質而成功，沒錯，我們無法否認這點，但重點不在於他們如何成功，想想你為什麼會對這些書籍或文章有興趣，因為「你想成為像他們一樣的成功人士」，所以你應該把重點放在如何讓這些人的特點變成「你」的特點。</p>
-
-<h1>如何做出改變？</h1>
-
-<p>所以要如何做到呢？我沒辦法告訴你，因為我也還在嘗試中，如果有誰知道方法的話還請務必告訴我！唯一可以確定的是，只有「你」才可以促使這個改變發生，只有當你願意並渴望成為像他們一樣的人時，你才有可能真正達到改變。</p>
-
-<p>我能給你（和我自己）的建議就是：</p>
-
-<blockquote><p>當你在做每一個決定的時候，想想看馬斯克（或任何你想成為的人）會怎麼做？為什麼他/她會做出這樣的選擇？而你的選擇又是什麼？你和他/她有什麼差異？</p></blockquote>
-
-<p>時時把這樣的念頭掛在心上，我覺得是比較有可能達到改變的方法了。</p>
 ]]></content>
   </entry>
   
