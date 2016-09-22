@@ -6,14 +6,14 @@ comments: true
 categories: [DailyUI, Project, Design]
 share: true
 image:
-  feature: "https://i.imgur.com/5nDhx57.jpg"
+  feature: "https://i.imgur.com/5qKslKE.jpg"
 ---
 
 這是今天DailyUI的成果，極限圈的Landing Page。
 
-<!-- more -->
-
 我實在不希望太晚睡搞壞身體（現在是凌晨3點QAQ），所以就不實作成網頁了，今天只有圖檔:)。
+
+<!-- more -->
 
 ![極限圈landing-page.jpg](https://i.imgur.com/5nDhx57.jpg)
 
