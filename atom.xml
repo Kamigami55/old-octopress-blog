@@ -4,7 +4,7 @@
   <title><![CDATA[Eason's blog]]></title>
   <link href="https://easonchang.com/atom.xml" rel="self"/>
   <link href="https://easonchang.com/"/>
-  <updated>2016-09-22T16:42:28+08:00</updated>
+  <updated>2016-11-21T13:32:18+08:00</updated>
   <id>https://easonchang.com/</id>
   <author>
     <name><![CDATA[Eason Chang]]></name>
@@ -12,6 +12,82 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[【閱讀筆記】《魅力學》，培養魅力的第一本書]]></title>
+    <link href="https://easonchang.com/2016/11/18/myth-of-charisma/"/>
+    <updated>2016-11-18T02:37:09+08:00</updated>
+    <id>https://easonchang.com/2016/11/18/myth-of-charisma</id>
+    <content type="html"><![CDATA[<blockquote><p>書名：魅力學：無往不利的自我經營術</p>
+
+<p>作者：Olivia Fox Cabane</p>
+
+<p>一句話書摘：若你對如何培養魅力沒有概念，這會是本很棒的入門書；而若你已接觸過不少相關概念，闔上書專心過生活吧。</p></blockquote>
+
+<h1>對「魅力」進行系統化分析</h1>
+
+<p>本書宗旨在「分析魅力的成因，並提供相關技巧」。</p>
+
+<!-- more -->
+
+
+<p>書籍前半部，有系統地剖析了魅力。</p>
+
+<p>魅力有三大要素，人們在見到一個人的幾秒鐘內，會自動對他進行以下判斷：</p>
+
+<ul>
+<li>臨在感——「你是否認真地活在當下？」</li>
+<li>影響力——「你是否有能力改變世界？」</li>
+<li>親和力——「你願意為我這麼做嗎？」</li>
+</ul>
+
+
+<p>而此三要素的排列組合，造就了四種魅力類型：</p>
+
+<ul>
+<li>權威型——邱吉爾</li>
+<li>遠見型——賈伯斯</li>
+<li>專注型——馬斯克</li>
+<li>仁慈型——達賴喇嘛</li>
+</ul>
+
+
+<p>每個人都有自己擅長的魅力類型，而每種社交場合適用的魅力類型也不同，書中提供了相當紮實的理論框架，讓讀者能強化自己的魅力強項、補正魅力弱項。</p>
+
+<h1>各式魅力練習技巧</h1>
+
+<p>本書後半部，提供了大量的魅力應用範例、及可操作的技巧。</p>
+
+<p>由於此處技巧種類繁雜，而且我個人偏好簡單的概念，而非繁複技巧，所以在此不想贅述，有興趣的讀者請自行閱讀。</p>
+
+<h1>我的評價</h1>
+
+<p>我認為閱讀的意義在於「改變自身的行為」，任何書都應該以此為目的進行書寫。</p>
+
+<p>具體方向有二：</p>
+
+<ol>
+<li>提出突破讀者認知的新穎觀點，達成「知的改變」</li>
+<li>端出心靈雞湯讓讀者爽，達成「行的改變」</li>
+</ol>
+
+
+<p>對我而言，《魅力學》兩點都沒有達成。</p>
+
+<p>我認為是因為我並非此書的目標客群。我平時就常閱讀有關魅力的文章，所以《魅力學》並沒有提供我太多新觀點，同時我也不覺得我自身缺乏魅力，所以作者再怎麼鼓勵我「魅力是可以培養的」，也無法打動我。</p>
+
+<p>但本書依舊是本相當出色的理論書籍，適合完全不知道該如何培養魅力的讀者，作為入門的第一本書。</p>
+
+<p>如果真要說，讀完《魅力學》，我最大的收穫就是重新認知到「活在當下（培養臨在感）」的重要性，此為展現魅力的基本條件。</p>
+
+<p>以下是我做的閱讀摘要，以簡報形式做呈現，供參～</p>
+
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/50LaTnV0itSAwT" width="100%" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+
+
+<p></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Octopress，為什麼我選擇它]]></title>
@@ -1057,41 +1133,6 @@
 <p><a href="http://kamigami55.github.io/DailyUI/001_signup/">點我玩線上Demo</a></p>
 
 <p><a href="https://github.com/Kamigami55/DailyUI/tree/master/001_signup">點我查看Github原始碼</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[【DailyUI #000】成為最強前端設計師吧]]></title>
-    <link href="https://easonchang.com/2016/05/08/dailyui-000-become-awesome-front-end-designer/"/>
-    <updated>2016-05-08T14:50:00+08:00</updated>
-    <id>https://easonchang.com/2016/05/08/dailyui-000-become-awesome-front-end-designer</id>
-    <content type="html"><![CDATA[<h1>什麼是 DailyUI</h1>
-
-<p>在網上衝浪的時候，不小心又看到了一個驚人的網站：DailyUI.co
-這是一個協助你成為更專業的 UI Designer 的服務，透過激勵你連續 100 天進行 UI 設計，他的運作方式是這樣的：</p>
-
-<!-- more -->
-
-
-<ul>
-<li>每天都會寄一封 email 給你，告訴你今天的 UI 設計題目（假日沒有，假日是用來遊山玩水的）</li>
-<li>題目只會指出大方向，沒有太多限制，發揮創意打造出最強 UI！It&rsquo;s show time!</li>
-<li>將你的設計發上 Twitter 或是 Dribble，向全世界分享你的創意！</li>
-<li>偶爾會有驚喜獎勵，不要被嚇到了:)</li>
-</ul>
-
-
-<p>這種互動模式實在是太驚人了！而且我也想知道有什麼驚喜獎勵～</p>
-
-<p>於是乎「<strong>Challenge Accepted!!</strong>」</p>
-
-<h1>我的挑戰紀錄</h1>
-
-<p><a href="https://easonchang.com/2016/05/09/dailyui-001-sign-up/">【DailyUI #001】Sign Up</a></p>
-
-<p><a href="https://easonchang.com/2016/05/09/dailyui-002-credit-card-checkout/">【DailyUI #002】Credit Card Checkout</a></p>
-
-<p><a href="https://easonchang.com/2016/05/10/dailyui-003-landing-page/">【DailyUI #003】Landing Page</a></p>
 ]]></content>
   </entry>
   
