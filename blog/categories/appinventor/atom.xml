@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Appinventor | Eason's blog]]></title>
+  <link href="https://easonchang.com/blog/categories/appinventor/atom.xml" rel="self"/>
+  <link href="https://easonchang.com/"/>
+  <updated>2017-03-05T23:14:11+08:00</updated>
+  <id>https://easonchang.com/</id>
+  <author>
+    <name><![CDATA[Eason Chang]]></name>
+    <email><![CDATA[eason@easonchang.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[開發藍芽鋼琴APP！使用AppInventor結合Arduino、HC05、與蜂鳴器]]></title>
+    <link href="https://easonchang.com/2017/03/05/bluetooth-keyboard/"/>
+    <updated>2017-03-05T23:00:36+08:00</updated>
+    <id>https://easonchang.com/2017/03/05/bluetooth-keyboard</id>
+    <content type="html"><![CDATA[<p>今天我們要實作簡易藍芽鋼琴APP！</p>
+
+<ul>
+<li>用AppInventor 2開發Android APP作為控制介面</li>
+<li>Arduino UNO作硬體控制</li>
+<li>HC-05藍芽模組接收手機指令</li>
+<li>一個無源蜂鳴器作為發音設備</li>
+</ul>
+
+
+<!-- more -->
+
+
+<p>DEMO影片：</p>
+
+<p><a href="https://www.youtube.com/watch?v=hr8DXRMLY9s"><img src="https://img.youtube.com/vi/hr8DXRMLY9s/0.jpg" alt="" /></a></p>
+
+<h3>先備知識</h3>
+
+<ul>
+<li>基礎AppInventor操作</li>
+<li>基礎Arduino程式撰寫</li>
+<li>HC-05藍芽模組使用</li>
+<li>蜂鳴器使用</li>
+</ul>
+
+
+<hr />
+
+<h1>Android App撰寫（使用AppInventor）</h1>
+
+<p>APP是當作藍芽鋼琴的控制介面，會透過藍芽告訴Arduino應該發出哪個聲音。</p>
+
+<p>下載.aia檔：<a href="https://drive.google.com/file/d/0B89iCvlgxOnydm9oaW9mOVdNTzg/view?usp=sharing">keyboard.aia</a></p>
+
+<h3>外觀編排</h3>
+
+<ul>
+<li>最上方有<strong>一個清單選擇器</strong>，用來連接藍芽</li>
+<li>中央<strong>八個按鈕</strong>是琴鍵，從DO,RE,&hellip;到DO5</li>
+<li>下方是<strong>一個按鈕</strong>，用來取消藍芽連接</li>
+<li>還有一個不可見的<strong>藍芽客戶端</strong>元件</li>
+</ul>
+
+
+<p><img src="https://imgur.com/jv9FN5e.png" alt="" /></p>
+
+<h3>程式設計</h3>
+
+<ul>
+<li><strong>連接藍芽</strong>清單選擇器被按下時，列出所有已配對藍芽</li>
+<li><strong>連接藍芽</strong>清單選擇器已選擇後，連接藍芽，</li>
+<li><strong>取消連接按鈕</strong>被按下時，取消連線</li>
+<li><strong>DO~DO5</strong>琴鍵按鈕被按下時，藍芽送出訊號<strong>&lsquo;1&rsquo;~&lsquo;8&rsquo;</strong>，告訴Arduino該發聲了</li>
+<li><strong>DO~DO5</strong>琴鍵按鈕被鬆開時，藍芽送出訊號<strong>&rsquo;S'</strong>，告訴Arduino停止發聲</li>
+</ul>
+
+
+<p><img src="https://imgur.com/ouu8fbu.png" alt="" /></p>
+
+<hr />
+
+<h1>硬體接線</h1>
+
+<h3>需求材料：</h3>
+
+<ul>
+<li>Arduino UNO x1（或其他類UNO開發版都可）</li>
+<li>無源蜂鳴器 x1</li>
+<li>HC-05藍牙模組 x1（HC-06也可）</li>
+</ul>
+
+
+<h3>接線：</h3>
+
+<ul>
+<li>HC-05的RX接pin11、TX接pin10</li>
+<li>蜂鳴器正極端接pin6（須具有PWM功能）</li>
+</ul>
+
+
+<p><img src="https://imgur.com/SFuIdNX.png" alt="" /></p>
+
+<hr />
+
+<h1>Arduino程式</h1>
+
+<ul>
+<li>不斷從藍芽收資料</li>
+<li>收到'1'~&lsquo;8'的話，發出對應的音</li>
+<li>收到&rsquo;S'的話，停止發音</li>
+</ul>
+
+
+<pre><code class="c">#include &lt;SoftwareSerial.h&gt;
+SoftwareSerial BTSerial(10, 11); // 藍芽Serial使用的pin腳（Arduino的RX,TX，對應到HC05的TX,RX)
+
+#define DO  262 // 音階頻率table
+#define RE  294
+#define MI  330
+#define FA  349
+#define SOL 392
+#define LA  440
+#define SI  494
+#define DO5 523
+
+#define BUZZER 6 // 蜂鳴器pin腳
+
+void setup() {
+  BTSerial.begin(9600);
+}
+
+void loop() {
+  if (BTSerial.available()){
+    char note = BTSerial.read();
+    switch(note){
+      case '1': // 若接收到字元'1'（從手機App傳來的）
+        tone(BUZZER, DO); // 就開始發出DO的音
+        break;
+      case '2': // 以此類推
+        tone(BUZZER, RE);
+        break;
+      case '3':
+        tone(BUZZER, MI);
+        break;
+      case '4':
+        tone(BUZZER, FA);
+        break;
+      case '5':
+        tone(BUZZER, SOL);
+        break;
+      case '6':
+        tone(BUZZER, LA);
+        break;
+      case '7':
+        tone(BUZZER, SI);
+        break;
+      case '8':
+        tone(BUZZER, DO5);
+        break;
+      case 'S': // 若接收到'S'
+        noTone(BUZZER); // 停止發音
+        break;
+    }
+  }
+}
+</code></pre>
+
+<p>完成！現在你可以用手機彈奏美妙的音樂了！</p>
+]]></content>
+  </entry>
+  
+</feed>

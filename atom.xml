@@ -4,7 +4,7 @@
   <title><![CDATA[Eason's blog]]></title>
   <link href="https://easonchang.com/atom.xml" rel="self"/>
   <link href="https://easonchang.com/"/>
-  <updated>2016-12-13T07:41:28+08:00</updated>
+  <updated>2017-03-05T23:14:11+08:00</updated>
   <id>https://easonchang.com/</id>
   <author>
     <name><![CDATA[Eason Chang]]></name>
@@ -12,6 +12,216 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[開發藍芽鋼琴APP！使用AppInventor結合Arduino、HC05、與蜂鳴器]]></title>
+    <link href="https://easonchang.com/2017/03/05/bluetooth-keyboard/"/>
+    <updated>2017-03-05T23:00:36+08:00</updated>
+    <id>https://easonchang.com/2017/03/05/bluetooth-keyboard</id>
+    <content type="html"><![CDATA[<p>今天我們要實作簡易藍芽鋼琴APP！</p>
+
+<ul>
+<li>用AppInventor 2開發Android APP作為控制介面</li>
+<li>Arduino UNO作硬體控制</li>
+<li>HC-05藍芽模組接收手機指令</li>
+<li>一個無源蜂鳴器作為發音設備</li>
+</ul>
+
+
+<!-- more -->
+
+
+<p>DEMO影片：</p>
+
+<p><a href="https://www.youtube.com/watch?v=hr8DXRMLY9s"><img src="https://img.youtube.com/vi/hr8DXRMLY9s/0.jpg" alt="" /></a></p>
+
+<h3>先備知識</h3>
+
+<ul>
+<li>基礎AppInventor操作</li>
+<li>基礎Arduino程式撰寫</li>
+<li>HC-05藍芽模組使用</li>
+<li>蜂鳴器使用</li>
+</ul>
+
+
+<hr />
+
+<h1>Android App撰寫（使用AppInventor）</h1>
+
+<p>APP是當作藍芽鋼琴的控制介面，會透過藍芽告訴Arduino應該發出哪個聲音。</p>
+
+<p>下載.aia檔：<a href="https://drive.google.com/file/d/0B89iCvlgxOnydm9oaW9mOVdNTzg/view?usp=sharing">keyboard.aia</a></p>
+
+<h3>外觀編排</h3>
+
+<ul>
+<li>最上方有<strong>一個清單選擇器</strong>，用來連接藍芽</li>
+<li>中央<strong>八個按鈕</strong>是琴鍵，從DO,RE,&hellip;到DO5</li>
+<li>下方是<strong>一個按鈕</strong>，用來取消藍芽連接</li>
+<li>還有一個不可見的<strong>藍芽客戶端</strong>元件</li>
+</ul>
+
+
+<p><img src="https://imgur.com/jv9FN5e.png" alt="" /></p>
+
+<h3>程式設計</h3>
+
+<ul>
+<li><strong>連接藍芽</strong>清單選擇器被按下時，列出所有已配對藍芽</li>
+<li><strong>連接藍芽</strong>清單選擇器已選擇後，連接藍芽，</li>
+<li><strong>取消連接按鈕</strong>被按下時，取消連線</li>
+<li><strong>DO~DO5</strong>琴鍵按鈕被按下時，藍芽送出訊號<strong>&lsquo;1&rsquo;~&lsquo;8&rsquo;</strong>，告訴Arduino該發聲了</li>
+<li><strong>DO~DO5</strong>琴鍵按鈕被鬆開時，藍芽送出訊號<strong>&rsquo;S'</strong>，告訴Arduino停止發聲</li>
+</ul>
+
+
+<p><img src="https://imgur.com/ouu8fbu.png" alt="" /></p>
+
+<hr />
+
+<h1>硬體接線</h1>
+
+<h3>需求材料：</h3>
+
+<ul>
+<li>Arduino UNO x1（或其他類UNO開發版都可）</li>
+<li>無源蜂鳴器 x1</li>
+<li>HC-05藍牙模組 x1（HC-06也可）</li>
+</ul>
+
+
+<h3>接線：</h3>
+
+<ul>
+<li>HC-05的RX接pin11、TX接pin10</li>
+<li>蜂鳴器正極端接pin6（須具有PWM功能）</li>
+</ul>
+
+
+<p><img src="https://imgur.com/SFuIdNX.png" alt="" /></p>
+
+<hr />
+
+<h1>Arduino程式</h1>
+
+<ul>
+<li>不斷從藍芽收資料</li>
+<li>收到'1'~&lsquo;8'的話，發出對應的音</li>
+<li>收到&rsquo;S'的話，停止發音</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cp">#include &lt;SoftwareSerial.h&gt;</span>
+</span><span class='line'><span class="n">SoftwareSerial</span> <span class="nf">BTSerial</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">);</span> <span class="c1">// 藍芽Serial使用的pin腳（Arduino的RX,TX，對應到HC05的TX,RX)</span>
+</span><span class='line'>
+</span><span class='line'><span class="cp">#define DO  262 </span><span class="c1">// 音階頻率table</span>
+</span><span class='line'><span class="cp">#define RE  294</span>
+</span><span class='line'><span class="cp">#define MI  330</span>
+</span><span class='line'><span class="cp">#define FA  349</span>
+</span><span class='line'><span class="cp">#define SOL 392</span>
+</span><span class='line'><span class="cp">#define LA  440</span>
+</span><span class='line'><span class="cp">#define SI  494</span>
+</span><span class='line'><span class="cp">#define DO5 523</span>
+</span><span class='line'>
+</span><span class='line'><span class="cp">#define BUZZER 6 </span><span class="c1">// 蜂鳴器pin腳</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">BTSerial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="n">BTSerial</span><span class="p">.</span><span class="n">available</span><span class="p">()){</span>
+</span><span class='line'>    <span class="kt">char</span> <span class="n">note</span> <span class="o">=</span> <span class="n">BTSerial</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+</span><span class='line'>    <span class="k">switch</span><span class="p">(</span><span class="n">note</span><span class="p">){</span>
+</span><span class='line'>      <span class="k">case</span> <span class="sc">&#39;1&#39;</span><span class="o">:</span> <span class="c1">// 若接收到字元&#39;1&#39;（從手機App傳來的）</span>
+</span><span class='line'>        <span class="n">tone</span><span class="p">(</span><span class="n">BUZZER</span><span class="p">,</span> <span class="n">DO</span><span class="p">);</span> <span class="c1">// 就開始發出DO的音</span>
+</span><span class='line'>        <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">case</span> <span class="sc">&#39;2&#39;</span><span class="o">:</span> <span class="c1">// 以此類推</span>
+</span><span class='line'>        <span class="n">tone</span><span class="p">(</span><span class="n">BUZZER</span><span class="p">,</span> <span class="n">RE</span><span class="p">);</span>
+</span><span class='line'>        <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">case</span> <span class="sc">&#39;3&#39;</span><span class="o">:</span>
+</span><span class='line'>        <span class="n">tone</span><span class="p">(</span><span class="n">BUZZER</span><span class="p">,</span> <span class="n">MI</span><span class="p">);</span>
+</span><span class='line'>        <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">case</span> <span class="sc">&#39;4&#39;</span><span class="o">:</span>
+</span><span class='line'>        <span class="n">tone</span><span class="p">(</span><span class="n">BUZZER</span><span class="p">,</span> <span class="n">FA</span><span class="p">);</span>
+</span><span class='line'>        <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">case</span> <span class="sc">&#39;5&#39;</span><span class="o">:</span>
+</span><span class='line'>        <span class="n">tone</span><span class="p">(</span><span class="n">BUZZER</span><span class="p">,</span> <span class="n">SOL</span><span class="p">);</span>
+</span><span class='line'>        <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">case</span> <span class="sc">&#39;6&#39;</span><span class="o">:</span>
+</span><span class='line'>        <span class="n">tone</span><span class="p">(</span><span class="n">BUZZER</span><span class="p">,</span> <span class="n">LA</span><span class="p">);</span>
+</span><span class='line'>        <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">case</span> <span class="sc">&#39;7&#39;</span><span class="o">:</span>
+</span><span class='line'>        <span class="n">tone</span><span class="p">(</span><span class="n">BUZZER</span><span class="p">,</span> <span class="n">SI</span><span class="p">);</span>
+</span><span class='line'>        <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">case</span> <span class="sc">&#39;8&#39;</span><span class="o">:</span>
+</span><span class='line'>        <span class="n">tone</span><span class="p">(</span><span class="n">BUZZER</span><span class="p">,</span> <span class="n">DO5</span><span class="p">);</span>
+</span><span class='line'>        <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">case</span> <span class="sc">&#39;S&#39;</span><span class="o">:</span> <span class="c1">// 若接收到&#39;S&#39;</span>
+</span><span class='line'>        <span class="n">noTone</span><span class="p">(</span><span class="n">BUZZER</span><span class="p">);</span> <span class="c1">// 停止發音</span>
+</span><span class='line'>        <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>完成！現在你可以用手機彈奏美妙的音樂了！</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[《為什麼聰明人都用方格筆記本》，用筆記術變身強者吧]]></title>
@@ -1174,29 +1384,6 @@
 前方的道路還很長呀</p>
 
 <p>以上，這是今天的DailyUI #003 Landing Page!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[【DailyUI #002】Credit Card Checkout]]></title>
-    <link href="https://easonchang.com/2016/05/09/dailyui-002-credit-card-checkout/"/>
-    <updated>2016-05-09T21:03:00+08:00</updated>
-    <id>https://easonchang.com/2016/05/09/dailyui-002-credit-card-checkout</id>
-    <content type="html"><![CDATA[<p><a href="http://kamigami55.github.io/DailyUI/002_creditCardCheckout/">點我試試Live Demo</a></p>
-
-<p><a href="https://github.com/Kamigami55/DailyUI/tree/master/002_creditCardCheckout">點我看看Github原始碼(可是完全沒有整理超級亂我覺得你還是不要看好了)</a></p>
-
-<p>It&rsquo;s DailyUI day #2!</p>
-
-<p>做一做就上癮了，所以當然要趁勝追擊繼續創造很厲害很厲害的UI！</p>
-
-<!-- more -->
-
-
-<p><img src="https://i.imgur.com/hEbjURo.jpg" alt="dailyui_002_credit.png" /></p>
-
-<p>我發現CSS還有很多特性是我還不了解的、pseudo-element(偽元素)、animetion、@keyframes、transform、&hellip;&hellip;
-我對於前端設計的掌握度還是非常低，無法隨心所欲地作出想要的效果，不過在挑戰DailyUI的過程中，確實可以明顯感覺到自己正在進步，希望完成這100天的挑戰後，自己能成為一位上的了檯面的前端工程師！</p>
 ]]></content>
   </entry>
   

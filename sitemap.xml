@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>https://easonchang.com/2017/03/05/bluetooth-keyboard/</loc>
+<lastmod>2017-03-05T23:00:36+08:00</lastmod>
+</url>
+<url>
 <loc>https://easonchang.com/2016/12/13/grid-note/</loc>
 <lastmod>2016-12-13T05:44:10+08:00</lastmod>
 </url>
@@ -238,15 +242,12 @@
 <loc>https://easonchang.com/blog/categories/blog/</loc>
 </url>
 <url>
-<loc>https://easonchang.com/posts/2/</loc>
+<loc>https://easonchang.com/blog/categories/appinventor/</loc>
 </url>
 <url>
-<loc>https://easonchang.com/posts/3/</loc>
+<loc>https://easonchang.com/blog/categories/hc05/</loc>
 </url>
 <url>
-<loc>https://easonchang.com/posts/4/</loc>
-</url>
-<url>
-<loc>https://easonchang.com/posts/5/</loc>
+<loc>https://easonchang.com/blog/categories/arduino/</loc>
 </url>
 </urlset>
