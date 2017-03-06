@@ -117,6 +117,8 @@ task :new_post, :title do |t, args|
     post.puts "share: true"
     post.puts "published: false"
     post.puts "categories: []"
+    post.puts "image:"
+    post.puts "  feature: \"\""
     post.puts "---"
   end
 end
