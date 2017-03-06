@@ -4,10 +4,10 @@
 
 url: https://easonchang.com
 title: "Eason's blog"
-subtitle: I create, therefore I am.
+subtitle: "Make & Share!!!"
 author: Eason Chang
 simple_search: https://www.google.com/search
-description: "Code, Maker, Life"
+description: "我是Eason，我創造有趣的東西，然後分享給你！"
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -28,7 +28,7 @@ enforce_ssl: easonchang.com
 #   HPSTR theme setting   #
 # ----------------------- #
 
-keywords: ["Code", "Maker", "Create", "Programming"]
+keywords: ["Code", "Maker", "Create", "Programming", "Make", "Share", "Eason", "Eason Chang"]
 avatar: "https://i.imgur.com/sv0OeoG.jpg"
 author_bio: "Hi! I am Eason! I create awesome things!"
 
