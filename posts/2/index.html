@@ -105,6 +105,80 @@
 <header>
   <div class="entry-meta">
     <span class="entry-date date published updated">
+      <time datetime="2016-08-16T02:34:00+08:00">
+        <a href="/2016/08/16/start-your-rails-project-with-production-mode/">August 16, 2016</a>
+      </time>
+    </span>
+    <span class="author vcard">
+      <span class="fn">
+        <a href="" title="About Eason Chang">Eason Chang</a>
+      </span>
+    </span>
+    
+      &nbsp; &bull; &nbsp;<span class="entry-comments">
+        <a href="/2016/08/16/start-your-rails-project-with-production-mode/#disqus_thread">Comment</a>
+      </span>
+    
+  </div><!-- /.entry-meta -->
+  
+    <h1 class="entry-title">
+      <a href="/2016/08/16/start-your-rails-project-with-production-mode/" rel="bookmark" title="使用production Mode啟動你的rails專案" itemprop="url">使用production Mode啟動你的rails專案</a>
+    </h1>
+  
+  
+    <div class="entry-image-index">
+      <a href="/2016/08/16/start-your-rails-project-with-production-mode/" title="使用production Mode啟動你的rails專案"><img src="https://imgur.com/a21E49E.jpg" alt="使用production Mode啟動你的rails專案"></a>
+    </div><!-- /.entry-image -->
+  
+</header>
+
+<div class="entry-content">
+  <h1>Quick Reference:</h1>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ RAILS_ENV</span><span class="o">=</span>production rake db:migrate
+</span><span class='line'><span class="nv">$ </span>rake secret //產生secret key
+</span><span class='line'><span class="nv">$ </span><span class="nb">export </span><span class="nv">SECRET_KEY_BASE</span><span class="o">=[</span>貼入上個指令產生出來的密鑰<span class="o">]</span>
+</span><span class='line'><span class="nv">$ </span>vim config/initializers/assets.rb  //加入用到的assets路徑
+</span><span class='line'>確認各處引用assets的方法正確
+</span><span class='line'><span class="nv">$ RAILS_ENV</span><span class="o">=</span>production rake assets:precompile
+</span><span class='line'><span class="nv">$ </span>vim config/environments/production.rb  //將這行改成true: config.serve_static_assets <span class="o">=</span> <span class="nb">true</span>
+</span><span class='line'><span class="nv">$ </span>rails s -e production
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+
+  
+  
+    <footer>
+      <a class="btn" rel="full-article" href="/2016/08/16/start-your-rails-project-with-production-mode/">Read on &rarr;</a>
+    </footer>
+  
+</div><!-- /.entry-content -->
+
+
+
+
+
+</article><!-- /.hentry -->
+
+<article class="hentry">
+  
+
+
+
+<header>
+  <div class="entry-meta">
+    <span class="entry-date date published updated">
       <time datetime="2016-08-15T12:23:00+08:00">
         <a href="/2016/08/15/dream-diary-09-fxxking-meteorology/">August 15, 2016</a>
       </time>
@@ -594,61 +668,6 @@
   
     <footer>
       <a class="btn" rel="full-article" href="/2016/08/01/dream-diary-01-start/">Read on &rarr;</a>
-    </footer>
-  
-</div><!-- /.entry-content -->
-
-
-
-
-
-</article><!-- /.hentry -->
-
-<article class="hentry">
-  
-
-
-
-<header>
-  <div class="entry-meta">
-    <span class="entry-date date published updated">
-      <time datetime="2016-05-10T19:43:00+08:00">
-        <a href="/2016/05/10/dailyui-003-landing-page/">May 10, 2016</a>
-      </time>
-    </span>
-    <span class="author vcard">
-      <span class="fn">
-        <a href="" title="About Eason Chang">Eason Chang</a>
-      </span>
-    </span>
-    
-      &nbsp; &bull; &nbsp;<span class="entry-comments">
-        <a href="/2016/05/10/dailyui-003-landing-page/#disqus_thread">Comment</a>
-      </span>
-    
-  </div><!-- /.entry-meta -->
-  
-    <h1 class="entry-title">
-      <a href="/2016/05/10/dailyui-003-landing-page/" rel="bookmark" title="【DailyUI #003】Landing Page" itemprop="url">【DailyUI #003】Landing Page</a>
-    </h1>
-  
-  
-    <div class="entry-image-index">
-      <a href="/2016/05/10/dailyui-003-landing-page/" title="【DailyUI #003】Landing Page"><img src="https://i.imgur.com/5qKslKE.jpg" alt="【DailyUI #003】Landing Page"></a>
-    </div><!-- /.entry-image -->
-  
-</header>
-
-<div class="entry-content">
-  <p>這是今天DailyUI的成果，極限圈的Landing Page。</p>
-
-<p>我實在不希望太晚睡搞壞身體（現在是凌晨3點QAQ），所以就不實作成網頁了，今天只有圖檔:)。</p>
-
-
-  
-  
-    <footer>
-      <a class="btn" rel="full-article" href="/2016/05/10/dailyui-003-landing-page/">Read on &rarr;</a>
     </footer>
   
 </div><!-- /.entry-content -->

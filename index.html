@@ -105,6 +105,71 @@
 <header>
   <div class="entry-meta">
     <span class="entry-date date published updated">
+      <time datetime="2017-03-10T02:57:34+08:00">
+        <a href="/2017/03/10/slack-bot-with-botkit/">March 10, 2017</a>
+      </time>
+    </span>
+    <span class="author vcard">
+      <span class="fn">
+        <a href="" title="About Eason Chang">Eason Chang</a>
+      </span>
+    </span>
+    
+      &nbsp; &bull; &nbsp;<span class="entry-comments">
+        <a href="/2017/03/10/slack-bot-with-botkit/#disqus_thread">Comment</a>
+      </span>
+    
+  </div><!-- /.entry-meta -->
+  
+    <h1 class="entry-title">
+      <a href="/2017/03/10/slack-bot-with-botkit/" rel="bookmark" title="Botkit初體驗，寫一隻Slack聊天機器人吧！" itemprop="url">Botkit初體驗，寫一隻Slack聊天機器人吧！</a>
+    </h1>
+  
+  
+    <div class="entry-image-index">
+      <a href="/2017/03/10/slack-bot-with-botkit/" title="Botkit初體驗，寫一隻Slack聊天機器人吧！"><img src="https://imgur.com/wnDgpFG.png" alt="Botkit初體驗，寫一隻Slack聊天機器人吧！"></a>
+    </div><!-- /.entry-image -->
+  
+</header>
+
+<div class="entry-content">
+  <p>目標：寫出一隻能運作的Slack聊天機器人(Chatbot)</p>
+
+<p>需要的資源：</p>
+
+<ul>
+<li>連網的可執行Node.js的電腦（我使用Arch Linux）</li>
+<li>可供測試的Slack team（可以自己建立或使用現有的team）</li>
+</ul>
+
+
+<h1>什麼是Botkit</h1>
+
+<p><a href="https://www.botkit.ai/">Botkit</a>是一套開源的聊天機器人開發工具，目前已支援<a href="https://slack.com/">Slack</a>、<a href="https://www.messenger.com/">Facebook Messenger</a>、<a href="https://www.ciscospark.com/">Cisco Spark</a>、<a href="https://www.twilio.com/chat">Twilio IP Messaging</a>、<a href="https://dev.botframework.com/">Microsoft Bot Framework</a>等平台。</p>
+
+
+  
+  
+    <footer>
+      <a class="btn" rel="full-article" href="/2017/03/10/slack-bot-with-botkit/">Read on &rarr;</a>
+    </footer>
+  
+</div><!-- /.entry-content -->
+
+
+
+
+
+</article><!-- /.hentry -->
+
+<article class="hentry">
+  
+
+
+
+<header>
+  <div class="entry-meta">
+    <span class="entry-date date published updated">
       <time datetime="2017-03-05T23:00:36+08:00">
         <a href="/2017/03/05/bluetooth-keyboard/">March 05, 2017</a>
       </time>
@@ -615,80 +680,6 @@
   
     <footer>
       <a class="btn" rel="full-article" href="/2016/08/17/dream-diary-10-flight-computer/">Read on &rarr;</a>
-    </footer>
-  
-</div><!-- /.entry-content -->
-
-
-
-
-
-</article><!-- /.hentry -->
-
-<article class="hentry">
-  
-
-
-
-<header>
-  <div class="entry-meta">
-    <span class="entry-date date published updated">
-      <time datetime="2016-08-16T02:34:00+08:00">
-        <a href="/2016/08/16/start-your-rails-project-with-production-mode/">August 16, 2016</a>
-      </time>
-    </span>
-    <span class="author vcard">
-      <span class="fn">
-        <a href="" title="About Eason Chang">Eason Chang</a>
-      </span>
-    </span>
-    
-      &nbsp; &bull; &nbsp;<span class="entry-comments">
-        <a href="/2016/08/16/start-your-rails-project-with-production-mode/#disqus_thread">Comment</a>
-      </span>
-    
-  </div><!-- /.entry-meta -->
-  
-    <h1 class="entry-title">
-      <a href="/2016/08/16/start-your-rails-project-with-production-mode/" rel="bookmark" title="使用production Mode啟動你的rails專案" itemprop="url">使用production Mode啟動你的rails專案</a>
-    </h1>
-  
-  
-    <div class="entry-image-index">
-      <a href="/2016/08/16/start-your-rails-project-with-production-mode/" title="使用production Mode啟動你的rails專案"><img src="https://imgur.com/a21E49E.jpg" alt="使用production Mode啟動你的rails專案"></a>
-    </div><!-- /.entry-image -->
-  
-</header>
-
-<div class="entry-content">
-  <h1>Quick Reference:</h1>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ RAILS_ENV</span><span class="o">=</span>production rake db:migrate
-</span><span class='line'><span class="nv">$ </span>rake secret //產生secret key
-</span><span class='line'><span class="nv">$ </span><span class="nb">export </span><span class="nv">SECRET_KEY_BASE</span><span class="o">=[</span>貼入上個指令產生出來的密鑰<span class="o">]</span>
-</span><span class='line'><span class="nv">$ </span>vim config/initializers/assets.rb  //加入用到的assets路徑
-</span><span class='line'>確認各處引用assets的方法正確
-</span><span class='line'><span class="nv">$ RAILS_ENV</span><span class="o">=</span>production rake assets:precompile
-</span><span class='line'><span class="nv">$ </span>vim config/environments/production.rb  //將這行改成true: config.serve_static_assets <span class="o">=</span> <span class="nb">true</span>
-</span><span class='line'><span class="nv">$ </span>rails s -e production
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-
-  
-  
-    <footer>
-      <a class="btn" rel="full-article" href="/2016/08/16/start-your-rails-project-with-production-mode/">Read on &rarr;</a>
     </footer>
   
 </div><!-- /.entry-content -->

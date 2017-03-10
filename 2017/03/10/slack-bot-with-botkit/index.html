@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+
+<head>
+<!-- enforce https -->
+  <script type="text/javascript">
+    var host = "easonchang.com";
+    if ((host == window.location.host) && (window.location.protocol != "https:"))
+      window.location.protocol = "https";
+  </script>
+
+
+
+<meta charset="utf-8">
+<meta http-equiv="cleartype" content="on">
+
+<title>Botkit初體驗，寫一隻Slack聊天機器人吧！ - Eason's blog</title>
+<meta name="author" content="Eason Chang">
+
+
+
+
+<meta name="description" content="我是Eason，我創造有趣的東西，然後分享給你！">
+
+<meta name="keywords" content="botkit chatbot slack Code Maker Create Programming Make Share Eason Eason Chang">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Twitter Cards -->
+
+
+<!-- Open Graph -->
+<meta property="og:local" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://easonchang.com/2017/03/10/slack-bot-with-botkit">
+<meta property="og:title" content="Botkit初體驗，寫一隻Slack聊天機器人吧！">
+<meta property="og:description" content="我是Eason，我創造有趣的東西，然後分享給你！">
+
+  <meta property="og:image" content="https://imgur.com/wnDgpFG.png">
+
+<meta property="og:site_name" content="Eason's blog">
+
+<link rel="canonical" href="https://easonchang.com/2017/03/10/slack-bot-with-botkit">
+<link href="/favicon.png" rel="icon">
+<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="/atom.xml" rel="alternate" title="Eason's blog" type="application/atom+xml">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+<script>Modernizr || document.write('<script src="/javascripts/vendor/modernizr-2.6.2.custom.min.js"><\/script>') </script>
+
+
+
+<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+
+</head>
+
+<body id="post" class="feature">
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+<nav id="dl-menu" class="dl-menuwrapper" role="navigation">
+	<button class="dl-trigger">Open Menu</button>
+	<ul class="dl-menu">
+		<li><a href="/">Home</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/posts/">All Posts</a></li>
+                <li><a href="/categories/">All Categories</a></li>
+		
+	</ul><!-- /.dl-menu -->
+</nav><!-- /.dl-menuwrapper -->
+
+
+
+<div class="entry-header">
+  
+  <div class="entry-image">
+    <img src="https://imgur.com/wnDgpFG.png" alt="Botkit初體驗，寫一隻Slack聊天機器人吧！">
+  </div><!-- /.entry-image -->
+</div><!-- /.entry-header -->
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    <header class="header-title">
+      <div class="header-title-wrap">
+        
+          <h1 class="entry-title"><a href="/2017/03/10/slack-bot-with-botkit/" rel="bookmark" title="Botkit初體驗，寫一隻Slack聊天機器人吧！">Botkit初體驗，寫一隻Slack聊天機器人吧！</a></h1>
+        
+        <h2>March 10, 2017</h2>
+      </div><!-- /.header-title-wrap -->
+    </header>
+    <div class="entry-content">
+      <p>目標：寫出一隻能運作的Slack聊天機器人(Chatbot)</p>
+
+<p>需要的資源：</p>
+
+<ul>
+<li>連網的可執行Node.js的電腦（我使用Arch Linux）</li>
+<li>可供測試的Slack team（可以自己建立或使用現有的team）</li>
+</ul>
+
+
+<h1>什麼是Botkit</h1>
+
+<p><a href="https://www.botkit.ai/">Botkit</a>是一套開源的聊天機器人開發工具，目前已支援<a href="https://slack.com/">Slack</a>、<a href="https://www.messenger.com/">Facebook Messenger</a>、<a href="https://www.ciscospark.com/">Cisco Spark</a>、<a href="https://www.twilio.com/chat">Twilio IP Messaging</a>、<a href="https://dev.botframework.com/">Microsoft Bot Framework</a>等平台。</p>
+
+<!-- more -->
+
+
+<p>Botkit的Github連結：<a href="https://github.com/howdyai/botkit">https://github.com/howdyai/botkit</a></p>
+
+<h1>下載Botkit與Node.js</h1>
+
+<h2>下載Node.js (如果之前沒裝過才需要裝)</h2>
+
+<p>Node.js是一套開源、跨平台輕量化的JavaScript執行環境，常用來開發各式網路服務。</p>
+
+<p>Botkit使用Node.js來運行，所以要使用Botkit你必須先安裝Node.js</p>
+
+<p>你可以在Node.js的官網上找到個平台的安裝方法：
+<a href="https://nodejs.org/en/">https://nodejs.org/en/</a></p>
+
+<p>而在Arch Linux上，只要輸入以下指令，就可使用系統內建的pacman套件管理軟體輕鬆安裝Node.js：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo pacman -S nodejs npm
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>下載Botkit</h2>
+
+<p>Botkit官方提供了兩種下載方式：透過Git與透過npm。</p>
+
+<p>這裡我們使用Git來下載，這樣可以連範例程式碼也一起載下來。</p>
+
+<p>在你的電腦終端機中輸入以下指令：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>git clone https://github.com/howdyai/botkit
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>這會將botkit下載至你的當前目錄裡，裡頭包含了botkit函式庫與範例程式。</p>
+
+<p>接著下載Botkit所需的Node.js模組檔案：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd </span>botkit/
+</span><span class='line'>npm install
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>設置你的第一隻Slack聊天機器人</h1>
+
+<p>下載完成後，我們就要在你的Slack team裡頭放入聊天機器人Chatbot了！</p>
+
+<h2>Slack端設定</h2>
+
+<p>用瀏覽器開啟 <a href="https://my.slack.com/services/new/bot">https://my.slack.com/services/new/bot</a> （請將<strong>my</strong>置換成你的<strong>Slack team專屬的URL連結</strong>）。</p>
+
+<p>這連結用來在你的Slack team裡頭新增Chatbot，在<strong>@username</strong>的欄位輸入你想為bot取的名字，然後按下<strong>Add bot integration</strong>來新增，這裡我將我的機器人取名為<strong>mmbot</strong></p>
+
+<p><img src="https://imgur.com/erLvNAU.png" alt="" /></p>
+
+<p>Chatbot新增成功！接著你會在它的設定頁面看到一串<strong>API Token金鑰</strong>，把它<strong>複製起來</strong>，下一步會用到。</p>
+
+<p>待會你將執行的Chatbot後端程式，必須有這串Token，才能連結上你剛剛設定的Slack bot。</p>
+
+<p><img src="https://imgur.com/W6FAR8S.png" alt="" /></p>
+
+<h2>Botkit程式後端運行</h2>
+
+<p>最後我們使用botkit提供的slack-bot.js範例來測試！輸入指令來執行它，記得將<code>token=your-token</code>換成你剛剛複製起來的API Token</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">token</span><span class="o">=</span>your-token node slack-bot.js
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>完成！跟你的新Bot打聲招呼吧！</h1>
+
+<p>至此你的新聊天機器人就設置完成了！趕快打開Slack跟他講講話吧！！</p>
+
+<p>slack-bot.js範例支援幾句非常簡單的對話，試著跟他說以下的話：</p>
+
+<ul>
+<li>Hello</li>
+<li>What is your name?</li>
+<li>Who am I?</li>
+<li>Call me Eason!</li>
+</ul>
+
+
+<p><img src="https://imgur.com/6VI5HdN.png" alt="" /></p>
+
+      <footer class="entry-meta">
+        <span class="entry-tags"><a href="/categories/#botkit" title="Pages tagged botkit" class="tag">botkit</a><a href="/categories/#chatbot" title="Pages tagged chatbot" class="tag">chatbot</a><a href="/categories/#slack" title="Pages tagged slack" class="tag">slack</a></span>
+        <span><a href="/2017/03/10/slack-bot-with-botkit/" rel="bookmark" title="Botkit初體驗，寫一隻Slack聊天機器人吧！">Botkit初體驗，寫一隻Slack聊天機器人吧！</a> was published on <span class="entry-date date published updated"><time datetime="2017-03-10T02:57:34+08:00">March 10, 2017</time></span></span>
+        
+        <span class="author vcard"><span class="fn"><a href="" title="About Eason Chang">Eason Chang</a></span></span>
+        <div class="social-share">
+          <ul class="socialcount socialcount-small inline-list">
+            <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=https://easonchang.com/2017/03/10/slack-bot-with-botkit" title="Share on Facebook"><span class="count"><i class="fa fa-facebook-square"></i> Share</span></a></li>
+            <li class="twitter"><a href="https://twitter.com/intent/tweet?text=https://easonchang.com/2017/03/10/slack-bot-with-botkit" title="Share on Twitter"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
+            <li class="googleplus"><a href="https://plus.google.com/share?url=https://easonchang.com/2017/03/10/slack-bot-with-botkit" title="Share on Google Plus"><span class="count"><i class="fa fa-google-plus-square"></i> +1</span></a></li>
+          </ul>
+        </div><!-- /.social-share -->
+      </footer>
+    </div><!-- /.entry-content -->
+    
+      <div class="read-more">
+        
+          <div class="read-more-header">
+            <a href="/2017/03/05/bluetooth-keyboard/" class="btn">Read More</a>
+          </div><!-- /.read-more-header -->
+          <div class="read-more-content">
+            <h3><a href="/2017/03/05/bluetooth-keyboard/" title="開發藍芽鋼琴APP！使用AppInventor結合Arduino、HC05、與蜂鳴器">開發藍芽鋼琴APP！使用AppInventor結合Arduino、HC05、與蜂鳴器</a></h3>
+            <p>今天我們要實作簡易藍芽鋼琴APP！用AppInventor 2開發Android APP作為控制介面Arduino UNO作硬體控制HC-05藍芽模組接收手機指令一個無源蜂鳴器作為發音設備DEMO影片：先備知識基礎AppInventor操作基礎Arduino程式撰寫HC- &hellip;&hellip; <a href="/2017/03/05/bluetooth-keyboard/"> Continue reading</a></p>
+          </div><!-- /.read-more-content -->
+        
+        <div class="read-more-list">
+          
+            <div class="list-item">
+              <h4><a href="/2016/12/13/grid-note/" title="《為什麼聰明人都用方格筆記本》，用筆記術變身強者吧">《為什麼聰明人都用方格筆記本》，用筆記術變身強者吧</a></h4>
+              <span>Published on December 13, 2016</span>
+            </div><!-- /.list-item -->
+          
+            <div class="list-item">
+              <h4><a href="/2016/11/18/myth-of-charisma/" title="【閱讀筆記】《魅力學》，培養魅力的第一本書">【閱讀筆記】《魅力學》，培養魅力的第一本書</a></h4>
+              <span>Published on November 18, 2016</span>
+            </div><!-- /.list-item -->
+          
+        </div><!-- /.read-more-list -->
+      </div><!-- /.read-more -->
+    
+    <section id="disqus_thread"></section><!-- /#disqus_thread -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <span>&copy; 2017 Eason Chang. Powered by <a href="http://octopress.org">Octopress</a> using the <a href="https://github.com/jez/hpstr-theme/">HPSTR Theme for Octopress</a>.</span>
+
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+
+	        
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/javascripts/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/javascripts/octopress.js" type="text/javascript"></script>
+<script src="/javascripts/scripts.min.js"></script>
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-73788598-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'eason-blog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'https://easonchang.com/2017/03/10/slack-bot-with-botkit/';
+        var disqus_url = 'https://easonchang.com/2017/03/10/slack-bot-with-botkit/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	        
+
+</body>
+</html>

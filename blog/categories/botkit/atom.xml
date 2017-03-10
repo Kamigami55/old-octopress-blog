@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Botkit | Eason's blog]]></title>
+  <link href="https://easonchang.com/blog/categories/botkit/atom.xml" rel="self"/>
+  <link href="https://easonchang.com/"/>
+  <updated>2017-03-10T03:06:13+08:00</updated>
+  <id>https://easonchang.com/</id>
+  <author>
+    <name><![CDATA[Eason Chang]]></name>
+    <email><![CDATA[eason@easonchang.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Botkit初體驗，寫一隻Slack聊天機器人吧！]]></title>
+    <link href="https://easonchang.com/2017/03/10/slack-bot-with-botkit/"/>
+    <updated>2017-03-10T02:57:34+08:00</updated>
+    <id>https://easonchang.com/2017/03/10/slack-bot-with-botkit</id>
+    <content type="html"><![CDATA[<p>目標：寫出一隻能運作的Slack聊天機器人(Chatbot)</p>
+
+<p>需要的資源：</p>
+
+<ul>
+<li>連網的可執行Node.js的電腦（我使用Arch Linux）</li>
+<li>可供測試的Slack team（可以自己建立或使用現有的team）</li>
+</ul>
+
+
+<h1>什麼是Botkit</h1>
+
+<p><a href="https://www.botkit.ai/">Botkit</a>是一套開源的聊天機器人開發工具，目前已支援<a href="https://slack.com/">Slack</a>、<a href="https://www.messenger.com/">Facebook Messenger</a>、<a href="https://www.ciscospark.com/">Cisco Spark</a>、<a href="https://www.twilio.com/chat">Twilio IP Messaging</a>、<a href="https://dev.botframework.com/">Microsoft Bot Framework</a>等平台。</p>
+
+<!-- more -->
+
+
+<p>Botkit的Github連結：<a href="https://github.com/howdyai/botkit">https://github.com/howdyai/botkit</a></p>
+
+<h1>下載Botkit與Node.js</h1>
+
+<h2>下載Node.js (如果之前沒裝過才需要裝)</h2>
+
+<p>Node.js是一套開源、跨平台輕量化的JavaScript執行環境，常用來開發各式網路服務。</p>
+
+<p>Botkit使用Node.js來運行，所以要使用Botkit你必須先安裝Node.js</p>
+
+<p>你可以在Node.js的官網上找到個平台的安裝方法：
+<a href="https://nodejs.org/en/">https://nodejs.org/en/</a></p>
+
+<p>而在Arch Linux上，只要輸入以下指令，就可使用系統內建的pacman套件管理軟體輕鬆安裝Node.js：</p>
+
+<pre><code class="bash">sudo pacman -S nodejs npm
+</code></pre>
+
+<h2>下載Botkit</h2>
+
+<p>Botkit官方提供了兩種下載方式：透過Git與透過npm。</p>
+
+<p>這裡我們使用Git來下載，這樣可以連範例程式碼也一起載下來。</p>
+
+<p>在你的電腦終端機中輸入以下指令：</p>
+
+<pre><code class="bash">git clone https://github.com/howdyai/botkit
+</code></pre>
+
+<p>這會將botkit下載至你的當前目錄裡，裡頭包含了botkit函式庫與範例程式。</p>
+
+<p>接著下載Botkit所需的Node.js模組檔案：</p>
+
+<pre><code class="bash">cd botkit/
+npm install
+</code></pre>
+
+<h1>設置你的第一隻Slack聊天機器人</h1>
+
+<p>下載完成後，我們就要在你的Slack team裡頭放入聊天機器人Chatbot了！</p>
+
+<h2>Slack端設定</h2>
+
+<p>用瀏覽器開啟 <a href="https://my.slack.com/services/new/bot">https://my.slack.com/services/new/bot</a> （請將<strong>my</strong>置換成你的<strong>Slack team專屬的URL連結</strong>）。</p>
+
+<p>這連結用來在你的Slack team裡頭新增Chatbot，在<strong>@username</strong>的欄位輸入你想為bot取的名字，然後按下<strong>Add bot integration</strong>來新增，這裡我將我的機器人取名為<strong>mmbot</strong></p>
+
+<p><img src="https://imgur.com/erLvNAU.png" alt="" /></p>
+
+<p>Chatbot新增成功！接著你會在它的設定頁面看到一串<strong>API Token金鑰</strong>，把它<strong>複製起來</strong>，下一步會用到。</p>
+
+<p>待會你將執行的Chatbot後端程式，必須有這串Token，才能連結上你剛剛設定的Slack bot。</p>
+
+<p><img src="https://imgur.com/W6FAR8S.png" alt="" /></p>
+
+<h2>Botkit程式後端運行</h2>
+
+<p>最後我們使用botkit提供的slack-bot.js範例來測試！輸入指令來執行它，記得將<code>token=your-token</code>換成你剛剛複製起來的API Token</p>
+
+<pre><code class="bash">token=your-token node slack-bot.js
+</code></pre>
+
+<h1>完成！跟你的新Bot打聲招呼吧！</h1>
+
+<p>至此你的新聊天機器人就設置完成了！趕快打開Slack跟他講講話吧！！</p>
+
+<p>slack-bot.js範例支援幾句非常簡單的對話，試著跟他說以下的話：</p>
+
+<ul>
+<li>Hello</li>
+<li>What is your name?</li>
+<li>Who am I?</li>
+<li>Call me Eason!</li>
+</ul>
+
+
+<p><img src="https://imgur.com/6VI5HdN.png" alt="" /></p>
+]]></content>
+  </entry>
+  
+</feed>
